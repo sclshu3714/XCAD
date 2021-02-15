@@ -398,9 +398,9 @@ namespace TKernel {
     //! @param theExtendedString the extended string which hash code is to be computed
     //! @param theUpperBound the upper bound of the range a computing hash code must be within
     //! @return a computed hash code, in the range [1, theUpperBound]
-    inline Standard_Integer HashCode(XTCollection_ExtendedString^ theExtendedString,const Standard_Integer theUpperBound)
+    /*inline Standard_Integer HashCode(XTCollection_ExtendedString^ theExtendedString,const Standard_Integer theUpperBound)
     {
         return TCollection_ExtendedString::HashCode(*theExtendedString->GetExtendedString(), theUpperBound);
-    }
+    }*/
 }
 #endif // _XTCollection_ExtendedString_HeaderFile

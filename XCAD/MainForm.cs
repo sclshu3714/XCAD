@@ -1,5 +1,5 @@
-﻿using DevExpress.XtraBars;
-using System;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +7,24 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TKBO;
+using TKBRep;
+using TKernel;
+using TKFillet;
+using TKMath;
+using TKPrim;
+using TKTopAlgo;
+using TKV3d;
+using TKG3d;
+using TKGeomBase;
+using TKLCAF;
+using TKVCAF;
+using TKXCAF;
+using TKXDESTEP;
+using OCCT.Foundation.Net;
+using XCAD.Modules;
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Navigation;
 
 namespace XCAD
 {
@@ -409,7 +427,7 @@ namespace XCAD
                     case XTopAbs_ShapeEnum.TopAbs_VERTEX:
                     default: {
                             GroupElement.Style = ElementStyle.Item;
-                            GroupElement.ImageOptions.Image = global::UniversalCAD.Properties.Resources.Img_5101;
+                            GroupElement.ImageOptions.Image = global::XCAD.Properties.Resources.Img_5101;
                             Display(theLabel, IsBoundaryDraw, XLocalLocation);
                         }
                         break;
@@ -466,7 +484,7 @@ namespace XCAD
                             }
                             else {
                                 GroupElement.Style = ElementStyle.Item;
-                                GroupElement.ImageOptions.Image = global::UniversalCAD.Properties.Resources.Img_5101;
+                                GroupElement.ImageOptions.Image = global::XCAD.Properties.Resources.Img_5101;
                                 XAIS_Shape shape = new XAIS_Shape(currentShape);
                                 context.Display(shape, true);
                                 OCCTView.SetFaceBoundaryDraw(shape, IsBoundaryDraw);

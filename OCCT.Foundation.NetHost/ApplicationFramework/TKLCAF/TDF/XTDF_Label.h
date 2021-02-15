@@ -31,6 +31,7 @@
 #include <Standard_Boolean.hxx>
 #include <Standard_OStream.hxx>
 #include <TDF_AttributeIndexedMap.hxx>
+//class Standard_Integer;
 class Standard_DomainError;
 class Standard_OutOfRange;
 class Standard_NullObject;
@@ -41,6 +42,7 @@ class TDF_Data;
 class TDF_LabelMapHasher;
 class Standard_GUID;
 class TDF_IDFilter;
+class TDF_Label;
 
 //! This class provides basic operations  to define
 //! a label in a data structure.

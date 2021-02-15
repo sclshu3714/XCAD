@@ -181,18 +181,18 @@ namespace TKMath {
     private:
         TopLoc_Location* NativeHandle;
     };
-    //! Computes a hash code for the given location, in the range [1, theUpperBound]
-    //! @param theLocation the location which hash code is to be computed
-    //! @param theUpperBound the upper bound of the range a computing hash code must be within
-    //! @return a computed hash code, in the range [1, theUpperBound]
-    inline Standard_Integer HashCode(XTopLoc_Location^ theLocation, Standard_Integer theUpperBound)
-    {
-        return theLocation->GetLocation()->HashCode(theUpperBound);
-    }
+    ////! Computes a hash code for the given location, in the range [1, theUpperBound]
+    ////! @param theLocation the location which hash code is to be computed
+    ////! @param theUpperBound the upper bound of the range a computing hash code must be within
+    ////! @return a computed hash code, in the range [1, theUpperBound]
+    //inline Standard_Integer HashCode(XTopLoc_Location^ theLocation, Standard_Integer theUpperBound)
+    //{
+    //    return theLocation->GetLocation()->HashCode(theUpperBound);
+    //}
 
-    inline void ShallowDump(XTopLoc_Location^ me, Standard_OStream S) {
-        me->GetLocation()->ShallowDump(S);
-    }
+    //inline void ShallowDump(XTopLoc_Location^ me, Standard_OStream S) {
+    //    me->GetLocation()->ShallowDump(S);
+    //}
 };
 #endif // _XTopLoc_Location_HeaderFile
 

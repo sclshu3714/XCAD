@@ -16,6 +16,8 @@
 		<PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\OCCT.Foundation.NetHost\OCCT.Foundation.NetHost.vcxproj" />
+	  <ProjectReference Include="..\OCCT.Foundation.Net\OCCT.Foundation.Net.csproj" />
 	  <ProjectReference Include="..\XModel\XModel.csproj" />
 	</ItemGroup>
 	<ItemGroup>
