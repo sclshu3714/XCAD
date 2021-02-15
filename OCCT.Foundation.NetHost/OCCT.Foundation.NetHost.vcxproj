@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{FC9B89C2-F6CC-441C-B386-5E90817B0973}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>OCCTFoundationNetHost</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CLRSupport>NetCore</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\win32\$(VCVER)\bind\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\win32\$(VCVER)\bind\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(CSF_OCCTIncludePath);E:\Software\OCC\OpenCASCADE-7.5.0-vc14-64\opencascade-7.5.0\inc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\inc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDF;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDocStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDataStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKVCAF\TPrsStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXCAF\XCAFDoc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXSBase\IFSelect;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKSTEP\STEPConstruct;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXCAF\XCAFPrs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\gp;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\TopLoc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\GeomAbs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\Bnd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\NCollection;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\TCollection;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\Standard;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\Quantity;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepPrimAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepPrim;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepSweep;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\BRepOffsetAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\BRepOffset;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\Draft;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BRepAlgoAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BOPAlgo;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BOPTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\Blend;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BlendFunc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BRepBlend;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BRepFilletAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFi2d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFi3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFiDS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFiKPart;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\FilletSurf;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBool\BRepFill;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKGeomAlgo\GeomFill;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG3d\Geom;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG3d\TopAbs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopoDS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\BRep;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\BRepTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopExp;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG2d\Geom2d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\GeomTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\GC;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\gce;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Aspect;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Graphic3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Font;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\AIS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\Prs3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\SelectMgr;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\PrsMgr;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\V3d;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <CompileAsManaged>true</CompileAsManaged>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <DisableSpecificWarnings>4199;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)OCCT.Foundation.NetHost.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(CSF_OCCTLibPath);E:\Software\OCC\OpenCASCADE7.5.0\win32\vc14\win32\vc14\libd;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>DelayImp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;TKBin.lib;TKBinL.lib;TKBinTObj.lib;TKBinXCAF.lib;TKBO.lib;TKBool.lib;TKBRep.lib;TKCAF.lib;TKCDF.lib;TKD3DHost.lib;TKDCAF.lib;TKDraw.lib;TKernel.lib;TKFeat.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKHLR.lib;TKIGES.lib;TKIVtk.lib;TKIVtkDraw.lib;TKLCAF.lib;TKMath.lib;TKMesh.lib;TKMeshVS.lib;TKOffset.lib;TKOpenGl.lib;TKPrim.lib;TKQADraw.lib;TKRWMesh.lib;TKService.lib;TKShHealing.lib;TKStd.lib;TKStdL.lib;TKSTEP.lib;TKSTEP209.lib;TKSTEPAttr.lib;TKSTEPBase.lib;TKSTL.lib;TKTObj.lib;TKTObjDRAW.lib;TKTopAlgo.lib;TKTopTest.lib;TKV3d.lib;TKVCAF.lib;TKViewerTest.lib;TKVRML.lib;TKXCAF.lib;TKXDEDRAW.lib;TKXDEIGES.lib;TKXDESTEP.lib;TKXMesh.lib;TKXml.lib;TKXmlL.lib;TKXmlTObj.lib;TKXmlXCAF.lib;TKXSBase.lib;TKXSDRAW.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)OCCT.Foundation.NetHost.pdb</ProgramDatabaseFile>
+      <AssemblyDebug>true</AssemblyDebug>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <ImportLibrary>$(OutDir)OCCT.Foundation.NetHost.lib</ImportLibrary>
+      <DelayLoadDLLs>avcodec-57.dll;avdevice-57.dll;avfilter-6.dll;avformat-57.dll;avutil-55.dll;d3dcompiler_47.dll;FreeImage.dll;FreeImagePlus.dll;freetype.dll;gl2ps.dll;libEGL.dll;libGLESv2.dll;liblzma.dll;swscale-4.dll;tbb.dll;tbbbind.dll;tbbmalloc.dll;tbbmalloc_proxy.dll;tbb_preview.dll;tcl86.dll;tk86.dll;TKBin.dll;TKBinL.dll;TKBinTObj.dll;TKBinXCAF.dll;TKBO.dll;TKBool.dll;TKBRep.dll;TKCAF.dll;TKCDF.dll;TKD3DHost.dll;TKDCAF.dll;TKDraw.dll;TKernel.dll;TKFeat.dll;TKFillet.dll;TKG2d.dll;TKG3d.dll;TKGeomAlgo.dll;TKGeomBase.dll;TKHLR.dll;TKIGES.dll;TKIVtk.dll;TKIVtkDraw.dll;TKLCAF.dll;TKMath.dll;TKMesh.dll;TKMeshVS.dll;TKOffset.dll;TKOpenGl.dll;TKPrim.dll;TKQADraw.dll;TKRWMesh.dll;TKService.dll;TKShHealing.dll;TKStd.dll;TKStdL.dll;TKSTEP.dll;TKSTEP209.dll;TKSTEPAttr.dll;TKSTEPBase.dll;TKSTL.dll;TKTObj.dll;TKTObjDRAW.dll;TKTopAlgo.dll;TKTopTest.dll;TKV3d.dll;TKVCAF.dll;TKViewerTest.dll;TKVRML.dll;TKXCAF.dll;TKXDEDRAW.dll;TKXDEIGES.dll;TKXDESTEP.dll;TKXMesh.dll;TKXml.dll;TKXmlL.dll;TKXmlTObj.dll;TKXmlXCAF.dll;TKXSBase.dll;TKXSDRAW.dll;vtkalglib-6.1.dll;vtkCommonComputationalGeometry-6.1.dll;vtkCommonCore-6.1.dll;vtkCommonDataModel-6.1.dll;vtkCommonExecutionModel-6.1.dll;vtkCommonMath-6.1.dll;vtkCommonMisc-6.1.dll;vtkCommonSystem-6.1.dll;vtkCommonTransforms-6.1.dll;vtkDICOMParser-6.1.dll;vtkFiltersCore-6.1.dll;vtkFiltersExtraction-6.1.dll;vtkFiltersGeneral-6.1.dll;vtkFiltersGeometry-6.1.dll;vtkFiltersSources-6.1.dll;vtkFiltersStatistics-6.1.dll;vtkfreetype-6.1.dll;vtkftgl-6.1.dll;vtkImagingCore-6.1.dll;vtkImagingFourier-6.1.dll;vtkImagingHybrid-6.1.dll;vtkInteractionStyle-6.1.dll;vtkIOCore-6.1.dll;vtkIOImage-6.1.dll;vtkjpeg-6.1.dll;vtkmetaio-6.1.dll;vtkpng-6.1.dll;vtkRenderingCore-6.1.dll;vtkRenderingFreeType-6.1.dll;vtkRenderingFreeTypeOpenGL-6.1.dll;vtkRenderingOpenGL-6.1.dll;vtksys-6.1.dll;vtktiff-6.1.dll;vtkzlib-6.1.dll;zlib.dll</DelayLoadDLLs>
+      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
+      <AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(CSF_OCCTIncludePath);E:\Software\OCC\OpenCASCADE-7.5.0-vc14-64\opencascade-7.5.0\inc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\inc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDF;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDocStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDataStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKVCAF\TPrsStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXCAF\XCAFDoc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXSBase\IFSelect;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKSTEP\STEPConstruct;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXCAF\XCAFPrs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\gp;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\TopLoc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\GeomAbs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\Bnd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\NCollection;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\TCollection;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\Standard;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\Quantity;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepPrimAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepPrim;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepSweep;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\BRepOffsetAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\BRepOffset;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\Draft;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BRepAlgoAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BOPAlgo;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BOPTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\Blend;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BlendFunc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BRepBlend;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BRepFilletAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFi2d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFi3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFiDS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFiKPart;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\FilletSurf;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBool\BRepFill;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKGeomAlgo\GeomFill;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG3d\Geom;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG3d\TopAbs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopoDS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\BRep;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\BRepTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopExp;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG2d\Geom2d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\GeomTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\GC;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\gce;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Aspect;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Graphic3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Font;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\AIS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\Prs3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\SelectMgr;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\PrsMgr;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\V3d;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(CSF_OCCTLibPath);E:\Software\OCC\OpenCASCADE-7.5.0-vc14-64\opencascade-7.5.0\win64\vc14\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>DelayImp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;TKBin.lib;TKBinL.lib;TKBinTObj.lib;TKBinXCAF.lib;TKBO.lib;TKBool.lib;TKBRep.lib;TKCAF.lib;TKCDF.lib;TKD3DHost.lib;TKDCAF.lib;TKDraw.lib;TKernel.lib;TKFeat.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKHLR.lib;TKIGES.lib;TKIVtk.lib;TKIVtkDraw.lib;TKLCAF.lib;TKMath.lib;TKMesh.lib;TKMeshVS.lib;TKOffset.lib;TKOpenGl.lib;TKPrim.lib;TKQADraw.lib;TKRWMesh.lib;TKService.lib;TKShHealing.lib;TKStd.lib;TKStdL.lib;TKSTEP.lib;TKSTEP209.lib;TKSTEPAttr.lib;TKSTEPBase.lib;TKSTL.lib;TKTObj.lib;TKTObjDRAW.lib;TKTopAlgo.lib;TKTopTest.lib;TKV3d.lib;TKVCAF.lib;TKViewerTest.lib;TKVRML.lib;TKXCAF.lib;TKXDEDRAW.lib;TKXDEIGES.lib;TKXDESTEP.lib;TKXMesh.lib;TKXml.lib;TKXmlL.lib;TKXmlTObj.lib;TKXmlXCAF.lib;TKXSBase.lib;TKXSDRAW.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>avcodec-57.dll;avdevice-57.dll;avfilter-6.dll;avformat-57.dll;avutil-55.dll;d3dcompiler_47.dll;FreeImage.dll;FreeImagePlus.dll;freetype.dll;gl2ps.dll;libEGL.dll;libGLESv2.dll;liblzma.dll;swscale-4.dll;tbb.dll;tbbbind.dll;tbbmalloc.dll;tbbmalloc_proxy.dll;tbb_preview.dll;tcl86.dll;tk86.dll;TKBin.dll;TKBinL.dll;TKBinTObj.dll;TKBinXCAF.dll;TKBO.dll;TKBool.dll;TKBRep.dll;TKCAF.dll;TKCDF.dll;TKD3DHost.dll;TKDCAF.dll;TKDraw.dll;TKernel.dll;TKFeat.dll;TKFillet.dll;TKG2d.dll;TKG3d.dll;TKGeomAlgo.dll;TKGeomBase.dll;TKHLR.dll;TKIGES.dll;TKIVtk.dll;TKIVtkDraw.dll;TKLCAF.dll;TKMath.dll;TKMesh.dll;TKMeshVS.dll;TKOffset.dll;TKOpenGl.dll;TKPrim.dll;TKQADraw.dll;TKRWMesh.dll;TKService.dll;TKShHealing.dll;TKStd.dll;TKStdL.dll;TKSTEP.dll;TKSTEP209.dll;TKSTEPAttr.dll;TKSTEPBase.dll;TKSTL.dll;TKTObj.dll;TKTObjDRAW.dll;TKTopAlgo.dll;TKTopTest.dll;TKV3d.dll;TKVCAF.dll;TKViewerTest.dll;TKVRML.dll;TKXCAF.dll;TKXDEDRAW.dll;TKXDEIGES.dll;TKXDESTEP.dll;TKXMesh.dll;TKXml.dll;TKXmlL.dll;TKXmlTObj.dll;TKXmlXCAF.dll;TKXSBase.dll;TKXSDRAW.dll;vtkalglib-6.1.dll;vtkCommonComputationalGeometry-6.1.dll;vtkCommonCore-6.1.dll;vtkCommonDataModel-6.1.dll;vtkCommonExecutionModel-6.1.dll;vtkCommonMath-6.1.dll;vtkCommonMisc-6.1.dll;vtkCommonSystem-6.1.dll;vtkCommonTransforms-6.1.dll;vtkDICOMParser-6.1.dll;vtkFiltersCore-6.1.dll;vtkFiltersExtraction-6.1.dll;vtkFiltersGeneral-6.1.dll;vtkFiltersGeometry-6.1.dll;vtkFiltersSources-6.1.dll;vtkFiltersStatistics-6.1.dll;vtkfreetype-6.1.dll;vtkftgl-6.1.dll;vtkImagingCore-6.1.dll;vtkImagingFourier-6.1.dll;vtkImagingHybrid-6.1.dll;vtkInteractionStyle-6.1.dll;vtkIOCore-6.1.dll;vtkIOImage-6.1.dll;vtkjpeg-6.1.dll;vtkmetaio-6.1.dll;vtkpng-6.1.dll;vtkRenderingCore-6.1.dll;vtkRenderingFreeType-6.1.dll;vtkRenderingFreeTypeOpenGL-6.1.dll;vtkRenderingOpenGL-6.1.dll;vtksys-6.1.dll;vtktiff-6.1.dll;vtkzlib-6.1.dll;zlib.dll</DelayLoadDLLs>
+      <AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(CSF_OCCTIncludePath);E:\Software\OCC\OpenCASCADE-7.5.0-vc14-64\opencascade-7.5.0\inc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\inc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDF;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDocStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKLCAF\TDataStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ApplicationFramework\TKVCAF\TPrsStd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXCAF\XCAFDoc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXSBase\IFSelect;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKSTEP\STEPConstruct;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\DataExchange\TKXCAF\XCAFPrs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\gp;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\TopLoc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\GeomAbs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKMath\Bnd;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\NCollection;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\TCollection;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\Standard;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\FoundationClasses\TKernel\Quantity;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepPrimAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepPrim;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKPrim\BRepSweep;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\BRepOffsetAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\BRepOffset;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKOffset\Draft;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BRepAlgoAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BOPAlgo;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBO\BOPTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\Blend;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BlendFunc;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BRepBlend;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\BRepFilletAPI;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFi2d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFi3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFiDS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\ChFiKPart;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKFillet\FilletSurf;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKBool\BRepFill;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingAlgorithms\TKGeomAlgo\GeomFill;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG3d\Geom;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG3d\TopAbs;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopoDS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\BRep;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\BRepTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKBRep\TopExp;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKG2d\Geom2d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\GeomTools;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\GC;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\ModelingData\TKGeomBase\gce;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Aspect;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Graphic3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKService\Font;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\AIS;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\Prs3d;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\SelectMgr;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\PrsMgr;D:\Users\lenovo\source\repos\XCAD\OCCT.Foundation.NetHost\Visualization\TKV3d\V3d;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>DelayImp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;TKBin.lib;TKBinL.lib;TKBinTObj.lib;TKBinXCAF.lib;TKBO.lib;TKBool.lib;TKBRep.lib;TKCAF.lib;TKCDF.lib;TKD3DHost.lib;TKDCAF.lib;TKDraw.lib;TKernel.lib;TKFeat.lib;TKFillet.lib;TKG2d.lib;TKG3d.lib;TKGeomAlgo.lib;TKGeomBase.lib;TKHLR.lib;TKIGES.lib;TKIVtk.lib;TKIVtkDraw.lib;TKLCAF.lib;TKMath.lib;TKMesh.lib;TKMeshVS.lib;TKOffset.lib;TKOpenGl.lib;TKPrim.lib;TKQADraw.lib;TKRWMesh.lib;TKService.lib;TKShHealing.lib;TKStd.lib;TKStdL.lib;TKSTEP.lib;TKSTEP209.lib;TKSTEPAttr.lib;TKSTEPBase.lib;TKSTL.lib;TKTObj.lib;TKTObjDRAW.lib;TKTopAlgo.lib;TKTopTest.lib;TKV3d.lib;TKVCAF.lib;TKViewerTest.lib;TKVRML.lib;TKXCAF.lib;TKXDEDRAW.lib;TKXDEIGES.lib;TKXDESTEP.lib;TKXMesh.lib;TKXml.lib;TKXmlL.lib;TKXmlTObj.lib;TKXmlXCAF.lib;TKXSBase.lib;TKXSDRAW.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>avcodec-57.dll;avdevice-57.dll;avfilter-6.dll;avformat-57.dll;avutil-55.dll;d3dcompiler_47.dll;FreeImage.dll;FreeImagePlus.dll;freetype.dll;gl2ps.dll;libEGL.dll;libGLESv2.dll;liblzma.dll;swscale-4.dll;tbb.dll;tbbbind.dll;tbbmalloc.dll;tbbmalloc_proxy.dll;tbb_preview.dll;tcl86.dll;tk86.dll;TKBin.dll;TKBinL.dll;TKBinTObj.dll;TKBinXCAF.dll;TKBO.dll;TKBool.dll;TKBRep.dll;TKCAF.dll;TKCDF.dll;TKD3DHost.dll;TKDCAF.dll;TKDraw.dll;TKernel.dll;TKFeat.dll;TKFillet.dll;TKG2d.dll;TKG3d.dll;TKGeomAlgo.dll;TKGeomBase.dll;TKHLR.dll;TKIGES.dll;TKIVtk.dll;TKIVtkDraw.dll;TKLCAF.dll;TKMath.dll;TKMesh.dll;TKMeshVS.dll;TKOffset.dll;TKOpenGl.dll;TKPrim.dll;TKQADraw.dll;TKRWMesh.dll;TKService.dll;TKShHealing.dll;TKStd.dll;TKStdL.dll;TKSTEP.dll;TKSTEP209.dll;TKSTEPAttr.dll;TKSTEPBase.dll;TKSTL.dll;TKTObj.dll;TKTObjDRAW.dll;TKTopAlgo.dll;TKTopTest.dll;TKV3d.dll;TKVCAF.dll;TKViewerTest.dll;TKVRML.dll;TKXCAF.dll;TKXDEDRAW.dll;TKXDEIGES.dll;TKXDESTEP.dll;TKXMesh.dll;TKXml.dll;TKXmlL.dll;TKXmlTObj.dll;TKXmlXCAF.dll;TKXSBase.dll;TKXSDRAW.dll;vtkalglib-6.1.dll;vtkCommonComputationalGeometry-6.1.dll;vtkCommonCore-6.1.dll;vtkCommonDataModel-6.1.dll;vtkCommonExecutionModel-6.1.dll;vtkCommonMath-6.1.dll;vtkCommonMisc-6.1.dll;vtkCommonSystem-6.1.dll;vtkCommonTransforms-6.1.dll;vtkDICOMParser-6.1.dll;vtkFiltersCore-6.1.dll;vtkFiltersExtraction-6.1.dll;vtkFiltersGeneral-6.1.dll;vtkFiltersGeometry-6.1.dll;vtkFiltersSources-6.1.dll;vtkFiltersStatistics-6.1.dll;vtkfreetype-6.1.dll;vtkftgl-6.1.dll;vtkImagingCore-6.1.dll;vtkImagingFourier-6.1.dll;vtkImagingHybrid-6.1.dll;vtkInteractionStyle-6.1.dll;vtkIOCore-6.1.dll;vtkIOImage-6.1.dll;vtkjpeg-6.1.dll;vtkmetaio-6.1.dll;vtkpng-6.1.dll;vtkRenderingCore-6.1.dll;vtkRenderingFreeType-6.1.dll;vtkRenderingFreeTypeOpenGL-6.1.dll;vtkRenderingOpenGL-6.1.dll;vtksys-6.1.dll;vtktiff-6.1.dll;vtkzlib-6.1.dll;zlib.dll</DelayLoadDLLs>
+      <OutputFile>$(OutDir)OCCT.Foundation.NetHost.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(CSF_OCCTLibPath);E:\Software\OCC\OpenCASCADE7.5.0\win32\vc14\win32\vc14\lib;E:\Software\OCC\OpenCASCADE7.5.0\win32\vc14\win32\vc14\libd;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)OCCT.Foundation.NetHost.pdb</ProgramDatabaseFile>
+      <AssemblyDebug>true</AssemblyDebug>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <SupportUnloadOfDelayLoadedDLL>true</SupportUnloadOfDelayLoadedDLL>
+      <AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_Integer.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_Name.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_RealEnum.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_Attribute.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_ChildIDIterator.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_ChildIterator.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_IDFilter.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_Label.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_LabelSequence.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_Tool.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_XIterator.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDocStd\XTDocStd_Application.h" />
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDocStd\XTDocStd_Document.h" />
+    <ClInclude Include="ApplicationFramework\TKVCAF\TPrsStd\XTPrsStd_AISPresentation.h" />
+    <ClInclude Include="DataExchange\TKSTEP\STEPConstruct\XSTEPConstruct_Tool.h" />
+    <ClInclude Include="DataExchange\TKXCAF\XCAFApp\XXCAFApp_Application.h" />
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc.h" />
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ColorTool.h" />
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ColorType.h" />
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_DocumentTool.h" />
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ShapeTool.h" />
+    <ClInclude Include="DataExchange\TKXCAF\XCAFPrs\XXCAFPrs_AISObject.h" />
+    <ClInclude Include="DataExchange\TKXCAF\XCAFPrs\XXCAFPrs_Driver.h" />
+    <ClInclude Include="DataExchange\TKXDESTEP\STEPCAFControl\XSTEPCAFControl_Reader.h" />
+    <ClInclude Include="DataExchange\TKXSBase\IFSelect\XIFSelect_PrintCount.h" />
+    <ClInclude Include="DataExchange\TKXSBase\IFSelect\XIFSelect_PrintFail.h" />
+    <ClInclude Include="DataExchange\TKXSBase\IFSelect\XIFSelect_RemainMode.h" />
+    <ClInclude Include="DataExchange\TKXSBase\IFSelect\XIFSelect_ReturnStatus.h" />
+    <ClInclude Include="FoundationClasses\TKernel\NCollection\XNCollection_ListNode.h" />
+    <ClInclude Include="FoundationClasses\TKernel\Quantity\XQuantity_Color.h" />
+    <ClInclude Include="FoundationClasses\TKernel\Quantity\XQuantity_ColorRGBA.h" />
+    <ClInclude Include="FoundationClasses\TKernel\Quantity\XQuantity_NameOfColor.h" />
+    <ClInclude Include="FoundationClasses\TKernel\Quantity\XQuantity_TypeOfColor.h" />
+    <ClInclude Include="FoundationClasses\TKernel\Standard\XStandard_ConstructionError.h" />
+    <ClInclude Include="FoundationClasses\TKernel\Standard\XStandard_GUID.h" />
+    <ClInclude Include="FoundationClasses\TKernel\Standard\XStandard_Helper.h" />
+    <ClInclude Include="FoundationClasses\TKernel\Standard\XStandard_UUID.h" />
+    <ClInclude Include="FoundationClasses\TKernel\TCollection\XTCollection_AsciiString.h" />
+    <ClInclude Include="FoundationClasses\TKernel\TCollection\XTCollection_ExtendedString.h" />
+    <ClInclude Include="FoundationClasses\TKMath\Bnd\XBnd_Box.h" />
+    <ClInclude Include="FoundationClasses\TKMath\Bnd\XBnd_Box2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_BSplKnotDistribution.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_CurveForm.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_CurveType.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_IsoType.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_JoinType.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_Shape.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_SurfaceForm.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_SurfaceType.h" />
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_UVSense.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax1.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax2.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax22d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax3.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Circ.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Circ2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Cone.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Cylinder.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Dir.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Dir2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Elips.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Elips2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_EulerSequence.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_GTrsf.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_GTrsf2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Hypr.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Hypr2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Lin.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Lin2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Mat.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Mat2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Parab.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Parab2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Pln.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Pnt.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Pnt2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Quaternion.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_QuaternionNLerp.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_QuaternionSLerp.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Sphere.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Torus.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Trsf.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Trsf2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_TrsfForm.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_TrsfNLerp.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Vec.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Vec2d.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_VectorWithNullMagnitude.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_XY.h" />
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_XYZ.h" />
+    <ClInclude Include="FoundationClasses\TKMath\TopLoc\XTopLoc_Datum3D.h" />
+    <ClInclude Include="FoundationClasses\TKMath\TopLoc\XTopLoc_Location.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBool\BRepFill\XBRepFill_Pipe.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_GlueEnum.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_Operation.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_Options.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_PaveFiller.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Common.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Cut.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Fuse.h" />
+    <ClInclude Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Section.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_LocalOperation.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeChamfer.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeFillet.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeFillet2d.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFi2d\XChFi2d_ConstructionError.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFi3d\XChFi3d_FilletShape.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFiDS\XChFiDS_ChamfMethod.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFiDS\XChFiDS_ChamfMode.h" />
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFiDS\XChFiDS_ErrorStatus.h" />
+    <ClInclude Include="ModelingAlgorithms\TKGeomAlgo\GeomFill\XGeomFill_Trihedron.h" />
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffsetAPI\XBRepOffsetAPI_MakePipe.h" />
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset.h" />
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset_Error.h" />
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset_Status.h" />
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset_Type.h" />
+    <ClInclude Include="ModelingAlgorithms\TKOffset\Draft\XDraft_ErrorStatus.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeBox.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeCone.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeCylinder.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeHalfSpace.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeOneAxis.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakePrism.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeRevol.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeRevolution.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeSphere.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeSweep.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeTorus.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeWedge.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Builder.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Cone.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Cylinder.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Direction.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_FaceBuilder.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_GWedge.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_OneAxis.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Revolution.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Sphere.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Torus.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Wedge.h" />
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepSweep\XBRepSweep_Revol.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Copy.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_EdgeError.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FaceError.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FastSewing.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FindPlane.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_GTransform.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeEdge.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeEdge2d.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeFace.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakePolygon.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeShape.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeShell.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeSolid.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeVertex.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeWire.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_ModifyShape.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_NurbsConvert.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_PipeError.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Sewing.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_ShapeModification.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_ShellError.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Transform.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_TransitionMode.h" />
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_WireError.h" />
+    <ClInclude Include="ModelingData\TKBRep\BRepTools\XBRepTools.h" />
+    <ClInclude Include="ModelingData\TKBRep\BRep\XBRep_Builder.h" />
+    <ClInclude Include="ModelingData\TKBRep\BRep\XBRep_Tool.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopExp\XTopExp.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopExp\XTopExp_Explorer.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Builder.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Compound.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_CompSolid.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Edge.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Face.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_HShape.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Iterator.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Shape.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Shell.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Solid.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TCompound.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TCompSolid.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TEdge.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TFace.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TShape.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TShell.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TSolid.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TVertex.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TWire.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Vertex.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Wire.h" />
+    <ClInclude Include="ModelingData\TKBRep\TopTools\XTopTools_ListOfShape.h" />
+    <ClInclude Include="ModelingData\TKG2d\Geom2d\XGeom2d_Curve.h" />
+    <ClInclude Include="ModelingData\TKG2d\Geom2d\XGeom2d_Geometry.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Axis1Placement.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Axis2Placement.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_AxisPlacement.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BezierCurve.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BezierSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BoundedCurve.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BoundedSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BSplineCurve.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BSplineSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_CartesianPoint.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Circle.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Conic.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_ConicalSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Curve.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_CylindricalSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Direction.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_ElementarySurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Ellipse.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Geometry.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Hyperbola.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Line.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_OffsetCurve.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_OffsetSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_OsculatingSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Parabola.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Plane.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Point.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_RectangularTrimmedSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_SphericalSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Surface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_SurfaceOfLinearExtrusion.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_SurfaceOfRevolution.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_SweptSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_ToroidalSurface.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Transformation.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_TrimmedCurve.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Vector.h" />
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_VectorWithMagnitude.h" />
+    <ClInclude Include="ModelingData\TKG3d\TopAbs\XTopAbs.h" />
+    <ClInclude Include="ModelingData\TKG3d\TopAbs\XTopAbs_Orientation.h" />
+    <ClInclude Include="ModelingData\TKG3d\TopAbs\XTopAbs_ShapeEnum.h" />
+    <ClInclude Include="ModelingData\TKG3d\TopAbs\XTopAbs_State.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_ErrorType.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeCirc.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeCirc2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeCone.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeCylinder.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeDir.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeDir2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeElips.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeElips2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeHypr.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeHypr2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeLin.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeLin2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeMirror.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeMirror2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeParab.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeParab2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakePln.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeRotation.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeRotation2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeScale.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeScale2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeTranslation.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeTranslation2d.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_Root.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfCircle.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfEllipse.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfHyperbola.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfParabola.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeCircle.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeConicalSurface.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeCylindricalSurface.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeEllipse.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeHyperbola.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeLine.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeMirror.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakePlane.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeRotation.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeScale.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeSegment.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeTranslation.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeTrimmedCone.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeTrimmedCylinder.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_Root.h" />
+    <ClInclude Include="ModelingData\TKGeomBase\GeomTools\XGeomTools.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_Background.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_FillMethod.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_GradientFillMethod.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_GridDrawMode.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_GridType.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_HatchStyle.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_InteriorStyle.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_PolygonOffsetMode.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfColorScaleData.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfColorScaleOrientation.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfColorScalePosition.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfDeflection.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfDisplayText.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfFacingModel.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfHighlightMethod.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfLine.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfMarker.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfResize.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfStyleText.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfTriedronPosition.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_WidthOfLine.h" />
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_XAtom.h" />
+    <ClInclude Include="Visualization\TKService\Font\XFont_FontAspect.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_AlphaMode.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ArrayFlags.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectLine3d.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_Aspects.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_Buffer.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_BufferType.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_CappingFlags.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_DataStructureManager.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_DiagnosticInfo.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_FrameStatsTimer.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_GroupAspect.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_HighlightStyle.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_HorizontalTextAlignment.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_LevelOfTextureAnisotropy.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_MaterialAspect.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfMaterial.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfTexture1D.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfTexture2D.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfTextureEnv.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfTexturePlane.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_PresentationAttributes.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_RenderingMode.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_RenderTransparentMethod.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_StereoMode.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TextPath.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TextureUnit.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ToneMappingMethod.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TransModeFlags.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfAnswer.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfBackfacingModel.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfBackground.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfComposition.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfConnection.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfLightSource.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfLimit.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfMaterial.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfPrimitiveArray.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfReflection.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfShaderObject.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfShadingModel.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfStructure.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfTexture.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfTextureFilter.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfTextureMode.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfVisualization.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_VerticalTextAlignment.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ZLayerId.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ZLayerSettings.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_Animation.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_AnimationCamera.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_AnimationObject.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_Axis.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_ColoredShape.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DimensionSelectionMode.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DisplayMode.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DisplaySpecialSymbol.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DisplayStatus.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DragAction.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_InteractiveObject.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfDimension.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfInteractive.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfRelation.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfSurface.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfUnit.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_SelectionModesConcurrency.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_SelectStatus.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_Shape.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_StandardDatum.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_StatusOfDetection.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_StatusOfPick.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfAxis.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfDist.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfIso.h" />
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfPlane.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumAttribute.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumAxes.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumMode.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumParts.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DimensionArrowOrientation.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DimensionTextHorizontalPosition.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DimensionTextVerticalPosition.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_Drawer.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_LineAspect.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfHighlight.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfHLR.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfLinePicking.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_VertexDrawMode.h" />
+    <ClInclude Include="Visualization\TKV3d\PrsMgr\XPrsMgr_PresentableObject.h" />
+    <ClInclude Include="Visualization\TKV3d\PrsMgr\XPrsMgr_TypeOfPresentation3d.h" />
+    <ClInclude Include="Visualization\TKV3d\SelectMgr\XSelectMgr_PickingStrategy.h" />
+    <ClInclude Include="Visualization\TKV3d\SelectMgr\XSelectMgr_SelectableObject.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_StereoDumpOptions.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfAxe.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfBackfacingModel.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfOrientation.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfPickCamera.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfPickLight.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfRepresentation.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfView.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfVisualization.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_View.h" />
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_Viewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_Integer.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_Name.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_Attribute.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_ChildIDIterator.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_ChildIterator.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_IDFilter.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_Label.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_Tool.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDocStd\XTDocStd_Application.cpp" />
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDocStd\XTDocStd_Document.cpp" />
+    <ClCompile Include="ApplicationFramework\TKVCAF\TPrsStd\XTPrsStd_AISPresentation.cpp" />
+    <ClCompile Include="DataExchange\TKSTEP\STEPConstruct\XSTEPConstruct_Tool.cpp" />
+    <ClCompile Include="DataExchange\TKXCAF\XCAFApp\XXCAFApp_Application.cpp" />
+    <ClCompile Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc.cpp" />
+    <ClCompile Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ColorTool.cpp" />
+    <ClCompile Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_DocumentTool.cpp" />
+    <ClCompile Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ShapeTool.cpp" />
+    <ClCompile Include="DataExchange\TKXCAF\XCAFPrs\XXCAFPrs_AISObject.cpp" />
+    <ClCompile Include="DataExchange\TKXCAF\XCAFPrs\XXCAFPrs_Driver.cpp" />
+    <ClCompile Include="DataExchange\TKXDESTEP\STEPCAFControl\XSTEPCAFControl_Reader.cpp" />
+    <ClCompile Include="FoundationClasses\TKernel\Quantity\XQuantity_Color.cpp" />
+    <ClCompile Include="FoundationClasses\TKernel\Quantity\XQuantity_ColorRGBA.cpp" />
+    <ClCompile Include="FoundationClasses\TKernel\Standard\XStandard_GUID.cpp" />
+    <ClCompile Include="FoundationClasses\TKernel\Standard\XStandard_Helper.cpp" />
+    <ClCompile Include="FoundationClasses\TKernel\TCollection\XTCollection_AsciiString.cpp" />
+    <ClCompile Include="FoundationClasses\TKernel\TCollection\XTCollection_ExtendedString.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\Bnd\XBnd_Box.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\Bnd\XBnd_Box2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax1.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax2.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax22d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax3.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Circ.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Circ2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Cone.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Cylinder.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Dir.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Dir2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Elips.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Elips2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_GTrsf.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_GTrsf2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Hypr.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Hypr2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Lin.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Lin2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Mat.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Mat2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Parab.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Parab2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Pln.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Pnt.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Pnt2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Quaternion.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Sphere.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Torus.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Trsf.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Trsf2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Vec.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Vec2d.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_XY.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_XYZ.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\TopLoc\XTopLoc_Datum3D.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\TopLoc\XTopLoc_Location.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKBool\BRepFill\XBRepFill_Pipe.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_Options.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_PaveFiller.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Common.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Cut.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Fuse.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Section.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_LocalOperation.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeChamfer.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeFillet.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeFillet2d.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKOffset\BRepOffsetAPI\XBRepOffsetAPI_MakePipe.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeBox.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeCone.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeCylinder.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeHalfSpace.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeOneAxis.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakePrism.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeRevol.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeRevolution.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeSphere.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeSweep.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeTorus.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeWedge.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Builder.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Cone.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Cylinder.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_FaceBuilder.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_GWedge.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_OneAxis.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Revolution.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Sphere.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Torus.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Wedge.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepSweep\XBRepSweep_Revol.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Copy.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FastSewing.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FindPlane.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_GTransform.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeEdge.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeEdge2d.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeFace.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakePolygon.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeShape.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeShell.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeSolid.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeVertex.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeWire.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_ModifyShape.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_NurbsConvert.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Sewing.cpp" />
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Transform.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\BRepTools\XBRepTools.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\BRep\XBRep_Builder.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\BRep\XBRep_Tool.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopExp\XTopExp.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopExp\XTopExp_Explorer.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Builder.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Compound.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_CompSolid.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Edge.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Face.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_HShape.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Iterator.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Shape.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Shell.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Solid.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TCompound.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TCompSolid.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TEdge.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TFace.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TShape.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TShell.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TSolid.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TVertex.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TWire.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Vertex.cpp" />
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Wire.cpp" />
+    <ClCompile Include="ModelingData\TKG2d\Geom2d\XGeom2d_Curve.cpp" />
+    <ClCompile Include="ModelingData\TKG2d\Geom2d\XGeom2d_Geometry.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Axis1Placement.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Axis2Placement.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_AxisPlacement.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BezierCurve.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BezierSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BoundedCurve.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BoundedSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BSplineCurve.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BSplineSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_CartesianPoint.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Circle.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Conic.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_ConicalSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Curve.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_CylindricalSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Direction.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_ElementarySurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Ellipse.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Geometry.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Hyperbola.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Line.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_OffsetCurve.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_OffsetSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_OsculatingSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Parabola.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Plane.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Point.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_RectangularTrimmedSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_SphericalSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Surface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_SurfaceOfLinearExtrusion.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_SurfaceOfRevolution.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_SweptSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_ToroidalSurface.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Transformation.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_TrimmedCurve.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Vector.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_VectorWithMagnitude.cpp" />
+    <ClCompile Include="ModelingData\TKG3d\TopAbs\XTopAbs.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeCirc.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeCirc2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeCone.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeCylinder.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeDir.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeDir2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeElips.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeElips2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeHypr.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeHypr2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeLin.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeLin2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeMirror.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeMirror2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeParab.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeParab2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakePln.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeRotation.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeRotation2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeScale.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeScale2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeTranslation.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeTranslation2d.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_Root.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfCircle.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfEllipse.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfHyperbola.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfParabola.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeCircle.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeConicalSurface.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeCylindricalSurface.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeEllipse.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeHyperbola.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeLine.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeMirror.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakePlane.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeRotation.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeScale.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeSegment.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeTranslation.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeTrimmedCone.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeTrimmedCylinder.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_Root.cpp" />
+    <ClCompile Include="ModelingData\TKGeomBase\GeomTools\XGeomTools.cpp" />
+    <ClCompile Include="OCCTProxy.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Visualization\TKService\Aspect\XAspect_Background.cpp" />
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectLine3d.cpp" />
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_Aspects.cpp" />
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_Buffer.cpp" />
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_DataStructureManager.cpp" />
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_MaterialAspect.cpp" />
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_PresentationAttributes.cpp" />
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_ZLayerSettings.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_Animation.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_AnimationCamera.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_AnimationObject.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_Axis.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_ColoredShape.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_1.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_2.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_3.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveObject.cpp" />
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_Shape.cpp" />
+    <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_Drawer.cpp" />
+    <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_LineAspect.cpp" />
+    <ClCompile Include="Visualization\TKV3d\PrsMgr\XPrsMgr_PresentableObject.cpp" />
+    <ClCompile Include="Visualization\TKV3d\SelectMgr\XSelectMgr_SelectableObject.cpp" />
+    <ClCompile Include="Visualization\TKV3d\V3d\XV3d_View.cpp" />
+    <ClCompile Include="Visualization\TKV3d\V3d\XV3d_Viewer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OCCT.Foundation.NetHost.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="GC.png" />
+    <Image Include="Geom.png" />
+    <Image Include="gp.png" />
+    <Image Include="helper.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,2540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses">
+      <UniqueIdentifier>{5c7c4a94-7f29-4500-81c3-636058f700a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses">
+      <UniqueIdentifier>{62d722d9-17c8-4b6e-b46d-a757ef90aec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKMath">
+      <UniqueIdentifier>{52dac250-1795-471f-8771-307fde7e3f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKMath">
+      <UniqueIdentifier>{b2842db1-5969-4038-b3ba-006c1d743647}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKMath\gp">
+      <UniqueIdentifier>{5dc8d9b7-139f-475f-b63e-7541c89de7f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKMath\gp">
+      <UniqueIdentifier>{a21b3ec6-fd54-48e5-8bf7-9d47d162c963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKernel">
+      <UniqueIdentifier>{565a4b2b-631d-46ff-96e5-a4b56e14c609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKernel">
+      <UniqueIdentifier>{cf529365-6616-4f4d-b0e6-76045b477a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKMath\Bnd">
+      <UniqueIdentifier>{49d27a4a-7153-4f71-b96a-40512d13f590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKMath\Bnd">
+      <UniqueIdentifier>{09648eb0-a2c6-4c03-bd5a-5476b498ebd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKMath\BSplCLib">
+      <UniqueIdentifier>{1443d697-8793-45ae-9510-556500071da2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKMath\BSplCLib">
+      <UniqueIdentifier>{129fa659-0eae-4665-a2cb-2fd368934432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKMath\BSplSLib">
+      <UniqueIdentifier>{1a698d53-92bb-4141-b254-8655113c8cf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKMath\BSplSLib">
+      <UniqueIdentifier>{93b1a3cf-a6fd-4f4c-b676-9058aeb70d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization">
+      <UniqueIdentifier>{aaa2a26c-64aa-40db-87b6-1999eda42b5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization">
+      <UniqueIdentifier>{b171677e-42df-46a2-bbb5-7ffcc573c8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKV3d">
+      <UniqueIdentifier>{1c18b89a-5c34-42a7-9b8e-1d288414c201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKV3d">
+      <UniqueIdentifier>{cfdcf898-c7f1-4032-9bdf-5091a0c23c8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKV3d\AIS">
+      <UniqueIdentifier>{95edef94-fbb0-4e90-b53c-957e00f7d4f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKV3d\AIS">
+      <UniqueIdentifier>{758477c1-1bb4-468c-a552-84fdc23b6284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData">
+      <UniqueIdentifier>{8299f988-5be5-48fd-b831-12d1c4e944e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData">
+      <UniqueIdentifier>{aff93764-fb59-4d26-9c98-2e26f9bdca3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKBRep">
+      <UniqueIdentifier>{b61409f1-0a59-4cd6-af86-70d943ac4935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKBRep">
+      <UniqueIdentifier>{25441cc1-8024-4bb3-be66-be0763ece9f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKBRep\TopoDS">
+      <UniqueIdentifier>{421510dc-b8e6-4887-bc31-c1c49de0da8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKBRep\TopoDS">
+      <UniqueIdentifier>{a3d163dc-9037-4b99-9ed7-883f2d1e908d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ApplicationFramework">
+      <UniqueIdentifier>{74e8a6b0-6d0d-42a0-ba0d-02612e3051b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ApplicationFramework">
+      <UniqueIdentifier>{d7c8173d-30a6-4714-b043-319890bc686e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange">
+      <UniqueIdentifier>{30c83d15-4a93-4cd7-9d5f-f6e17bfed9ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange">
+      <UniqueIdentifier>{ffcbb826-82db-4be7-b7e5-1741ba182b7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms">
+      <UniqueIdentifier>{fd2bd779-a754-46a2-afb0-b27f162b6b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms">
+      <UniqueIdentifier>{c4417756-805c-4ec9-8e98-4065b4a079e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKXMesh">
+      <UniqueIdentifier>{d30322df-54de-40ee-a762-b4f6a2577a9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKXMesh">
+      <UniqueIdentifier>{66f2a6c7-fb24-414e-ab21-0d8399842e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKG3d">
+      <UniqueIdentifier>{647b6c1a-b571-4bff-b12a-8971ae2d7437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKBRep\BRepTools">
+      <UniqueIdentifier>{35d1ccd8-86e5-4dbd-8815-e09bf1a7d6de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKBRep\BRepTools">
+      <UniqueIdentifier>{abcb93df-f0ff-44a0-b463-674f0fdc9bc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKG3d\Geom">
+      <UniqueIdentifier>{bcbce9a0-0aac-4ba4-9718-30a88efbdb72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKG3d">
+      <UniqueIdentifier>{8ae683cc-f54f-4c78-8a14-84bf8877dbbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKG3d\Geom">
+      <UniqueIdentifier>{992071ff-ec8a-4fef-9d5b-e42701eb8df6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKernel\Standard">
+      <UniqueIdentifier>{46ba7536-7c3d-4b22-a1f7-e6f5f6feee37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKernel\Standard">
+      <UniqueIdentifier>{63e58573-3333-4cd5-9c70-843013ea1170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKMath\TopLoc">
+      <UniqueIdentifier>{ecbb2911-7d61-4bf0-aa39-002e14cd7ff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKMath\TopLoc">
+      <UniqueIdentifier>{1f1e1d7b-a2a6-4e7f-9a58-71d5b93bca15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKXDESTEP">
+      <UniqueIdentifier>{dd8bc1d5-08bb-4f17-889e-eb76cf4c94ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange\TKXDESTEP">
+      <UniqueIdentifier>{832700f5-25b3-468d-8523-62058e2d6857}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKXDESTEP\STEPCAFControl">
+      <UniqueIdentifier>{6ade0323-8356-4ba5-a6ae-1c6e03c4c80e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange\TKXDESTEP\STEPCAFControl">
+      <UniqueIdentifier>{f1720542-4743-44bd-a778-acac86f336d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ApplicationFramework\TKLCAF">
+      <UniqueIdentifier>{35a44a2c-cc5f-45ce-90c5-548693af3d1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ApplicationFramework\TKLCAF\TDF">
+      <UniqueIdentifier>{c712598e-51af-4375-a22e-f3c5662aecaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ApplicationFramework\TKLCAF">
+      <UniqueIdentifier>{8e78fa74-7188-4013-aa8c-eb81b5d75ab6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ApplicationFramework\TKLCAF\TDF">
+      <UniqueIdentifier>{94b98ecb-f206-48ad-ab8c-3166fee8abd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ApplicationFramework\TKLCAF\TDocStd">
+      <UniqueIdentifier>{a842bb21-7b5e-4cb8-bccd-704d7b7f9a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ApplicationFramework\TKLCAF\TDocStd">
+      <UniqueIdentifier>{291a7e01-1824-46bd-a875-c188e3194a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKernel\TCollection">
+      <UniqueIdentifier>{79a3259b-c709-482b-a8e2-cdd110c2499c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKernel\TCollection">
+      <UniqueIdentifier>{c0e6c59c-744c-40d1-9185-b888409abe4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKXCAF">
+      <UniqueIdentifier>{3148e359-e437-40d5-a887-e42fb9b8e78a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKXCAF\XCAFApp">
+      <UniqueIdentifier>{3f4676fb-65c4-417e-afdc-e9845b59cdf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange\TKXCAF">
+      <UniqueIdentifier>{9682360d-2d44-4e32-aeb0-927511684afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange\TKXCAF\XCAFApp">
+      <UniqueIdentifier>{90820db5-45c0-4abb-8746-3827ed63663a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ApplicationFramework\TKLCAF\TDataStd">
+      <UniqueIdentifier>{54dd68ce-570d-42d1-80b8-79dd4c34eb3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ApplicationFramework\TKLCAF\TDataStd">
+      <UniqueIdentifier>{692c6461-3005-4db0-98fe-e03c3cec191b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ApplicationFramework\TKVCAF">
+      <UniqueIdentifier>{439e86e5-4720-4f16-96b7-45545c9871fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ApplicationFramework\TKVCAF\TPrsStd">
+      <UniqueIdentifier>{3b79c802-7fa8-42b7-8ede-0aaeeb4f2f55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ApplicationFramework\TKVCAF">
+      <UniqueIdentifier>{0365a8fb-3922-4b52-b08a-c3fc9f446178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ApplicationFramework\TKVCAF\TPrsStd">
+      <UniqueIdentifier>{4ae27774-a9e6-4a39-8bd0-ddce9ebd4425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKXCAF\XCAFPrs">
+      <UniqueIdentifier>{1318920c-0821-44f7-bda0-787c280177f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange\TKXCAF\XCAFPrs">
+      <UniqueIdentifier>{c9adab4d-f342-4855-906e-0de78fbf3d22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKV3d\Prs3d">
+      <UniqueIdentifier>{dca35983-27eb-45db-873f-915339725c6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKG3d\TopAbs">
+      <UniqueIdentifier>{113bda65-a1fe-4558-a0c1-50539b29f3a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKSTEP">
+      <UniqueIdentifier>{c1e0fb98-143d-43e0-bcc7-55818cc6d4ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKSTEP\STEPConstruct">
+      <UniqueIdentifier>{1a1a660f-19f2-4273-95c7-58bcf0fb374f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange\TKSTEP">
+      <UniqueIdentifier>{57be2ee2-588f-48ed-a747-ef231aff9f89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange\TKSTEP\STEPConstruct">
+      <UniqueIdentifier>{31fae613-8493-4a2e-bca9-deb4e7bb397e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKService">
+      <UniqueIdentifier>{31361b50-c084-49e5-a7a4-3e6db242a4df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKService\Aspect">
+      <UniqueIdentifier>{21e4efc7-b110-4fe5-ae25-7a543c049f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKService">
+      <UniqueIdentifier>{711bcb08-7c86-4aa1-80f5-fa04521393af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKService\Aspect">
+      <UniqueIdentifier>{e7ec6c82-f925-438d-8e18-2784b907ed18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKernel\Quantity">
+      <UniqueIdentifier>{1259e72e-4b3c-46ee-8d38-448f717f0404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKernel\Quantity">
+      <UniqueIdentifier>{7962fceb-fc16-4ce8-9a33-eb0b145e5900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKV3d\Prs3d">
+      <UniqueIdentifier>{2f8707b9-4ca8-4be7-8a4f-f672405f409f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKV3d\SelectMgr">
+      <UniqueIdentifier>{a14d20b6-1c7a-4895-b3b4-1f0d5ce9509a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKV3d\SelectMgr">
+      <UniqueIdentifier>{3e961f9c-4b02-4401-8747-01125b4ea0f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKV3d\PrsMgr">
+      <UniqueIdentifier>{259d5e36-6269-4ffd-93c9-ae5a558229f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKV3d\PrsMgr">
+      <UniqueIdentifier>{dd44bf4d-f5be-4f0e-9340-d31867766799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKXCAF\XCAFDoc">
+      <UniqueIdentifier>{7f25686a-a819-4809-85e3-048f29b781d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\DataExchange\TKXCAF\XCAFDoc">
+      <UniqueIdentifier>{c4c3da58-e780-4224-ad40-ea9537fef776}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKG3d\TopAbs">
+      <UniqueIdentifier>{689c5f92-eb40-4aba-970d-3969d1044488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKMath\GeomAbs">
+      <UniqueIdentifier>{41d69480-2440-4cc3-9d3c-6a3926a35970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKPrim">
+      <UniqueIdentifier>{54698e54-7fa2-4a56-9b8a-573d507a3faa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKPrim">
+      <UniqueIdentifier>{a378106d-a33d-4c8c-a399-04f6a51f2228}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI">
+      <UniqueIdentifier>{fa122542-d6b9-4804-96a1-4fb3b621ecea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI">
+      <UniqueIdentifier>{cebca70a-7f7b-44ce-83fc-760c622c1016}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKTopAlgo">
+      <UniqueIdentifier>{36241e61-6233-4e9c-9ff4-b23ec731fe04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI">
+      <UniqueIdentifier>{1a970617-e894-4b44-b503-87533de55165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKTopAlgo">
+      <UniqueIdentifier>{7f46a2e6-9155-42df-b835-53e4d1647552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI">
+      <UniqueIdentifier>{1b2ee77f-81a1-413d-bc92-08f31dadcc97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKBRep\TopTools">
+      <UniqueIdentifier>{a9843f00-fcbf-4bb0-b3b5-af57a55b1624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKBRep\TopTools">
+      <UniqueIdentifier>{ad18f5f3-c02c-4bf8-adb8-f51a48953daf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKBO">
+      <UniqueIdentifier>{3d0c1ca8-fcbf-4688-97ad-4b97af2d43fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKBO">
+      <UniqueIdentifier>{c9c50b77-09af-4b0c-be02-565304bcc3d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKBO\BRepAlgoAPI">
+      <UniqueIdentifier>{c2aba044-99dd-401e-915a-736180d45edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKBO\BRepAlgoAPI">
+      <UniqueIdentifier>{8b724d06-7b25-46ae-b3cc-756de1bfb4a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKG2d">
+      <UniqueIdentifier>{6ac8fd46-07e8-454a-9718-5a2cddeb0ed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKG2d\Geom2d">
+      <UniqueIdentifier>{30bcb9c5-5646-413a-869a-d2b1198e741c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKG2d">
+      <UniqueIdentifier>{9bc18ae0-5e4f-4b83-889a-c4f4299e82ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKG2d\Geom2d">
+      <UniqueIdentifier>{9f949608-1243-4470-8f1a-e9781887ca73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKPrim\BRepPrim">
+      <UniqueIdentifier>{920c341a-feb1-41ac-90c2-018b7b79097a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKBRep\BRep">
+      <UniqueIdentifier>{7b377b6d-0f49-459e-93c9-db870d877698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKBRep\BRep">
+      <UniqueIdentifier>{2b7564d9-a7fc-4a5c-bbb7-c26f4b816bad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKPrim\BRepPrim">
+      <UniqueIdentifier>{2e226e97-cad6-443c-b5d0-b5f371f46d05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKPrim\BRepSweep">
+      <UniqueIdentifier>{35472a55-1fc6-4a0f-b3b2-c9dbf5415652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKPrim\BRepSweep">
+      <UniqueIdentifier>{828591da-d0c1-4138-a8c9-ca1fa45a8849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKPrim\Sweep">
+      <UniqueIdentifier>{9e671b49-855c-4cff-9cd2-3319bbb3830d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKPrim\Sweep">
+      <UniqueIdentifier>{8cbc9d92-2606-4cb7-b4bc-ed371dfafc1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKBO\BOPTools">
+      <UniqueIdentifier>{c081677b-699d-4970-8224-256038828a9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKBO\BOPTools">
+      <UniqueIdentifier>{6b810f98-de9f-4cf8-ab5a-b426bd509596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKBO\BOPDS">
+      <UniqueIdentifier>{930b955f-9682-4787-a677-a0ef53286cfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKBO\BOPDS">
+      <UniqueIdentifier>{ae151748-2414-473f-b757-c0c89886b66d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKBO\BOPAlgo">
+      <UniqueIdentifier>{ab2da58f-051b-4bfb-9110-eafcc0ca9494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKBO\BOPAlgo">
+      <UniqueIdentifier>{d2bcdaeb-e1f2-4df1-8b29-3d21bc7b1539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKBO\IntTools">
+      <UniqueIdentifier>{735d726b-998b-48d2-8def-337214ae8a6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKBO\IntTools">
+      <UniqueIdentifier>{e01d0e88-c4c5-4c62-9c90-16b2aa6b6d3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKV3d\V3d">
+      <UniqueIdentifier>{4b07a0d7-54ca-4883-b694-9ca1150bafb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKV3d\V3d">
+      <UniqueIdentifier>{4e248f28-c77c-4386-aa8e-1875c46db3ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKBRep\TopExp">
+      <UniqueIdentifier>{e24042d3-2f45-48d3-b976-54355800d2c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKBRep\TopExp">
+      <UniqueIdentifier>{7d94073d-6bdf-4d34-93e2-ce1ae8bd1f9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKFillet">
+      <UniqueIdentifier>{122385dd-f6a7-4244-a773-f8f1488e7304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKFillet">
+      <UniqueIdentifier>{402953a7-8147-4792-8d77-81a1238226b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKFillet\BRepFilletAPI">
+      <UniqueIdentifier>{5740952c-4bc4-437e-988e-12afdc88c963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKFillet\BRepFilletAPI">
+      <UniqueIdentifier>{8658c2bc-7c0d-45b9-97a3-b05e066fc006}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKFillet\ChFiDS">
+      <UniqueIdentifier>{951dde62-1683-4e34-8685-00835e9eb933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKFillet\ChFi3d">
+      <UniqueIdentifier>{fe22c2a6-318d-46f9-afd3-e2549d6b4c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKFillet\ChFi2d">
+      <UniqueIdentifier>{20708fef-dd5a-4cb9-865e-25523f30e7c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKGeomBase">
+      <UniqueIdentifier>{0bbb3fc6-37ad-4041-9b34-1b3082bc52b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKGeomBase\GeomTools">
+      <UniqueIdentifier>{22b36332-b45e-4bb1-8cde-5b6628b93412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKGeomBase">
+      <UniqueIdentifier>{cb497246-dc13-472d-9b35-200bec52622b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKGeomBase\GeomTools">
+      <UniqueIdentifier>{2818066f-232d-4b38-9334-772edf81af67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKGeomBase\gce">
+      <UniqueIdentifier>{eefc51ab-dacb-4d49-8765-f206b5e1cf7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingData\TKGeomBase\GC">
+      <UniqueIdentifier>{e63e9908-2486-420d-8c71-b0e64e684027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKGeomBase\GC">
+      <UniqueIdentifier>{91623239-b6da-464f-9ff0-76c62534aec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingData\TKGeomBase\gce">
+      <UniqueIdentifier>{7d09fc38-9746-4e68-8df8-193fb623c928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKOffset">
+      <UniqueIdentifier>{386794d2-ac38-4f98-a4fe-46f4f7d544b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKOffset\BRepOffset">
+      <UniqueIdentifier>{7594e188-a2bc-4663-a4c2-f32173c561d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKOffset\BRepOffsetAPI">
+      <UniqueIdentifier>{7ab5dcf2-0cf0-4a81-9c67-f41d104e1cae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKOffset">
+      <UniqueIdentifier>{857055d4-19f4-4732-a6ce-e503b6a166d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKOffset\BRepOffset">
+      <UniqueIdentifier>{18ad4276-88a7-4b27-b7dd-d3cc12e56fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKOffset\BRepOffsetAPI">
+      <UniqueIdentifier>{7b005003-b7ef-4157-a8ce-4460e69b2369}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKBool">
+      <UniqueIdentifier>{e437e1ba-8862-45bc-a002-9bd079156f54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKBool\BRepFill">
+      <UniqueIdentifier>{9533d103-408b-48ce-bcbb-5aa9b465b5ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKGeomAlgo">
+      <UniqueIdentifier>{ce057064-6d2e-4435-baf5-0474d92e04b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKGeomAlgo\GeomFill">
+      <UniqueIdentifier>{2f336bcc-f1fa-4632-80a8-6854ba299531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKBool">
+      <UniqueIdentifier>{0601e812-bb59-4d9d-b89f-a85385dddb83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ModelingAlgorithms\TKBool\BRepFill">
+      <UniqueIdentifier>{7221ddd2-795a-45b0-9eab-d136f06913ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKXSBase">
+      <UniqueIdentifier>{2510857d-fab6-4c9c-83a1-bf35170ae9b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\DataExchange\TKXSBase\IFSelect">
+      <UniqueIdentifier>{70f731b8-6b5a-499e-9592-c0be8dcb1d6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ModelingAlgorithms\TKOffset\Draft">
+      <UniqueIdentifier>{dbeb61b9-5fe5-4b83-bc3a-c4cf86ba60cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FoundationClasses\TKernel\NCollection">
+      <UniqueIdentifier>{1149b8c8-7952-428b-80c7-ac3dd3501940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FoundationClasses\TKernel\NCollection">
+      <UniqueIdentifier>{37569cd8-6c3c-4825-9cdd-fef3a1a0f78e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKService\Graphic3d">
+      <UniqueIdentifier>{0ae6dfc2-a531-4f4c-aef0-a80e22c20c7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Visualization\TKService\Graphic3d">
+      <UniqueIdentifier>{61bf5c87-0f5f-46b1-a73d-9c689e1ddffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Visualization\TKService\Font">
+      <UniqueIdentifier>{cbec2791-8717-4f9e-be4a-2d7472d3d673}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax1.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax2.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax3.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Ax22d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Circ.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Circ2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Cone.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Cylinder.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Dir.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Dir2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Elips.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Elips2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_GTrsf.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_GTrsf2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Hypr.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Hypr2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Lin.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Lin2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Mat.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Mat2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Parab.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Parab2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Pln.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Pnt.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Pnt2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Quaternion.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_QuaternionNLerp.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_QuaternionSLerp.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Sphere.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Torus.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Trsf.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Trsf2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_TrsfNLerp.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Vec.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_Vec2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_VectorWithNullMagnitude.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_XY.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_XYZ.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Geometry.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\Standard\XStandard_ConstructionError.h">
+      <Filter>头文件\FoundationClasses\TKernel\Standard</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Surface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\TopLoc\XTopLoc_Location.h">
+      <Filter>头文件\FoundationClasses\TKMath\TopLoc</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\TopLoc\XTopLoc_Datum3D.h">
+      <Filter>头文件\FoundationClasses\TKMath\TopLoc</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_InteractiveObject.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXDESTEP\STEPCAFControl\XSTEPCAFControl_Reader.h">
+      <Filter>头文件\DataExchange\TKXDESTEP\STEPCAFControl</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_Label.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDocStd\XTDocStd_Document.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDocStd</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\TCollection\XTCollection_ExtendedString.h">
+      <Filter>头文件\FoundationClasses\TKernel\TCollection</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\Standard\XStandard_Helper.h">
+      <Filter>头文件\FoundationClasses\TKernel\Standard</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDocStd\XTDocStd_Application.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDocStd</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_ChildIterator.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_Attribute.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\Standard\XStandard_GUID.h">
+      <Filter>头文件\FoundationClasses\TKernel\Standard</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_Name.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDataStd</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKVCAF\TPrsStd\XTPrsStd_AISPresentation.h">
+      <Filter>头文件\ApplicationFramework\TKVCAF\TPrsStd</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfHighlight.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\TopAbs\XTopAbs_ShapeEnum.h">
+      <Filter>头文件\ModelingData\TKG3d\TopAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_EulerSequence.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\gp\xgp_TrsfForm.h">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_IDFilter.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfLine.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfHighlightMethod.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\Quantity\XQuantity_NameOfColor.h">
+      <Filter>头文件\FoundationClasses\TKernel\Quantity</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\Quantity\XQuantity_Color.h">
+      <Filter>头文件\FoundationClasses\TKernel\Quantity</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\Quantity\XQuantity_TypeOfColor.h">
+      <Filter>头文件\FoundationClasses\TKernel\Quantity</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKSTEP\STEPConstruct\XSTEPConstruct_Tool.h">
+      <Filter>头文件\DataExchange\TKSTEP\STEPConstruct</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_Drawer.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfDeflection.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfHLR.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumAttribute.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumAxes.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumMode.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumParts.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DimensionArrowOrientation.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DimensionTextHorizontalPosition.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DimensionTextVerticalPosition.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfLinePicking.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_VertexDrawMode.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_LineAspect.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\SelectMgr\XSelectMgr_SelectableObject.h">
+      <Filter>头文件\Visualization\TKV3d\SelectMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\PrsMgr\XPrsMgr_PresentableObject.h">
+      <Filter>头文件\Visualization\TKV3d\PrsMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfFacingModel.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\PrsMgr\XPrsMgr_TypeOfPresentation3d.h">
+      <Filter>头文件\Visualization\TKV3d\PrsMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_LabelSequence.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_XIterator.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\Standard\XStandard_UUID.h">
+      <Filter>头文件\FoundationClasses\TKernel\Standard</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\TCollection\XTCollection_AsciiString.h">
+      <Filter>头文件\FoundationClasses\TKernel\TCollection</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_Integer.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDataStd</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\TopAbs\XTopAbs_Orientation.h">
+      <Filter>头文件\ModelingData\TKG3d\TopAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\TopAbs\XTopAbs.h">
+      <Filter>头文件\ModelingData\TKG3d\TopAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\TopAbs\XTopAbs_State.h">
+      <Filter>头文件\ModelingData\TKG3d\TopAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Shape.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_Shape.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfDimension.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfInteractive.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfRelation.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfSurface.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_KindOfUnit.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_SelectionModesConcurrency.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_SelectStatus.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_StandardDatum.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_StatusOfDetection.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_StatusOfPick.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfAxis.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfDist.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfIso.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfPlane.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_Axis.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Curve.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Vector.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Line.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_BSplKnotDistribution.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_CurveForm.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_CurveType.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_IsoType.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_JoinType.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_Shape.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_SurfaceForm.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_SurfaceType.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\GeomAbs\XGeomAbs_UVSense.h">
+      <Filter>头文件\FoundationClasses\TKMath\GeomAbs</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Point.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Circle.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Conic.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Ellipse.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Direction.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TShape.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Iterator.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_HShape.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Wire.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Shell.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Solid.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Compound.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_CompSolid.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Edge.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Face.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Builder.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeShape.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopTools\XTopTools_ListOfShape.h">
+      <Filter>头文件\ModelingData\TKBRep\TopTools</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeSweep.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Cut.h">
+      <Filter>头文件\ModelingAlgorithms\TKBO\BRepAlgoAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeFace.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeEdge.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_Vertex.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG2d\Geom2d\XGeom2d_Curve.h">
+      <Filter>头文件\ModelingData\TKG2d\Geom2d</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG2d\Geom2d\XGeom2d_Geometry.h">
+      <Filter>头文件\ModelingData\TKG2d\Geom2d</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeWire.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakePrism.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_EdgeError.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FaceError.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_PipeError.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_ShapeModification.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_ShellError.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_TransitionMode.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_WireError.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeSolid.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeOneAxis.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeBox.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Builder.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_GWedge.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Direction.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\BRep\XBRep_Builder.h">
+      <Filter>头文件\ModelingData\TKBRep\BRep</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_OneAxis.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Wedge.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeRevol.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepSweep\XBRepSweep_Revol.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepSweep</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeCone.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Revolution.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Cone.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeCylinder.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Cylinder.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_FaceBuilder.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Sphere.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Torus.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeHalfSpace.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeRevolution.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeSphere.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeTorus.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeWedge.h">
+      <Filter>头文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_GlueEnum.h">
+      <Filter>头文件\ModelingAlgorithms\TKBO\BOPAlgo</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_Operation.h">
+      <Filter>头文件\ModelingAlgorithms\TKBO\BOPAlgo</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_PaveFiller.h">
+      <Filter>头文件\ModelingAlgorithms\TKBO\BOPAlgo</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_Options.h">
+      <Filter>头文件\ModelingAlgorithms\TKBO\BOPAlgo</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Common.h">
+      <Filter>头文件\ModelingAlgorithms\TKBO\BRepAlgoAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Fuse.h">
+      <Filter>头文件\ModelingAlgorithms\TKBO\BRepAlgoAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Section.h">
+      <Filter>头文件\ModelingAlgorithms\TKBO\BRepAlgoAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeVertex.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeShell.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_Animation.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_AnimationObject.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_AnimationCamera.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_View.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfView.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_GradientFillMethod.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_FillMethod.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfVisualization.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfTriedronPosition.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfAxe.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfOrientation.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_StereoDumpOptions.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfBackfacingModel.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfPickCamera.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfPickLight.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_TypeOfRepresentation.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\BRepTools\XBRepTools.h">
+      <Filter>头文件\ModelingData\TKBRep\BRepTools</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\BRep\XBRep_Tool.h">
+      <Filter>头文件\ModelingData\TKBRep\BRep</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopExp\XTopExp.h">
+      <Filter>头文件\ModelingData\TKBRep\TopExp</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopExp\XTopExp_Explorer.h">
+      <Filter>头文件\ModelingData\TKBRep\TopExp</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TVertex.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TEdge.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TWire.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TCompound.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TCompSolid.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TFace.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TShell.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKBRep\TopoDS\XTopoDS_TSolid.h">
+      <Filter>头文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_RealEnum.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDataStd</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_LocalOperation.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\BRepFilletAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeChamfer.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\BRepFilletAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFiDS\XChFiDS_ChamfMethod.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\ChFiDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFiDS\XChFiDS_ChamfMode.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\ChFiDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeFillet.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\BRepFilletAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFi3d\XChFi3d_FilletShape.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\ChFi3d</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFiDS\XChFiDS_ErrorStatus.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\ChFiDS</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeFillet2d.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\BRepFilletAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKFillet\ChFi2d\XChFi2d_ConstructionError.h">
+      <Filter>头文件\ModelingAlgorithms\TKFillet\ChFi2d</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GeomTools\XGeomTools.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GeomTools</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_ErrorType.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_Root.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\Bnd\XBnd_Box.h">
+      <Filter>头文件\FoundationClasses\TKMath\Bnd</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\V3d\XV3d_Viewer.h">
+      <Filter>头文件\Visualization\TKV3d\V3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_GridDrawMode.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_GridType.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_Root.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfCircle.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_TrimmedCurve.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BoundedCurve.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfEllipse.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfHyperbola.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfParabola.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeCircle.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_RectangularTrimmedSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BoundedSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeEllipse.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Transformation.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeConicalSurface.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_ElementarySurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_ConicalSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeCylindricalSurface.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_CylindricalSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_AxisPlacement.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Axis1Placement.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Axis2Placement.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BezierCurve.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BezierSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BSplineCurve.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_BSplineSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_CartesianPoint.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Hyperbola.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_OffsetCurve.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_OffsetSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_OsculatingSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Parabola.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_Plane.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_SphericalSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKMath\Bnd\XBnd_Box2d.h">
+      <Filter>头文件\FoundationClasses\TKMath\Bnd</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_VectorWithMagnitude.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_ToroidalSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_SweptSurface.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_SurfaceOfRevolution.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKG3d\Geom\XGeom_SurfaceOfLinearExtrusion.h">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeHyperbola.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeLine.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeMirror.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakePlane.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeRotation.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeScale.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeSegment.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeTranslation.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeTrimmedCone.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\GC\XGC_MakeTrimmedCylinder.h">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeCirc.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeCirc2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeCone.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeCylinder.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeDir.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeDir2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeElips.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeElips2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeHypr.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeHypr2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeLin.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeLin2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeMirror.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeMirror2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeParab.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeParab2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakePln.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeRotation.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeRotation2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeScale.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeScale2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeTranslation.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingData\TKGeomBase\gce\xgce_MakeTranslation2d.h">
+      <Filter>头文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset_Error.h">
+      <Filter>头文件\ModelingAlgorithms\TKOffset\BRepOffset</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset_Type.h">
+      <Filter>头文件\ModelingAlgorithms\TKOffset\BRepOffset</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset.h">
+      <Filter>头文件\ModelingAlgorithms\TKOffset\BRepOffset</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset_Status.h">
+      <Filter>头文件\ModelingAlgorithms\TKOffset\BRepOffset</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKOffset\BRepOffsetAPI\XBRepOffsetAPI_MakePipe.h">
+      <Filter>头文件\ModelingAlgorithms\TKOffset\BRepOffsetAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKBool\BRepFill\XBRepFill_Pipe.h">
+      <Filter>头文件\ModelingAlgorithms\TKBool\BRepFill</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKGeomAlgo\GeomFill\XGeomFill_Trihedron.h">
+      <Filter>头文件\ModelingAlgorithms\TKGeomAlgo\GeomFill</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXSBase\IFSelect\XIFSelect_PrintCount.h">
+      <Filter>头文件\DataExchange\TKXSBase\IFSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXSBase\IFSelect\XIFSelect_PrintFail.h">
+      <Filter>头文件\DataExchange\TKXSBase\IFSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXSBase\IFSelect\XIFSelect_RemainMode.h">
+      <Filter>头文件\DataExchange\TKXSBase\IFSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXSBase\IFSelect\XIFSelect_ReturnStatus.h">
+      <Filter>头文件\DataExchange\TKXSBase\IFSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKOffset\Draft\XDraft_ErrorStatus.h">
+      <Filter>头文件\ModelingAlgorithms\TKOffset\Draft</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_ModifyShape.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Transform.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Copy.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_GTransform.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Sewing.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_NurbsConvert.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakePolygon.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeEdge2d.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FindPlane.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FastSewing.h">
+      <Filter>头文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_XAtom.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_WidthOfLine.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfStyleText.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfColorScaleData.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfColorScaleOrientation.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfColorScalePosition.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfDisplayText.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfMarker.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_TypeOfResize.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_HatchStyle.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_InteriorStyle.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_PolygonOffsetMode.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Aspect\XAspect_Background.h">
+      <Filter>头文件\Visualization\TKService\Aspect</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\NCollection\XNCollection_ListNode.h">
+      <Filter>头文件\FoundationClasses\TKernel\NCollection</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXCAF\XCAFApp\XXCAFApp_Application.h">
+      <Filter>头文件\DataExchange\TKXCAF\XCAFApp</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_DocumentTool.h">
+      <Filter>头文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ShapeTool.h">
+      <Filter>头文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXCAF\XCAFPrs\XXCAFPrs_Driver.h">
+      <Filter>头文件\DataExchange\TKXCAF\XCAFPrs</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_ChildIDIterator.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc.h">
+      <Filter>头文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ColorType.h">
+      <Filter>头文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ColorTool.h">
+      <Filter>头文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClInclude>
+    <ClInclude Include="FoundationClasses\TKernel\Quantity\XQuantity_ColorRGBA.h">
+      <Filter>头文件\FoundationClasses\TKernel\Quantity</Filter>
+    </ClInclude>
+    <ClInclude Include="DataExchange\TKXCAF\XCAFPrs\XXCAFPrs_AISObject.h">
+      <Filter>头文件\DataExchange\TKXCAF\XCAFPrs</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_ColoredShape.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationFramework\TKLCAF\TDF\XTDF_Tool.h">
+      <Filter>头文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DimensionSelectionMode.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DisplayMode.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DisplaySpecialSymbol.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DisplayStatus.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\AIS\XAIS_DragAction.h">
+      <Filter>头文件\Visualization\TKV3d\AIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\SelectMgr\XSelectMgr_PickingStrategy.h">
+      <Filter>头文件\Visualization\TKV3d\SelectMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_AlphaMode.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ArrayFlags.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectLine3d.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_Buffer.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_BufferType.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_CappingFlags.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_DataStructureManager.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_DiagnosticInfo.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_FrameStatsTimer.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_GroupAspect.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_HighlightStyle.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_HorizontalTextAlignment.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_LevelOfTextureAnisotropy.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_MaterialAspect.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfMaterial.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfTexture1D.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfTexture2D.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfTextureEnv.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_NameOfTexturePlane.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_PresentationAttributes.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_RenderingMode.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_RenderTransparentMethod.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_StereoMode.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TextPath.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TextureUnit.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ToneMappingMethod.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TransModeFlags.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfAnswer.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfBackfacingModel.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfBackground.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfComposition.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfConnection.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfLightSource.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfLimit.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfMaterial.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfPrimitiveArray.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfReflection.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfShaderObject.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfShadingModel.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfStructure.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfTexture.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfTextureFilter.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfTextureMode.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_TypeOfVisualization.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_VerticalTextAlignment.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ZLayerId.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ZLayerSettings.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_Aspects.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Font\XFont_FontAspect.h">
+      <Filter>头文件\Visualization\TKService\Font</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax1.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="OCCTProxy.cpp" />
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax2.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax3.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax22d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Circ.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Circ2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Cone.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Cylinder.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Dir.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Dir2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Elips.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Elips2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_GTrsf.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_GTrsf2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Hypr.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Hypr2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Lin.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Lin2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Mat.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Mat2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Parab.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Parab2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Pln.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Pnt.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Pnt2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Quaternion.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Sphere.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Torus.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Trsf.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Trsf2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Vec.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Vec2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_XY.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\gp\xgp_XYZ.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\gp</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Geometry.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Surface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\TopLoc\XTopLoc_Location.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\TopLoc</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\TopLoc\XTopLoc_Datum3D.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\TopLoc</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveObject.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_1.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_2.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_3.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKXDESTEP\STEPCAFControl\XSTEPCAFControl_Reader.cpp">
+      <Filter>源文件\DataExchange\TKXDESTEP\STEPCAFControl</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_Label.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDocStd\XTDocStd_Document.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDocStd</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKernel\TCollection\XTCollection_ExtendedString.cpp">
+      <Filter>源文件\FoundationClasses\TKernel\TCollection</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKernel\Standard\XStandard_Helper.cpp">
+      <Filter>源文件\FoundationClasses\TKernel\Standard</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDocStd\XTDocStd_Application.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDocStd</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_ChildIterator.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_Attribute.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKernel\Standard\XStandard_GUID.cpp">
+      <Filter>源文件\FoundationClasses\TKernel\Standard</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_Name.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDataStd</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKVCAF\TPrsStd\XTPrsStd_AISPresentation.cpp">
+      <Filter>源文件\ApplicationFramework\TKVCAF\TPrsStd</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_IDFilter.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKernel\Quantity\XQuantity_Color.cpp">
+      <Filter>源文件\FoundationClasses\TKernel\Quantity</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKSTEP\STEPConstruct\XSTEPConstruct_Tool.cpp">
+      <Filter>源文件\DataExchange\TKSTEP\STEPConstruct</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_Drawer.cpp">
+      <Filter>源文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_LineAspect.cpp">
+      <Filter>源文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\PrsMgr\XPrsMgr_PresentableObject.cpp">
+      <Filter>源文件\Visualization\TKV3d\PrsMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\SelectMgr\XSelectMgr_SelectableObject.cpp">
+      <Filter>源文件\Visualization\TKV3d\SelectMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKernel\TCollection\XTCollection_AsciiString.cpp">
+      <Filter>源文件\FoundationClasses\TKernel\TCollection</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDataStd\XTDataStd_Integer.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDataStd</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\TopAbs\XTopAbs.cpp">
+      <Filter>源文件\ModelingData\TKG3d\TopAbs</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Shape.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_Shape.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_Axis.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Curve.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Vector.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Line.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Point.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Conic.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Circle.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Ellipse.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Direction.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TShape.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Iterator.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_HShape.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Wire.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Shell.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Solid.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Compound.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_CompSolid.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Edge.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Face.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Builder.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeShape.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeSweep.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakePrism.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Cut.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKBO\BRepAlgoAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeFace.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_Vertex.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG2d\Geom2d\XGeom2d_Geometry.cpp">
+      <Filter>源文件\ModelingData\TKG2d\Geom2d</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG2d\Geom2d\XGeom2d_Curve.cpp">
+      <Filter>源文件\ModelingData\TKG2d\Geom2d</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeWire.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeEdge.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeSolid.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeOneAxis.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Builder.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_GWedge.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\BRep\XBRep_Builder.cpp">
+      <Filter>源文件\ModelingData\TKBRep\BRep</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_OneAxis.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Wedge.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeBox.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepSweep\XBRepSweep_Revol.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepSweep</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeRevol.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Revolution.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Cone.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeCone.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Cylinder.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeCylinder.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_FaceBuilder.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Sphere.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrim\XBRepPrim_Torus.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrim</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeHalfSpace.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeRevolution.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeSphere.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeTorus.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKPrim\BRepPrimAPI\XBRepPrimAPI_MakeWedge.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKPrim\BRepPrimAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_PaveFiller.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKBO\BOPAlgo</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKBO\BOPAlgo\XBOPAlgo_Options.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKBO\BOPTools</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Common.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKBO\BRepAlgoAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Fuse.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKBO\BRepAlgoAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKBO\BRepAlgoAPI\XBRepAlgoAPI_Section.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKBO\BRepAlgoAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeVertex.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeShell.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_Animation.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_AnimationObject.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\V3d\XV3d_View.cpp">
+      <Filter>源文件\Visualization\TKV3d\V3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_AnimationCamera.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\BRepTools\XBRepTools.cpp">
+      <Filter>源文件\ModelingData\TKBRep\BRepTools</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\BRep\XBRep_Tool.cpp">
+      <Filter>源文件\ModelingData\TKBRep\BRep</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TVertex.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TEdge.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TWire.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TCompound.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TCompSolid.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TFace.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TShell.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopoDS\XTopoDS_TSolid.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopoDS</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopExp\XTopExp_Explorer.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopExp</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKBRep\TopExp\XTopExp.cpp">
+      <Filter>源文件\ModelingData\TKBRep\TopExp</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_LocalOperation.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKFillet\BRepFilletAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeChamfer.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKFillet\BRepFilletAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeFillet.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKFillet\BRepFilletAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKFillet\BRepFilletAPI\XBRepFilletAPI_MakeFillet2d.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKFillet\BRepFilletAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GeomTools\XGeomTools.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GeomTools</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_Root.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\Bnd\XBnd_Box.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\Bnd</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\V3d\XV3d_Viewer.cpp">
+      <Filter>源文件\Visualization\TKV3d\V3d</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_Root.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeEllipse.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BoundedCurve.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_TrimmedCurve.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfCircle.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfEllipse.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfHyperbola.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeArcOfParabola.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeCircle.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BoundedSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Transformation.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_ElementarySurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_ConicalSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeConicalSurface.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_CylindricalSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeCylindricalSurface.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_AxisPlacement.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Axis1Placement.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Axis2Placement.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BezierCurve.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BezierSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BSplineCurve.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_BSplineSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_CartesianPoint.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Hyperbola.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_OffsetCurve.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_OsculatingSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_OffsetSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Parabola.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_Plane.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_SphericalSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKMath\Bnd\XBnd_Box2d.cpp">
+      <Filter>源文件\FoundationClasses\TKMath\Bnd</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_VectorWithMagnitude.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_ToroidalSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_SweptSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_SurfaceOfRevolution.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_SurfaceOfLinearExtrusion.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeHyperbola.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeLine.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeMirror.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakePlane.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeRotation.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeScale.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeSegment.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeTranslation.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeTrimmedCone.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKG3d\Geom\XGeom_RectangularTrimmedSurface.cpp">
+      <Filter>源文件\ModelingData\TKG3d\Geom</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\GC\XGC_MakeTrimmedCylinder.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeCirc.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeCirc2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeCone.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeCylinder.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeDir.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeDir2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeElips.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeElips2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeHypr.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeHypr2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeLin.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeLin2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeMirror.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeMirror2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeParab.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeParab2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakePln.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeRotation.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeRotation2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeScale.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeScale2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeTranslation.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingData\TKGeomBase\gce\xgce_MakeTranslation2d.cpp">
+      <Filter>源文件\ModelingData\TKGeomBase\gce</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKOffset\BRepOffset\XBRepOffset.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKOffset\BRepOffset</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKBool\BRepFill\XBRepFill_Pipe.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKBool\BRepFill</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKOffset\BRepOffsetAPI\XBRepOffsetAPI_MakePipe.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKOffset\BRepOffsetAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_ModifyShape.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Transform.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Copy.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_GTransform.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_Sewing.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_NurbsConvert.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakePolygon.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_MakeEdge2d.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FindPlane.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI\XBRepBuilderAPI_FastSewing.cpp">
+      <Filter>源文件\ModelingAlgorithms\TKTopAlgo\BRepBuilderAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Aspect\XAspect_Background.cpp">
+      <Filter>源文件\Visualization\TKService\Aspect</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKXCAF\XCAFPrs\XXCAFPrs_Driver.cpp">
+      <Filter>源文件\DataExchange\TKXCAF\XCAFPrs</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ShapeTool.cpp">
+      <Filter>源文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_DocumentTool.cpp">
+      <Filter>源文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKXCAF\XCAFApp\XXCAFApp_Application.cpp">
+      <Filter>源文件\DataExchange\TKXCAF\XCAFApp</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_ChildIDIterator.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc.cpp">
+      <Filter>源文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClCompile>
+    <ClCompile Include="FoundationClasses\TKernel\Quantity\XQuantity_ColorRGBA.cpp">
+      <Filter>源文件\FoundationClasses\TKernel\Quantity</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKXCAF\XCAFDoc\XXCAFDoc_ColorTool.cpp">
+      <Filter>源文件\DataExchange\TKXCAF\XCAFDoc</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_ColoredShape.cpp">
+      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
+    </ClCompile>
+    <ClCompile Include="DataExchange\TKXCAF\XCAFPrs\XXCAFPrs_AISObject.cpp">
+      <Filter>源文件\DataExchange\TKXCAF\XCAFPrs</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationFramework\TKLCAF\TDF\XTDF_Tool.cpp">
+      <Filter>源文件\ApplicationFramework\TKLCAF\TDF</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectLine3d.cpp">
+      <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_Buffer.cpp">
+      <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_DataStructureManager.cpp">
+      <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_MaterialAspect.cpp">
+      <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_PresentationAttributes.cpp">
+      <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_ZLayerSettings.cpp">
+      <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_Aspects.cpp">
+      <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OCCT.Foundation.NetHost.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Geom.png">
+      <Filter>头文件\ModelingData\TKG3d\Geom</Filter>
+    </Image>
+    <Image Include="gp.png">
+      <Filter>头文件\FoundationClasses\TKMath\gp</Filter>
+    </Image>
+    <Image Include="GC.png">
+      <Filter>头文件\ModelingData\TKGeomBase\GC</Filter>
+    </Image>
+    <Image Include="helper.png">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
