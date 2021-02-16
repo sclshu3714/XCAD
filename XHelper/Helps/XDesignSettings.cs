@@ -34,9 +34,9 @@ namespace XHelper.Helps
         /// <summary>
         /// app.config配置管理
         /// </summary>
-        //public static XConfigurationManager AppManager { 
-        //    get { return XConfigurationManager.AppConfiguration; } 
-        //}
+        public static XConfigurationManager AppManager {
+            get { return XConfigurationManager.AppConfiguration; }
+        }
         /// <summary>
         /// ini备份扩展
         /// </summary>
@@ -75,19 +75,19 @@ namespace XHelper.Helps
         /// </summary>
         public string WorkbenchPath {
             get {
-                //if(string.IsNullOrEmpty(workbenchPath))
-                //    workbenchPath = DesignSettings.AppManager.GetConfiguration<string>("WorkbenchPath");
-                //if(string.IsNullOrEmpty(workbenchPath)) {
-                //    workbenchPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MODELWORX");
-                //    DesignSettings.AppManager.SetConfiguration("WorkbenchPath", workbenchPath);
-                //}
-                if(!Directory.Exists(workbenchPath))
+                if (string.IsNullOrEmpty(workbenchPath))
+                    workbenchPath = DesignSettings.AppManager.GetConfiguration<string>("WorkbenchPath");
+                if (string.IsNullOrEmpty(workbenchPath)) {
+                    workbenchPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MODELWORX");
+                    DesignSettings.AppManager.SetConfiguration("WorkbenchPath", workbenchPath);
+                }
+                if (!Directory.Exists(workbenchPath))
                     Directory.CreateDirectory(workbenchPath);
                 return workbenchPath;
             }
             set {
                 workbenchPath = Path.Combine(value, "MODELWORX");
-                //DesignSettings.AppManager.SetConfiguration("WorkbenchPath", workbenchPath);
+                DesignSettings.AppManager.SetConfiguration("WorkbenchPath", workbenchPath);
                 if(!Directory.Exists(workbenchPath))
                     Directory.CreateDirectory(workbenchPath);
             }

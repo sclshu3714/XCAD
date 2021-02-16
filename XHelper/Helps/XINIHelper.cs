@@ -44,19 +44,19 @@ namespace XHelper
         /// </summary>
         private static string StaticWorkbenchPath {
             get {
-                //if(string.IsNullOrEmpty(workbenchPath))
-                //    workbenchPath = XConfigurationManager.StaticGetConfiguration<string>("WorkbenchPath");
-                //if(string.IsNullOrEmpty(workbenchPath)) {
-                //    workbenchPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MODELWORX","config");
-                //    XConfigurationManager.StaticSetConfiguration("WorkbenchPath", workbenchPath);
-                //}
-                if(!Directory.Exists(workbenchPath))
+                if (string.IsNullOrEmpty(workbenchPath))
+                    workbenchPath = XConfigurationManager.StaticGetConfiguration<string>("WorkbenchPath");
+                if (string.IsNullOrEmpty(workbenchPath)) {
+                    workbenchPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MODELWORX", "config");
+                    XConfigurationManager.StaticSetConfiguration("WorkbenchPath", workbenchPath);
+                }
+                if (!Directory.Exists(workbenchPath))
                     Directory.CreateDirectory(workbenchPath);
                 return workbenchPath;
             }
             set {
                 workbenchPath = Path.Combine(value, "MODELWORX");
-                //XConfigurationManager.StaticSetConfiguration("WorkbenchPath", workbenchPath);
+                XConfigurationManager.StaticSetConfiguration("WorkbenchPath", workbenchPath);
                 if(!Directory.Exists(workbenchPath))
                     Directory.CreateDirectory(workbenchPath);
             }
