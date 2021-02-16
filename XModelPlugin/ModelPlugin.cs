@@ -30,6 +30,7 @@ namespace XModelPlugin
             Object obj = Activator.CreateInstance(tp);
             return method.Invoke(obj, args);
         }
+
         /// <summary>
         /// 执行方法
         /// </summary>
