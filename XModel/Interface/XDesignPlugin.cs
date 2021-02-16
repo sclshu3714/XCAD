@@ -31,6 +31,7 @@ namespace XModel.Interface
                     IEnumerable<Type> tempTypes = PluginAssembly.GetTypes().Where(type => type.BaseType != null && type.BaseType.Name == "XDesignPlugin");
                     foreach (Type tempType in tempTypes) {
                         XDesignPlugin DesignPlugin = (XDesignPlugin)PluginAssembly.CreateInstance(tempType.FullName);
+                        DesignPlugin.PluginAssembly = PluginAssembly;
                         return DesignPlugin;
                     }
                 }
@@ -89,6 +90,18 @@ namespace XModel.Interface
                 return false;
             Object obj = Activator.CreateInstance(tp);
             return method.Invoke(obj, args);
+        }
+
+        /// <summary>
+        /// 执行方法
+        /// </summary>
+        /// <param name="methodName"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+
+        public virtual object Invoke(string methodName, params Object[] args)
+        {
+            return null;
         }
         #endregion
 

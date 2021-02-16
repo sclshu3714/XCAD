@@ -30,7 +30,22 @@ namespace XModelPlugin
             Object obj = Activator.CreateInstance(tp);
             return method.Invoke(obj, args);
         }
+        /// <summary>
+        /// 执行方法
+        /// </summary>
+        /// <param name="methodName"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
 
+        public override object Invoke(string methodName, params Object[] args)
+        {
+            switch (methodName) {
+                case "Add":
+                    return Add((int)args[0], (int)args[1]);
+                default:
+                    return null;
+            }
+        }
         public int Add(int a, int b) {
             return a + b;
         }

@@ -25,6 +25,10 @@ using OCCT.Foundation.Net;
 using XCAD.Modules;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
+using XModel.Common;
+using XModel.Elements;
+using XModel.Interface;
+using System.Runtime.Loader;
 
 namespace XCAD
 {
@@ -43,10 +47,24 @@ namespace XCAD
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (!Initialize()) {
-                Application.Exit();
-                return;
-            }
+            //if (!Initialize()) {
+            //    Application.Exit();
+            //    return;
+            //}
+            XPluginAssembly plugin = new XPluginAssembly() {
+                PluginId = Guid.NewGuid().ToString(),
+                AssemblyFullName = "XModelPlugin.ModelPlugin",
+                AssemblyName = "ModelPlugin",
+                index = 0,
+                PluginCaption = "Model",
+                PluginGroup = "测试",
+                PluginName = "test",
+                PluginPath = @"plugins\XModelPlugin.dll"
+            };
+            XDesignPlugin DesignPlugin = new XDesignPlugin();
+            XAssemblyLoadContext context = new XAssemblyLoadContext();
+            AssemblyLoadContext loadContext = context.AssemblyLoad(plugin, ref DesignPlugin);
+            object result = DesignPlugin.Invoke("XModelPlugin.ModelPlugin","Add", 10, 50);
             this.FormClosed += MainForm_FormClosed;
             this.accordionControl.ElementClick += AccordionControl_ElementClick;
             this.accordionControl.CustomDrawElement += accordionControl_CustomDrawElement;
@@ -57,7 +75,7 @@ namespace XCAD
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (InitViewer) {
-                OCCTView.InitOCCTProxy();
+                OCCTView?.InitOCCTProxy();
                 OCCTView = null;
                 OCCTContext = null;
             }
