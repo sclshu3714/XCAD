@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XHelper\XHelper.csproj" />
     <ProjectReference Include="..\XModel\XModel.csproj" />
   </ItemGroup>
 
