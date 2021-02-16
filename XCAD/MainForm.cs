@@ -49,6 +49,8 @@ namespace XCAD
             }
             this.FormClosed += MainForm_FormClosed;
             this.accordionControl.ElementClick += AccordionControl_ElementClick;
+            this.accordionControl.Refresh();
+            this.Refresh();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -92,6 +94,15 @@ namespace XCAD
             this.RWControl.MouseWheel += RenderWindow_MouseWheel;
             return InitViewer;
         }
+        //private void accordionControl_CustomDrawElement(object sender, CustomDrawElementEventArgs e)
+        //{
+        //    if (e.ObjectInfo.Element == filterPeopleElement || e.ObjectInfo.Element == filterMailElement) {
+        //        e.Handled = true;
+        //        e.DrawHeaderBackground();
+        //        e.DrawText();
+        //        e.Cache.FillRectangle(e.ObjectInfo.PaintAppearance.ForeColor, new Rectangle(e.ObjectInfo.HeaderBounds.Location, new Size(ScaleHelper.ScaleHorizontal(3), e.ObjectInfo.HeaderBounds.Height)));
+        //    }
+        //}
         #endregion
 
         #region 元素事件
