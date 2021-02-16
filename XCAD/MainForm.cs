@@ -97,11 +97,23 @@ namespace XCAD
         }
         private void accordionControl_CustomDrawElement(object sender, CustomDrawElementEventArgs e)
         {
-            if (e.ObjectInfo.Element == accElementTLable || e.ObjectInfo.Element == accElementViewer) {
+            if (this.accordionControl.SelectedElement != null && e.ObjectInfo.Element == this.accordionControl.SelectedElement) {
                 e.Handled = true;
                 e.DrawHeaderBackground();
                 e.DrawText();
                 e.Cache.FillRectangle(e.ObjectInfo.PaintAppearance.ForeColor, new Rectangle(e.ObjectInfo.HeaderBounds.Location, new Size(ScaleHelper.ScaleHorizontal(3), e.ObjectInfo.HeaderBounds.Height)));
+            }
+        }
+
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            if (!IsHandleCreated || IsDisposed) return;
+            if (Width < ScaleHelper.ScaleHorizontal(850)) {
+                accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Overlay;
+            }
+            else {
+                accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Inline;
             }
         }
         #endregion
