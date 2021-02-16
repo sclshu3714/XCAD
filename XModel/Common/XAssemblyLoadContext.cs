@@ -31,8 +31,9 @@ namespace XModel.Common
                     if (Plugins == null || Plugins.Count() == 0)
                         return null;
                     _AssemblyLoadContext.Resolving += _AssemblyLoadContext_Resolving;
-                    XDesignPlugin XPlugin = (XDesignPlugin)Activator.CreateInstance(Plugins.First());
-                    DesignPlugin = XPlugin.LoadAssembly(plugin.PluginPath);
+                    DesignPlugin = (XDesignPlugin)Activator.CreateInstance(Plugins.First());
+                    DesignPlugin.PluginAssembly = _Assembly;
+                    //DesignPlugin = DesignPlugin.LoadAssembly(plugin.PluginPath);
                     if (LoadedAssemblys == null)
                         LoadedAssemblys = new Dictionary<string, AssemblyLoadContext>();
                     LoadedAssemblys.Add(friendlyName, _AssemblyLoadContext);
