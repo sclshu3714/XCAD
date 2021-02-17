@@ -118,7 +118,7 @@ namespace XCAD
         }
         private void accordionControl_CustomDrawElement(object sender, CustomDrawElementEventArgs e)
         {
-            if (this.accordionControl.SelectedElement != null && e.ObjectInfo.Element == this.accordionControl.SelectedElement) {
+            if (this.accordionControl.SelectedElement != null && this.accordionControl.SelectedElement.Elements.Count == 0 && e.ObjectInfo.Element == this.accordionControl.SelectedElement) {
                 e.Handled = true;
                 e.DrawHeaderBackground();
                 e.DrawText();
