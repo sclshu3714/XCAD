@@ -1960,6 +1960,7 @@ namespace XCAD
         public void DisplayMessage(string logid, string code, string explain, string position, int level) {
             this.flyoutMessagePanel.Controls.Clear();
             ListBoxControl listBox = new ListBoxControl();
+            listBox.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             listBox.Items.Add(explain);
             listBox.Dock = DockStyle.Fill;
             this.flyoutMessagePanel.Controls.Add(listBox);
