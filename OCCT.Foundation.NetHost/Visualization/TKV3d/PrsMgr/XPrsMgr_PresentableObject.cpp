@@ -156,7 +156,8 @@ namespace TKV3d {
 
     //! Returns the attributes settings.
     XPrs3d_Drawer^ XPrsMgr_PresentableObject::Attributes() {
-        return gcnew XPrs3d_Drawer(NativeHandle()->Attributes());
+        Handle(Prs3d_Drawer) HDrawer = NativeHandle()->Attributes();
+        return gcnew XPrs3d_Drawer(HDrawer);
     };
 
     //! Initializes the drawing tool theDrawer.

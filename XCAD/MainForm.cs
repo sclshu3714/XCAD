@@ -30,6 +30,7 @@ using XModel.Elements;
 using XModel.Interface;
 using System.Runtime.Loader;
 using DevExpress.XtraEditors;
+using TKService;
 
 namespace XCAD
 {
@@ -169,19 +170,40 @@ namespace XCAD
                     SetProperty(e.Element.Tag?.ToString());
                     break;
                 case "HollowMesh":                      //显示模式 - 空心网格
-                    break;
                 case "MeshEdges":                       //显示模式 - 网格边缘
-                    break;
                 case "MeshShrinked":                    //显示模式 - 网格收缩
-                    break;
                 case "Wireframe":                       //显示模式 - 线框模式
-                    break;
                 case "FlatShaded":                      //显示模式 - 平面投影
-                    break;
                 case "SmoothlyShaded":                  //显示模式 - 平滑阴影
-                    break;
                 case "ShadedwithEdges":                 //显示模式 - 显示边框
+                    SetViewDisplayMode(e.Element.Tag?.ToString());
                     break;
+                case "Rubberbandselection":             //视图模式 - 橡皮筋选择
+                case "Orbitrotationbysingletouch":      //视图模式 - 单触旋转
+                case "Panbysingletouch":                //视图模式 - 单触平移
+                case "Zoombysingletouch":               //视图模式 - 单触缩放
+                case "ShowAll":                         //视图模式 - 显示所有
+                case "FitAll":                          //视图模式 - 适合所有
+                case "Enable/disableperspectivemodel":  //视图模式 - 透视模式
+                case "Show/hidemessagewindow":          //视图模式 - 消息窗口
+                case "Showselected":                    //视图模式 - 显示选择
+                case "HideSelected":                    //视图模式 - 隐藏选择
+                case "Showonlyselected":                //视图模式 - 仅显示选择
+                case "PropertyWindow":                  //视图模式 - 属性窗口
+                case "SelectParent":                    //视图模式 - 选择父级
+                case "Assignorchangematerial":          //视图模式 - 指定材质
+                case "DeleteSelected":                  //视图模式 - 删除选择
+                    SetViewMode(e.Element.Tag?.ToString());
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        #region 视图模式
+        private void SetViewMode(string Tag, XAIS_InteractiveObject shape = null)
+        {
+            switch (Tag) {
                 case "Rubberbandselection":             //视图模式 - 橡皮筋选择
                     break;
                 case "Orbitrotationbysingletouch":      //视图模式 - 单触旋转
@@ -191,18 +213,23 @@ namespace XCAD
                 case "Zoombysingletouch":               //视图模式 - 单触缩放
                     break;
                 case "ShowAll":                         //视图模式 - 显示所有
+                    OCCTView.DisplayAll(true);
                     break;
                 case "FitAll":                          //视图模式 - 适合所有
+                    OCCTView.WindowFitAll(0, 0, this.RWControl.Width, this.RWControl.Height);
                     break;
                 case "Enable/disableperspectivemodel":  //视图模式 - 透视模式
                     break;
                 case "Show/hidemessagewindow":          //视图模式 - 消息窗口
                     break;
                 case "Showselected":                    //视图模式 - 显示选择
+                    OCCTView.DisplaySelected(true);
                     break;
                 case "HideSelected":                    //视图模式 - 隐藏选择
+                    OCCTContext.EraseSelected(true);
                     break;
                 case "Showonlyselected":                //视图模式 - 仅显示选择
+                   
                     break;
                 case "PropertyWindow":                  //视图模式 - 属性窗口
                     break;
@@ -211,20 +238,89 @@ namespace XCAD
                 case "Assignorchangematerial":          //视图模式 - 指定材质
                     break;
                 case "DeleteSelected":                  //视图模式 - 删除选择
+                    OCCTContext.ClearSelected(true);
                     break;
                 default:
                     break;
             }
         }
-        #region 视图
-
         #endregion
 
         #region 显示模式
 
+        private void SetViewDisplayMode(string Tag, XAIS_InteractiveObject shape = null)
+        {
+            switch (Tag) {
+                case "HollowMesh":                      //显示模式 - 空心网格
+                    if (shape != null) {
+                        XPrs3d_Drawer shapeDrawer = shape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        if (AspectFillArea3d.ToDrawEdges())
+                            AspectFillArea3d.SetEdgeOn();
+                        else
+                            AspectFillArea3d.SetEdgeOff();
+                    }
+                    else if (OCCTView.IsObjectSelected() && OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
+                        XPrs3d_Drawer shapeDrawer = SelectedShape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        if (AspectFillArea3d.ToDrawEdges())
+                            AspectFillArea3d.SetEdgeOn();
+                        else
+                            AspectFillArea3d.SetEdgeOff();
+                    }
+                    break;
+                case "MeshEdges":                       //显示模式 - 网格边缘
+
+                    break;
+                case "MeshShrinked":                    //显示模式 - 网格收缩
+
+                    break;
+                case "Wireframe":                       //显示模式 - 线框模式
+                    int Mode = OCCTView.DisplayMode();
+                    SetDisplayMode(Mode == 0 ? 1 : 0);
+                    break;
+                case "FlatShaded":                      //显示模式 - 平面投影
+
+                    break;
+                case "SmoothlyShaded":                  //显示模式 - 平滑阴影
+
+                    break;
+                case "ShadedwithEdges":                 //显示模式 - 显示边框
+                    if (shape != null) {
+                        XPrs3d_Drawer shapeDrawer = shape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        if (AspectFillArea3d.ToDrawEdges()) {
+                            AspectFillArea3d.SetEdgeOn();
+                            SetFaceBoundaryAspect(shape, true);
+                        }
+                        else {
+                            AspectFillArea3d.SetEdgeOff();
+                            SetFaceBoundaryAspect(shape, false);
+                        }
+                    }
+                    else if (OCCTView.IsObjectSelected() && OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
+                        XPrs3d_Drawer shapeDrawer = SelectedShape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        if (AspectFillArea3d.ToDrawEdges()) {
+                            AspectFillArea3d.SetEdgeOn();
+                            SetFaceBoundaryAspect(SelectedShape, true);
+                        }
+                        else {
+                            AspectFillArea3d.SetEdgeOff();
+                            SetFaceBoundaryAspect(SelectedShape, false);
+                        }
+                        UpdateCurrentViewer();
+                    }
+                    break;
+            }
+        }
         #endregion
 
-        #region 更改展示的特性
+        #region 特性修改
         /// <summary>
         /// 设置指定或者选择的图形的展示特性
         /// </summary>
@@ -242,26 +338,49 @@ namespace XCAD
                     if (shape != null) {
                         XPrs3d_Drawer shapeDrawer = shape.Attributes();
                         XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        AspectFillArea3d.SetDistinguishOn();
+                        AspectFillArea3d.SetTextureMapOff();
                     }
-                    else if (OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
-
+                    else if (OCCTView.IsObjectSelected() && OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
+                        XPrs3d_Drawer shapeDrawer = SelectedShape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        AspectFillArea3d.SetDistinguishOn();
+                        AspectFillArea3d.SetTextureMapOff();
                     }
                     break;
                 case "Texture":                         //特性 - 纹理
                     if (shape != null) {
-
+                        XPrs3d_Drawer shapeDrawer = shape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        AspectFillArea3d.SetDistinguishOff();
+                        AspectFillArea3d.SetTextureMapOn();
                     }
-                    else if (OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
-
+                    else if (OCCTView.IsObjectSelected() && OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
+                        XPrs3d_Drawer shapeDrawer = SelectedShape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        AspectFillArea3d.SetDistinguishOff();
+                        AspectFillArea3d.SetTextureMapOn();
                     }
                     break;
                 case "None":                            //特性 - 无
                 default:
                     if (shape != null) {
-
+                        XPrs3d_Drawer shapeDrawer = shape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        AspectFillArea3d.SetDistinguishOff();
+                        AspectFillArea3d.SetTextureMapOff();
                     }
-                    else if (OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
-
+                    else if (OCCTView.IsObjectSelected() && OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
+                        XPrs3d_Drawer shapeDrawer = SelectedShape.Attributes();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
+                        XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
+                        AspectFillArea3d.SetDistinguishOff();
+                        AspectFillArea3d.SetTextureMapOff();
                     }
                     break;
             }

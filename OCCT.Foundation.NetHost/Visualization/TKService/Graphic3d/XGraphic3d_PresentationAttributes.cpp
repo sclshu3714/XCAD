@@ -100,7 +100,11 @@ namespace TKService {
     //! Return basic presentation fill area aspect, NULL by default.
     //! When set, might be used instead of Color() property.
     XGraphic3d_AspectFillArea3d^ XGraphic3d_PresentationAttributes::BasicFillAreaAspect() {
-        return gcnew XGraphic3d_AspectFillArea3d(NativeHandle()->BasicFillAreaAspect());
+        Handle(Graphic3d_AspectFillArea3d) temp = NativeHandle()->BasicFillAreaAspect();
+        if (!temp.IsNull())
+            return gcnew XGraphic3d_AspectFillArea3d(temp);
+        else
+            return gcnew XGraphic3d_AspectFillArea3d();
     };
 
     //! Sets basic presentation fill area aspect.

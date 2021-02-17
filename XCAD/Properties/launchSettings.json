@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "XCAD": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
