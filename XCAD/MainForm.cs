@@ -293,25 +293,26 @@ namespace XCAD
                         XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
                         XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
                         if (AspectFillArea3d.ToDrawEdges()) {
-                            AspectFillArea3d.SetEdgeOn();
-                            SetFaceBoundaryAspect(shape, true);
+                            AspectFillArea3d.SetEdgeOff();
+                            shapeDrawer.SetFaceBoundaryDraw(false);
                         }
                         else {
-                            AspectFillArea3d.SetEdgeOff();
-                            SetFaceBoundaryAspect(shape, false);
+                            AspectFillArea3d.SetEdgeOn();
+                            shapeDrawer.SetFaceBoundaryDraw(true);
                         }
+                        UpdateCurrentViewer();
                     }
                     else if (OCCTView.IsObjectSelected() && OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
                         XPrs3d_Drawer shapeDrawer = SelectedShape.Attributes();
                         XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
                         XGraphic3d_AspectFillArea3d AspectFillArea3d = shapeDrawer.BasicFillAreaAspect();
                         if (AspectFillArea3d.ToDrawEdges()) {
-                            AspectFillArea3d.SetEdgeOn();
-                            SetFaceBoundaryAspect(SelectedShape, true);
+                            AspectFillArea3d.SetEdgeOff();
+                            shapeDrawer.SetFaceBoundaryDraw(false);
                         }
                         else {
-                            AspectFillArea3d.SetEdgeOff();
-                            SetFaceBoundaryAspect(SelectedShape, false);
+                            AspectFillArea3d.SetEdgeOn();
+                            shapeDrawer.SetFaceBoundaryDraw(true);
                         }
                         UpdateCurrentViewer();
                     }

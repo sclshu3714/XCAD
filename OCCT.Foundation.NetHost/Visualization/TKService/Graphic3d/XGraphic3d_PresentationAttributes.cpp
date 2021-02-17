@@ -103,8 +103,11 @@ namespace TKService {
         Handle(Graphic3d_AspectFillArea3d) temp = NativeHandle()->BasicFillAreaAspect();
         if (!temp.IsNull())
             return gcnew XGraphic3d_AspectFillArea3d(temp);
-        else
-            return gcnew XGraphic3d_AspectFillArea3d();
+        else {
+            XGraphic3d_AspectFillArea3d^ theAspect = gcnew XGraphic3d_AspectFillArea3d();
+            NativeHandle()->SetBasicFillAreaAspect(theAspect->GetAspectFillArea3dHandle());
+            return theAspect;
+        }
     };
 
     //! Sets basic presentation fill area aspect.
