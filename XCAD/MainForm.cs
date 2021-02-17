@@ -54,24 +54,7 @@ namespace XCAD
                 return;
             }
             DisplayMessage(Guid.NewGuid().ToString(), "code 55", "工具准备就绪", "MainForm", 0);
-            //XPluginAssembly plugin = new XPluginAssembly() {
-            //    PluginId = Guid.NewGuid().ToString(),
-            //    AssemblyFullName = "XModelPlugin.ModelPlugin",
-            //    AssemblyName = "ModelPlugin",
-            ////    index = 0,
-            //    PluginCaption = "Model",
-            //    PluginGroup = "测试",
-            //    PluginName = "test",
-            //    PluginPath = @"plugins\XModelPlugin.dll"
-            //};
-            //XDesignPlugin DesignPlugin = new XDesignPlugin();
-            //XAssemblyLoadContext context = new XAssemblyLoadContext();
-            //AssemblyLoadContext loadContext = context.AssemblyLoad(plugin, ref DesignPlugin);
-            //object result = DesignPlugin.Invoke("XModelPlugin.ModelPlugin","Add", 10, 50);
-            //object result1 = DesignPlugin.Invoke("Add", 10, 50);
-            //XAssemblyLoadContext.UnLoadPlugin(DesignPlugin);
-            //object result2 = DesignPlugin.Invoke("XModelPlugin.ModelPlugin", "Add", 10, 50);
-            //object result3 = DesignPlugin.Invoke("Add", 10, 50);
+            
             this.FormClosed += MainForm_FormClosed;
             this.accordionControl.ElementClick += AccordionControl_ElementClick;
             this.accordionControl.CustomDrawElement += accordionControl_CustomDrawElement;
@@ -88,6 +71,52 @@ namespace XCAD
             }
         }
 
+
+        /// <summary>
+        /// 自动加载插件
+        /// </summary>
+        public void LoadedPlugins() {
+            string PluginPath = @$"{Application.StartupPath}\plugins\";
+            string[] FileInfos = Directory.GetFiles(PluginPath,"*.dll");
+            foreach (string fileName in FileInfos) {
+                XPluginAssembly plugin = new XPluginAssembly() {
+                    PluginId = Guid.NewGuid().ToString(),
+                    //AssemblyFullName = "XModelPlugin.ModelPlugin",
+                    //AssemblyName = "ModelPlugin",
+                    //    index = 0,
+                    PluginCaption = Path.GetFileNameWithoutExtension(fileName),
+                    PluginGroup = Path.GetFileNameWithoutExtension(fileName),
+                    PluginName = Path.GetFileNameWithoutExtension(fileName),
+                    PluginPath = @$"plugins\{Path.GetFileName(fileName)}"
+                };
+                XDesignPlugin DesignPlugin = new XDesignPlugin();
+                XAssemblyLoadContext loadContext = XAssemblyLoadContext.AssemblyLoad(plugin, ref DesignPlugin);
+                AccordionControlElement PluginNode = this.accordionElementPlugin;
+                PluginNode = new AccordionControlElement();
+                PluginNode.Name = $"{DesignPlugin.PluginName}";
+                PluginNode.Text = $"{DesignPlugin.PluginCaption}";
+                PluginNode.Tag = DesignPlugin;
+                this.accordionElementPlugin.Elements.Add(PluginNode);
+            }
+            //XPluginAssembly plugin = new XPluginAssembly() {
+            //    PluginId = Guid.NewGuid().ToString(),
+            //    AssemblyFullName = "XModelPlugin.ModelPlugin",
+            //    AssemblyName = "ModelPlugin",
+            //    //    index = 0,
+            //    PluginCaption = "Model",
+            //    PluginGroup = "测试",
+            //    PluginName = "test",
+            //    PluginPath = @"plugins\XModelPlugin.dll"
+            //};
+            //XDesignPlugin DesignPlugin = new XDesignPlugin();
+            //XAssemblyLoadContext context = new XAssemblyLoadContext();
+            //AssemblyLoadContext loadContext = context.AssemblyLoad(plugin, ref DesignPlugin);
+            //object result = DesignPlugin.Invoke("XModelPlugin.ModelPlugin", "Add", 10, 50);
+            //object result1 = DesignPlugin.Invoke("Add", 10, 50);
+            //XAssemblyLoadContext.UnLoadPlugin(DesignPlugin);
+            //object result2 = DesignPlugin.Invoke("XModelPlugin.ModelPlugin", "Add", 10, 50);
+            //object result3 = DesignPlugin.Invoke("Add", 10, 50);
+        }
         /// <summary>
         /// 初始化
         /// </summary>

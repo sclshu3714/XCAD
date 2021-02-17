@@ -12,18 +12,20 @@ namespace XModel.Common
 {
     public class XAssemblyLoadContext : AssemblyLoadContext
     {
-        public XAssemblyLoadContext() { }
+        public XAssemblyLoadContext(string? name, bool isCollectible = false) : base(name, isCollectible) { 
+            
+        }
         /// <summary>
         /// 指定位置的插件库集合
         /// </summary>
-        AssemblyDependencyResolver resolver { get; set; }
+        public static AssemblyDependencyResolver resolver { get; set; }
 
-        public AssemblyLoadContext AssemblyLoad(XPluginAssembly plugin, ref XDesignPlugin DesignPlugin) {
+        public static XAssemblyLoadContext AssemblyLoad(XPluginAssembly plugin, ref XDesignPlugin DesignPlugin) {
             try {
                 string PluginName = plugin.PluginName;
                 string friendlyName = $"{PluginName}Domain";
                 resolver = new AssemblyDependencyResolver(plugin.PluginPath);
-                AssemblyLoadContext _AssemblyLoadContext = new AssemblyLoadContext(friendlyName, true);
+                XAssemblyLoadContext _AssemblyLoadContext = new XAssemblyLoadContext(friendlyName, true);
                 using (var fs = new FileStream(plugin.PluginPath, FileMode.Open, FileAccess.Read)) {
                     var _Assembly = _AssemblyLoadContext.LoadFromStream(fs);
                     var Modules = _Assembly.Modules;
@@ -46,7 +48,7 @@ namespace XModel.Common
             return null;
         }
 
-        private Assembly _AssemblyLoadContext_Resolving(AssemblyLoadContext arg1, AssemblyName arg2)
+        private static Assembly _AssemblyLoadContext_Resolving(AssemblyLoadContext arg1, AssemblyName arg2)
         {
             var path = resolver.ResolveAssemblyToPath(arg2);
             if (!string.IsNullOrEmpty(path)) {

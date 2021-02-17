@@ -7,7 +7,18 @@ namespace XModelPlugin
 {
     public class ModelPlugin : XDesignPlugin
     {
-        public ModelPlugin() { }
+        public ModelPlugin()
+        {
+            this.ProjectId = Guid.NewGuid().ToString();
+            this.PluginName = Guid.NewGuid().ToString("N");
+            this.PluginCaption = Guid.NewGuid().ToString("N");
+            this.PluginTag = Guid.NewGuid().ToString();
+            //this.PluginIcon = Guid.NewGuid().ToString();
+            this.PluginCategory = Guid.NewGuid().ToString("N");
+            //this.LogonUser = Guid.NewGuid().ToString();
+            this.ProjectId = Guid.NewGuid().ToString();
+            this.ProjectName = Guid.NewGuid().ToString("N");
+        }
 
         /// <summary>
         /// 执行方法

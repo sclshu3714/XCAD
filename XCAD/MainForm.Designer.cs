@@ -74,6 +74,7 @@ namespace XCAD
             this.fluentFormDefaultManager = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.flyoutMessagePanel = new DevExpress.Utils.FlyoutPanel();
+            this.accordionElementPlugin = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl)).BeginInit();
@@ -102,7 +103,6 @@ namespace XCAD
             // 
             // accordionControl
             // 
-            this.accordionControl.AllowItemSelection = true;
             this.accordionControl.Appearance.Item.Disabled.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.accordionControl.Appearance.Item.Disabled.Options.UseFont = true;
             this.accordionControl.Appearance.Item.Hovered.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -111,16 +111,17 @@ namespace XCAD
             this.accordionControl.Appearance.Item.Normal.Options.UseFont = true;
             this.accordionControl.Appearance.Item.Pressed.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.accordionControl.Appearance.Item.Pressed.Options.UseFont = true;
+            this.accordionControl.ContextButtonsOptions.AllowHtmlText = true;
             this.accordionControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accElementOperation,
+            this.accordionElementPlugin,
             this.accElementSetting,
             this.accElementAbout});
             this.accordionControl.Location = new System.Drawing.Point(0, 31);
             this.accordionControl.LookAndFeel.SkinName = "Office 2019 Black";
             this.accordionControl.LookAndFeel.UseDefaultLookAndFeel = false;
             this.accordionControl.Name = "accordionControl";
-            this.accordionControl.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Minimal;
             this.accordionControl.OptionsMinimizing.PopupFormAutoHeightMode = DevExpress.XtraBars.Navigation.AccordionPopupFormAutoHeightMode.FitContent;
             this.accordionControl.RootDisplayMode = DevExpress.XtraBars.Navigation.AccordionControlRootDisplayMode.Footer;
             this.accordionControl.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -173,7 +174,6 @@ namespace XCAD
             this.accElementView.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accElementProperty,
             this.accElementDisplayMode});
-            this.accElementView.Expanded = true;
             this.accElementView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementView.ImageOptions.Image")));
             this.accElementView.Name = "accElementView";
             this.accElementView.Tag = "View";
@@ -303,7 +303,6 @@ namespace XCAD
             this.accElementSelectParent,
             this.accElementAssignorchangematerial,
             this.accElementDeleteSelected});
-            this.accElementViewer.Expanded = true;
             this.accElementViewer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementViewer.ImageOptions.Image")));
             this.accElementViewer.Name = "accElementViewer";
             this.accElementViewer.Tag = "Viewer";
@@ -494,6 +493,13 @@ namespace XCAD
             this.flyoutMessagePanel.ParentForm = this;
             this.flyoutMessagePanel.TabIndex = 0;
             // 
+            // accordionElementPlugin
+            // 
+            this.accordionElementPlugin.Expanded = true;
+            this.accordionElementPlugin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionElementPlugin.ImageOptions.Image")));
+            this.accordionElementPlugin.Name = "accordionElementPlugin";
+            this.accordionElementPlugin.Text = "插件";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -566,5 +572,6 @@ namespace XCAD
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementDeleteSelected;
         private DevExpress.Utils.ImageCollection imageCollection;
         private DevExpress.Utils.FlyoutPanel flyoutMessagePanel;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionElementPlugin;
     }
 }
