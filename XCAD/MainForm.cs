@@ -53,6 +53,7 @@ namespace XCAD
                 Application.Exit();
                 return;
             }
+            LoadedPlugins();
             DisplayMessage(Guid.NewGuid().ToString(), "code 55", "工具准备就绪", "MainForm", 0);
             
             this.FormClosed += MainForm_FormClosed;

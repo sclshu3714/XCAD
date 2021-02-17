@@ -36,8 +36,10 @@ namespace XModel.Common
                     DesignPlugin = (XDesignPlugin)Activator.CreateInstance(Plugins.First());
                     DesignPlugin.PluginAssembly = _Assembly;
                     //DesignPlugin = DesignPlugin.LoadAssembly(plugin.PluginPath);
-                    if (LoadedAssemblys == null)
+                    if (LoadedAssemblys == null) {
                         LoadedAssemblys = new Dictionary<string, AssemblyLoadContext>();
+                        LoadedDesignPlugins = new Dictionary<string, XDesignPlugin>();
+                    }
                     if (string.IsNullOrEmpty(DesignPlugin.PluginId))
                         DesignPlugin.PluginId = Guid.NewGuid().ToString();
                     LoadedAssemblys.Add(DesignPlugin.PluginId, _AssemblyLoadContext);
