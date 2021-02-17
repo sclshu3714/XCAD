@@ -50,12 +50,13 @@ namespace TKService {
     };
 
     //! Returns basic presentation color (including alpha channel).
-    const Quantity_ColorRGBA& XGraphic3d_PresentationAttributes::ColorRGBA() {
-        return NativeHandle()->ColorRGBA();
+    XQuantity_ColorRGBA^ XGraphic3d_PresentationAttributes::ColorRGBA() {
+        Quantity_ColorRGBA* temp = new Quantity_ColorRGBA(NativeHandle()->ColorRGBA());
+        return gcnew XQuantity_ColorRGBA(temp);
     };
 
     //! Returns basic presentation color, Quantity_NOC_WHITE by default.
-    const XQuantity_Color^ XGraphic3d_PresentationAttributes::Color() {
+    XQuantity_Color^ XGraphic3d_PresentationAttributes::Color() {
         return gcnew  XQuantity_Color(NativeHandle()->Color());
     };
 
@@ -70,7 +71,7 @@ namespace TKService {
     };
 
     //! Sets basic presentation transparency (0 - opaque, 1 - fully transparent).
-    void XGraphic3d_PresentationAttributes::SetTransparency(const Standard_ShortReal theTranspCoef) {
+    void XGraphic3d_PresentationAttributes::SetTransparency(Standard_ShortReal theTranspCoef) {
         NativeHandle()->SetTransparency(theTranspCoef);
     };
 
@@ -81,7 +82,7 @@ namespace TKService {
     };
 
     //! Sets presentation Zlayer.
-    void XGraphic3d_PresentationAttributes::SetZLayer(const Graphic3d_ZLayerId theLayer) {
+    void XGraphic3d_PresentationAttributes::SetZLayer(Graphic3d_ZLayerId theLayer) {
         NativeHandle()->SetZLayer(theLayer);
     };
 
@@ -92,19 +93,19 @@ namespace TKService {
     };
 
     //! Sets display mode.
-    void XGraphic3d_PresentationAttributes::SetDisplayMode(const Standard_Integer theMode) {
+    void XGraphic3d_PresentationAttributes::SetDisplayMode(Standard_Integer theMode) {
         NativeHandle()->SetDisplayMode(theMode);
     };
 
     //! Return basic presentation fill area aspect, NULL by default.
     //! When set, might be used instead of Color() property.
-    const Handle(Graphic3d_AspectFillArea3d)& XGraphic3d_PresentationAttributes::BasicFillAreaAspect() {
-        return NativeHandle()->BasicFillAreaAspect();
+    XGraphic3d_AspectFillArea3d^ XGraphic3d_PresentationAttributes::BasicFillAreaAspect() {
+        return gcnew XGraphic3d_AspectFillArea3d(NativeHandle()->BasicFillAreaAspect());
     };
 
     //! Sets basic presentation fill area aspect.
-    void XGraphic3d_PresentationAttributes::SetBasicFillAreaAspect(const Handle(Graphic3d_AspectFillArea3d)& theAspect) {
-        NativeHandle()->SetBasicFillAreaAspect(theAspect);
+    void XGraphic3d_PresentationAttributes::SetBasicFillAreaAspect(XGraphic3d_AspectFillArea3d^ theAspect) {
+        NativeHandle()->SetBasicFillAreaAspect(theAspect->GetAspectFillArea3dHandle());
     };
 }
 

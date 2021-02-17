@@ -35,6 +35,8 @@ namespace TKService {
 
         ~XGraphic3d_AspectFillArea3d();// { IHandle = NULL; };
 
+        XGraphic3d_AspectFillArea3d(Handle(Graphic3d_AspectFillArea3d) pos);
+
         void SetAspectFillArea3dHandle(Handle(Graphic3d_AspectFillArea3d) pos);
 
         Handle(Graphic3d_AspectFillArea3d) GetAspectFillArea3dHandle();

@@ -16,6 +16,11 @@
 #include <XGraphic3d_AspectFillArea3d.h>
 namespace TKService {
 
+    XGraphic3d_AspectFillArea3d::XGraphic3d_AspectFillArea3d(Handle(Graphic3d_AspectFillArea3d) pos) {
+        NativeHandle() = pos;
+        SetAspectsHandle(NativeHandle());
+    };
+
     XGraphic3d_AspectFillArea3d::!XGraphic3d_AspectFillArea3d() { 
     
     };// { IHandle = NULL; };

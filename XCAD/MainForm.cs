@@ -241,7 +241,7 @@ namespace XCAD
                 case "Material":                        //特性 - 材料
                     if (shape != null) {
                         XPrs3d_Drawer shapeDrawer = shape.Attributes();
-                        shapeDrawer.SetShadingAspect();
+                        XPrs3d_ShadingAspect ShadingAspect = shapeDrawer.ShadingAspect();
                     }
                     else if (OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
 

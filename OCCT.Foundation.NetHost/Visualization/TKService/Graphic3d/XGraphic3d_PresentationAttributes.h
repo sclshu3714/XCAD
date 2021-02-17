@@ -21,6 +21,8 @@
 #include "XAspect_TypeOfHighlightMethod.h"
 #include "XQuantity_NameOfColor.h"
 #include "XQuantity_Color.h"
+#include "XQuantity_ColorRGBA.h"
+#include "XGraphic3d_AspectFillArea3d.h"
 
 #include <Aspect_TypeOfHighlightMethod.hxx>
 #include <Graphic3d_AspectFillArea3d.hxx>
@@ -32,6 +34,8 @@
 using namespace TKernel;
 namespace TKService {
     ref class TKernel::XQuantity_Color;
+    ref class TKernel::XQuantity_ColorRGBA;
+    ref class XGraphic3d_AspectFillArea3d;
     //! Class defines presentation properties.
     public ref class XGraphic3d_PresentationAttributes    // : public Standard_Transient
     {
@@ -46,7 +50,9 @@ namespace TKService {
 
         //! Destructor.
         virtual ~XGraphic3d_PresentationAttributes();
+
         !XGraphic3d_PresentationAttributes() { };//{ IHandle = NULL; };
+
         virtual Handle(Graphic3d_PresentationAttributes) GetPresentationAttributes();
 
         void SetNativeHandle(Handle(Graphic3d_PresentationAttributes) pos);
@@ -58,10 +64,10 @@ namespace TKService {
         virtual void SetMethod(XAspect_TypeOfHighlightMethod theMethod);
 
         //! Returns basic presentation color (including alpha channel).
-        const Quantity_ColorRGBA& ColorRGBA();
+        XQuantity_ColorRGBA^ ColorRGBA();
 
         //! Returns basic presentation color, Quantity_NOC_WHITE by default.
-        const XQuantity_Color^ Color();
+        XQuantity_Color^ Color();
 
         //! Sets basic presentation color (RGB components, does not modifies transparency).
         virtual void SetColor(XQuantity_Color^ theColor);
@@ -70,28 +76,28 @@ namespace TKService {
         Standard_ShortReal Transparency();
 
         //! Sets basic presentation transparency (0 - opaque, 1 - fully transparent).
-        virtual void SetTransparency(const Standard_ShortReal theTranspCoef);
+        virtual void SetTransparency(Standard_ShortReal theTranspCoef);
 
         //! Returns presentation Zlayer, Graphic3d_ZLayerId_Default by default.
         //! Graphic3d_ZLayerId_UNKNOWN means undefined (a layer of main presentation to be used).
         Graphic3d_ZLayerId ZLayer();
 
         //! Sets presentation Zlayer.
-        virtual void SetZLayer(const Graphic3d_ZLayerId theLayer);
+        virtual void SetZLayer(Graphic3d_ZLayerId theLayer);
 
         //! Returns display mode, 0 by default.
         //! -1 means undefined (main display mode of presentation to be used).
         Standard_Integer DisplayMode();
 
         //! Sets display mode.
-        virtual void SetDisplayMode(const Standard_Integer theMode);
+        virtual void SetDisplayMode(Standard_Integer theMode);
 
         //! Return basic presentation fill area aspect, NULL by default.
         //! When set, might be used instead of Color() property.
-        const Handle(Graphic3d_AspectFillArea3d)& BasicFillAreaAspect();
+        XGraphic3d_AspectFillArea3d^ BasicFillAreaAspect();
 
         //! Sets basic presentation fill area aspect.
-        virtual void SetBasicFillAreaAspect(const Handle(Graphic3d_AspectFillArea3d)& theAspect);
+        virtual void SetBasicFillAreaAspect(XGraphic3d_AspectFillArea3d^ theAspect);
 
         /// <summary>
         /// ±¾µØ¾ä±ú
