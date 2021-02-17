@@ -160,6 +160,7 @@ namespace XCAD
                 case "Save":
                     #region 打开文件
                     OperationSaveFile();
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", "保存文件完成", "MainForm", 0);
                     #endregion
                     break;
                 case "None":                            //特性 - 无
@@ -240,6 +241,7 @@ namespace XCAD
                 case "Material":                        //特性 - 材料
                     if (shape != null) {
                         XPrs3d_Drawer shapeDrawer = shape.Attributes();
+                        shapeDrawer.SetShadingAspect();
                     }
                     else if (OCCTContext.SelectedInteractive() is XAIS_InteractiveObject SelectedShape && SelectedShape != null) {
 

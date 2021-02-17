@@ -64,7 +64,7 @@ namespace TKService {
         ~XGraphic3d_Aspects();// { IHandle = NULL; };
         void SetAspectsHandle(Handle(Graphic3d_Aspects) pos);
 
-        Handle(Graphic3d_Aspects) GetAspectsHandle();
+        virtual Handle(Graphic3d_Aspects) GetAspectsHandle();
 
         //! Return interior rendering style; Aspect_IS_SOLID by default.
         XAspect_InteriorStyle InteriorStyle();

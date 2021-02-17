@@ -1740,6 +1740,15 @@
     <ClInclude Include="Visualization\TKService\Font\XFont_FontAspect.h">
       <Filter>头文件\Visualization\TKService\Font</Filter>
     </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_ShadingAspect.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_BasicAspect.h">
+      <Filter>头文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectFillArea3d.h">
+      <Filter>头文件\Visualization\TKService\Graphic3d</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FoundationClasses\TKMath\gp\xgp_Ax1.cpp">
@@ -1864,15 +1873,6 @@
       <Filter>源文件\FoundationClasses\TKMath\TopLoc</Filter>
     </ClCompile>
     <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveObject.cpp">
-      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
-    </ClCompile>
-    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_1.cpp">
-      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
-    </ClCompile>
-    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_2.cpp">
-      <Filter>源文件\Visualization\TKV3d\AIS</Filter>
-    </ClCompile>
-    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_3.cpp">
       <Filter>源文件\Visualization\TKV3d\AIS</Filter>
     </ClCompile>
     <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext.cpp">
@@ -2515,6 +2515,15 @@
       <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
     </ClCompile>
     <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_Aspects.cpp">
+      <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_BasicAspect.cpp">
+      <Filter>源文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_ShadingAspect.cpp">
+      <Filter>源文件\Visualization\TKV3d\Prs3d</Filter>
+    </ClCompile>
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectFillArea3d.cpp">
       <Filter>源文件\Visualization\TKService\Graphic3d</Filter>
     </ClCompile>
   </ItemGroup>

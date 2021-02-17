@@ -539,6 +539,7 @@
     <ClInclude Include="Visualization\TKService\Font\XFont_FontAspect.h" />
     <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_AlphaMode.h" />
     <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_ArrayFlags.h" />
+    <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectFillArea3d.h" />
     <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectLine3d.h" />
     <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_Aspects.h" />
     <ClInclude Include="Visualization\TKService\Graphic3d\XGraphic3d_Buffer.h" />
@@ -612,6 +613,7 @@
     <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfDist.h" />
     <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfIso.h" />
     <ClInclude Include="Visualization\TKV3d\AIS\XAIS_TypeOfPlane.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_BasicAspect.h" />
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumAttribute.h" />
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumAxes.h" />
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DatumMode.h" />
@@ -621,6 +623,7 @@
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_DimensionTextVerticalPosition.h" />
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_Drawer.h" />
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_LineAspect.h" />
+    <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_ShadingAspect.h" />
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfHighlight.h" />
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfHLR.h" />
     <ClInclude Include="Visualization\TKV3d\Prs3d\XPrs3d_TypeOfLinePicking.h" />
@@ -877,6 +880,7 @@
     <ClCompile Include="OCCTProxy.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Visualization\TKService\Aspect\XAspect_Background.cpp" />
+    <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectFillArea3d.cpp" />
     <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_AspectLine3d.cpp" />
     <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_Aspects.cpp" />
     <ClCompile Include="Visualization\TKService\Graphic3d\XGraphic3d_Buffer.cpp" />
@@ -890,13 +894,12 @@
     <ClCompile Include="Visualization\TKV3d\AIS\XAIS_Axis.cpp" />
     <ClCompile Include="Visualization\TKV3d\AIS\XAIS_ColoredShape.cpp" />
     <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext.cpp" />
-    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_1.cpp" />
-    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_2.cpp" />
-    <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveContext_3.cpp" />
     <ClCompile Include="Visualization\TKV3d\AIS\XAIS_InteractiveObject.cpp" />
     <ClCompile Include="Visualization\TKV3d\AIS\XAIS_Shape.cpp" />
+    <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_BasicAspect.cpp" />
     <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_Drawer.cpp" />
     <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_LineAspect.cpp" />
+    <ClCompile Include="Visualization\TKV3d\Prs3d\XPrs3d_ShadingAspect.cpp" />
     <ClCompile Include="Visualization\TKV3d\PrsMgr\XPrsMgr_PresentableObject.cpp" />
     <ClCompile Include="Visualization\TKV3d\SelectMgr\XSelectMgr_SelectableObject.cpp" />
     <ClCompile Include="Visualization\TKV3d\V3d\XV3d_View.cpp" />

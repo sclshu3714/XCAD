@@ -13,25 +13,51 @@
 // Alternatively, this file may be used under the terms of Open CASCADE
 // commercial license or contractual agreement.
 
-#ifndef _Prs3d_BasicAspect_HeaderFile
-#define _Prs3d_BasicAspect_HeaderFile
+#ifndef _XPrs3d_BasicAspect_HeaderFile
+#define _XPrs3d_BasicAspect_HeaderFile
+#pragma once
+#include <Prs3d_BasicAspect.hxx>
+#include <NCollection_Haft.h>
 
 #include <Standard.hxx>
 #include <Standard_OStream.hxx>
 #include <Standard_Type.hxx>
 #include <Standard_Transient.hxx>
 
-//! All basic Prs3d_xxxAspect must inherits from this class
-//! The aspect classes qualifies how to represent a given kind of object.
-class Prs3d_BasicAspect : public Standard_Transient
-{
-  DEFINE_STANDARD_RTTIEXT(Prs3d_BasicAspect, Standard_Transient)
+namespace TKV3d {
+	//! All basic Prs3d_xxxAspect must inherits from this class
+	//! The aspect classes qualifies how to represent a given kind of object.
+	public ref class XPrs3d_BasicAspect //: public Standard_Transient
+	{
+    public:
+        XPrs3d_BasicAspect();
 
-  //! Dumps the content of me into the stream
-  virtual void DumpJson (Standard_OStream& theOStream, const Standard_Integer theDepth = -1) const = 0;
+        XPrs3d_BasicAspect(Handle(Prs3d_BasicAspect) pos);
 
+        void SetBasicAspectHandle(Handle(Prs3d_BasicAspect) pos);
+
+        virtual Handle(Prs3d_BasicAspect) GetBasicAspectHandle();
+
+		//! Dumps the content of me into the stream
+		//! const Standard_Integer theDepth = -1
+		virtual void DumpJson(Standard_OStream theOStream, Standard_Integer theDepth);
+
+        /// <summary>
+        /// ±¾µØ¾ä±ú
+        /// </summary>
+        virtual property Handle(Standard_Transient) IHandle {
+            Handle(Standard_Transient) get() {//Standard_OVERRIDE {
+                return NativeHandle();
+            }
+            void set(Handle(Standard_Transient) handle) {//Standard_OVERRIDE {
+                if (!handle.IsNull())
+                    NativeHandle() = Handle(Prs3d_BasicAspect)::DownCast(handle);
+                else if (!NativeHandle().IsNull())
+                    NativeHandle() = NULL;
+            }
+        }
+    private:
+        NCollection_Haft<Handle(Prs3d_BasicAspect)> NativeHandle;
+	};
 };
-
-DEFINE_STANDARD_HANDLE(Prs3d_BasicAspect, Standard_Transient)
-
-#endif // _Prs3d_BasicAspect_HeaderFile
+#endif // _XPrs3d_BasicAspect_HeaderFile

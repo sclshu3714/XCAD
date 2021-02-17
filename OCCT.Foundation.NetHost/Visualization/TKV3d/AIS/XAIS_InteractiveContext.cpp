@@ -1222,4 +1222,643 @@ namespace TKV3d {
     //{
     //    NativeHandle()->setObjectStatus(theIObj, theStatus, theDispMode, theSelectionMode);
     //};
+    //
+
+    //1
+    //=======================================================================
+    //function : MoveTo
+    //purpose  :
+    //=======================================================================
+    XAIS_StatusOfDetection XAIS_InteractiveContext::MoveTo(Standard_Integer  theXPix, Standard_Integer  theYPix, XV3d_View^ theView, Standard_Boolean  theToRedrawOnUpdate)
+    {
+        return safe_cast<XAIS_StatusOfDetection>(NativeHandle()->MoveTo(theXPix, theYPix, theView->GetView(), theToRedrawOnUpdate));
+    };
+
+    //=======================================================================
+    //function : AddSelect
+    //purpose  : 
+    //=======================================================================
+    XAIS_StatusOfPick XAIS_InteractiveContext::AddSelect(Handle(SelectMgr_EntityOwner) theObject)
+    {
+        return safe_cast<XAIS_StatusOfPick>(NativeHandle()->AddSelect(theObject));
+    };
+
+    //! Adds object in the selection.
+    XAIS_StatusOfPick XAIS_InteractiveContext::AddSelect(XAIS_InteractiveObject^ theObject) {
+        return AddSelect(theObject->GlobalSelOwner());
+    };
+
+    //=======================================================================
+    //function : Select
+    //purpose  : 
+    //=======================================================================
+    XAIS_StatusOfPick XAIS_InteractiveContext::Select(Standard_Integer  theXPMin, Standard_Integer  theYPMin, Standard_Integer  theXPMax, Standard_Integer  theYPMax, XV3d_View^ theView, Standard_Boolean  toUpdateViewer)
+    {
+        return safe_cast<XAIS_StatusOfPick>(NativeHandle()->Select(theXPMin, theYPMin, theXPMax, theYPMax, theView->GetView(), toUpdateViewer));
+    };
+
+    //=======================================================================
+    //function : Select
+    //purpose  : Selection by polyline
+    //=======================================================================
+    XAIS_StatusOfPick XAIS_InteractiveContext::Select(TColgp_Array1OfPnt2d thePolyline, XV3d_View^ theView, Standard_Boolean toUpdateViewer)
+    {
+        return safe_cast<XAIS_StatusOfPick>(NativeHandle()->Select(thePolyline, theView->GetView(), toUpdateViewer));
+    };
+
+    //=======================================================================
+    //function : Select
+    //purpose  : 
+    //=======================================================================
+    XAIS_StatusOfPick XAIS_InteractiveContext::Select(Standard_Boolean toUpdateViewer)
+    {
+        return safe_cast<XAIS_StatusOfPick>(NativeHandle()->Select(toUpdateViewer));
+    };
+
+    //=======================================================================
+    //function : ShiftSelect
+    //purpose  : 
+    //=======================================================================
+    XAIS_StatusOfPick XAIS_InteractiveContext::ShiftSelect(Standard_Boolean toUpdateViewer)
+    {
+        return safe_cast<XAIS_StatusOfPick>(NativeHandle()->ShiftSelect(toUpdateViewer));
+    };
+
+    //=======================================================================
+    //function : ShiftSelect
+    //purpose  : 
+    //=======================================================================
+    XAIS_StatusOfPick XAIS_InteractiveContext::ShiftSelect(Standard_Integer theXPMin, Standard_Integer theYPMin, Standard_Integer theXPMax, Standard_Integer theYPMax, XV3d_View^ theView, Standard_Boolean toUpdateViewer)
+    {
+        return safe_cast<XAIS_StatusOfPick>(NativeHandle()->ShiftSelect(theXPMin, theYPMin, theXPMax, theYPMax, theView->GetView(), toUpdateViewer));
+    };
+
+    //=======================================================================
+    //function : ShiftSelect
+    //purpose  : 
+    //=======================================================================
+    XAIS_StatusOfPick XAIS_InteractiveContext::ShiftSelect(TColgp_Array1OfPnt2d thePolyline, XV3d_View^ theView, Standard_Boolean toUpdateViewer)
+    {
+        return safe_cast<XAIS_StatusOfPick>(NativeHandle()->ShiftSelect(thePolyline, theView->GetView(), toUpdateViewer));
+    };
+
+    //=======================================================================
+    //function : HilightSelected
+    //purpose  :
+    //=======================================================================
+    void XAIS_InteractiveContext::HilightSelected(Standard_Boolean theToUpdateViewer)
+    {
+        NativeHandle()->HilightSelected(theToUpdateViewer);
+    };
+
+    ////=======================================================================
+    ////function : highlightOwners
+    ////purpose  :
+    ////=======================================================================
+    //void XAIS_InteractiveContext::highlightOwners(AIS_NListOfEntityOwner& theOwners)
+    //{
+    //    NativeHandle()->highlightOwners(theOwners);
+    //};
+
+    //=======================================================================
+    //function : UnhilightSelected
+    //purpose  :
+    //=======================================================================
+    void XAIS_InteractiveContext::UnhilightSelected(Standard_Boolean theToUpdateViewer)
+    {
+        NativeHandle()->UnhilightSelected(theToUpdateViewer);
+    };
+
+
+    //=======================================================================
+    //function : ClearSelected
+    //purpose  :
+    //=======================================================================
+    void XAIS_InteractiveContext::ClearSelected(Standard_Boolean theToUpdateViewer)
+    {
+        NativeHandle()->ClearSelected(theToUpdateViewer);
+    };
+
+    //=======================================================================
+    //function : SetSelected
+    //purpose  : Sets the whole object as selected and highlights it with selection color
+    //=======================================================================
+    void XAIS_InteractiveContext::SetSelected(XAIS_InteractiveObject^ theObject, Standard_Boolean theToUpdateViewer)
+    {
+        NativeHandle()->SetSelected(theObject->GetInteractiveObject(), theToUpdateViewer);
+    };
+
+    //=======================================================================
+    //function : SetSelected
+    //purpose  : Sets the whole object as selected and highlights it with selection color
+    //=======================================================================
+    void XAIS_InteractiveContext::SetSelected(Handle(SelectMgr_EntityOwner) theOwner, Standard_Boolean theToUpdateViewer)
+    {
+        NativeHandle()->SetSelected(theOwner, theToUpdateViewer);
+    };
+
+    //=======================================================================
+    //function : AddOrRemoveSelected
+    //purpose  : Adds or removes current object from AIS selection and highlights/unhighlights it.
+    //           Since this method makes sence only for neutral point selection of a whole object,
+    //           if 0 selection of the object is empty this method simply does nothing.
+    //=======================================================================
+    void XAIS_InteractiveContext::AddOrRemoveSelected(XAIS_InteractiveObject^ theObject, Standard_Boolean theToUpdateViewer)
+    {
+        NativeHandle()->AddOrRemoveSelected(theObject->GetInteractiveObject(), theToUpdateViewer);
+    };
+
+    //=======================================================================
+    //function : AddOrRemoveSelected
+    //purpose  : Allows to highlight or unhighlight the owner given depending on
+    //           its selection status
+    //=======================================================================
+    void XAIS_InteractiveContext::AddOrRemoveSelected(Handle(SelectMgr_EntityOwner) theOwner, Standard_Boolean theToUpdateViewer)
+    {
+        NativeHandle()->AddOrRemoveSelected(theOwner, theToUpdateViewer);
+    };
+
+    // =======================================================================
+    // function : SetSelectedState
+    // purpose  :
+    // =======================================================================
+    Standard_Boolean XAIS_InteractiveContext::SetSelectedState(Handle(SelectMgr_EntityOwner) theEntity, Standard_Boolean theIsSelected)
+    {
+        return NativeHandle()->SetSelectedState(theEntity, theIsSelected);
+    };
+
+    //=======================================================================
+    //function : IsSelected
+    //purpose  :
+    //=======================================================================
+    Standard_Boolean XAIS_InteractiveContext::IsSelected(XAIS_InteractiveObject^ theObj)
+    {
+        return NativeHandle()->IsSelected(theObj->GetInteractiveObject());
+    };
+
+    //=======================================================================
+    //function : FirstSelectedObject
+    //purpose  :
+    //=======================================================================
+    XAIS_InteractiveObject^ XAIS_InteractiveContext::FirstSelectedObject()
+    {
+        return gcnew XAIS_InteractiveObject(NativeHandle()->FirstSelectedObject());
+    };
+
+    //! Count a number of selected entities using InitSelected()+MoreSelected()+NextSelected() iterator.
+       //! @sa SelectedOwner()/InitSelected()/MoreSelected()/NextSelected().
+    Standard_Integer XAIS_InteractiveContext::NbSelected() {
+        return NativeHandle()->NbSelected();
+    };
+
+    //! Initializes a scan of the selected objects.
+    //! @sa SelectedOwner()/MoreSelected()/NextSelected().
+    void XAIS_InteractiveContext::InitSelected() {
+        NativeHandle()->InitSelected();
+    };
+
+    //! Returns true if there is another object found by the scan of the list of selected objects.
+    //! @sa SelectedOwner()/InitSelected()/NextSelected().
+    Standard_Boolean XAIS_InteractiveContext::MoreSelected() {
+        return NativeHandle()->MoreSelected();
+    };
+
+    //! Continues the scan to the next object in the list of selected objects.
+    //! @sa SelectedOwner()/InitSelected()/MoreSelected().
+    void XAIS_InteractiveContext::NextSelected() {
+        NativeHandle()->NextSelected();
+    };
+
+    //! Returns the owner of the selected entity.
+    //! @sa InitSelected()/MoreSelected()/NextSelected().
+    Handle(SelectMgr_EntityOwner) XAIS_InteractiveContext::SelectedOwner() {
+        return NativeHandle()->SelectedOwner();
+    };
+
+    //! Return XAIS_InteractiveObject^::DownCast (SelectedOwner()->Selectable()).
+    //! @sa SelectedOwner().
+    XAIS_InteractiveObject^ XAIS_InteractiveContext::SelectedInteractive() {
+        return gcnew XAIS_InteractiveObject(NativeHandle()->SelectedInteractive());
+    };
+
+    //=======================================================================
+    //function : HasSelectedShape
+    //purpose  :
+    //=======================================================================
+    Standard_Boolean XAIS_InteractiveContext::HasSelectedShape()
+    {
+        return NativeHandle()->HasSelectedShape();
+    };
+
+    //=======================================================================
+    //function : SelectedShape
+    //purpose  :
+    //=======================================================================
+    XTopoDS_Shape^ XAIS_InteractiveContext::SelectedShape()
+    {
+        return gcnew XTopoDS_Shape(NativeHandle()->SelectedShape());
+    };
+
+    //! Returns SelectedInteractive()->HasOwner().
+        //! @sa SelectedOwner().
+    Standard_Boolean XAIS_InteractiveContext::HasApplicative()
+    {
+        return SelectedInteractive()->HasOwner();
+    }
+
+    //! Returns SelectedInteractive()->GetOwner().
+    //! @sa SelectedOwner().
+    Handle(Standard_Transient) XAIS_InteractiveContext::Applicative()
+    {
+        return SelectedInteractive()->GetOwner();
+    }
+
+    //=======================================================================
+    //function : EntityOwners
+    //purpose  : 
+    //=======================================================================
+    void XAIS_InteractiveContext::EntityOwners(Handle(SelectMgr_IndexedMapOfOwner) theOwners, XAIS_InteractiveObject^ theIObj, Standard_Integer theMode)
+    {
+        NativeHandle()->EntityOwners(theOwners, theIObj->GetInteractiveObject(), theMode);
+    };
+
+    //=======================================================================
+    //function : HasDetectedShape
+    //purpose  : 
+    //=======================================================================
+    /*Standard_Boolean XAIS_InteractiveContext::HasDetectedShape()
+    {
+        return NativeHandle()->HasDetectedShape();
+    };*/
+
+    //=======================================================================
+    //function : DetectedShape
+    //purpose  : 
+    //=======================================================================
+    /*TopoDS_Shape XAIS_InteractiveContext::DetectedShape()
+    {
+        return NativeHandle()->DetectedShape();
+    };*/
+
+    //! returns True if other entities were detected in the last mouse detection
+        //! @sa HilightPreviousDetected()/HilightNextDetected().
+    Standard_Boolean XAIS_InteractiveContext::HasNextDetected() {
+        return NativeHandle()->HasNextDetected();
+    };
+
+    //=======================================================================
+    //function : HilightNextDetected
+    //purpose  :
+    //=======================================================================
+    Standard_Integer XAIS_InteractiveContext::HilightNextDetected(XV3d_View^ theView, Standard_Boolean  theToRedrawImmediate)
+    {
+        return NativeHandle()->HilightNextDetected(theView->GetView(), theToRedrawImmediate);
+    };
+
+    //=======================================================================
+    //function : HilightPreviousDetected
+    //purpose  :
+    //=======================================================================
+    Standard_Integer XAIS_InteractiveContext::HilightPreviousDetected(XV3d_View^ theView, Standard_Boolean  theToRedrawImmediate)
+    {
+        return NativeHandle()->HilightPreviousDetected(theView->GetView(), theToRedrawImmediate);
+    };
+
+
+    //! Initialization for iteration through mouse-detected objects in
+    //! interactive context or in local context if it is opened.
+    //! @sa DetectedCurrentOwner()/MoreDetected()/NextDetected().
+    void XAIS_InteractiveContext::InitDetected() {
+        NativeHandle()->InitDetected();
+    };
+
+    //! Return TRUE if there is more mouse-detected objects after the current one
+    //! during iteration through mouse-detected interactive objects.
+    //! @sa DetectedCurrentOwner()/InitDetected()/NextDetected().
+    Standard_Boolean XAIS_InteractiveContext::MoreDetected() {
+        return NativeHandle()->MoreDetected();
+    };
+
+    //! Gets next current object during iteration through mouse-detected interactive objects.
+    //! @sa DetectedCurrentOwner()/InitDetected()/MoreDetected().
+    void XAIS_InteractiveContext::NextDetected() {
+        NativeHandle()->NextDetected();
+    };
+
+    //=======================================================================
+    //function : DetectedCurrentOwner
+    //purpose  :
+    //=======================================================================
+    Handle(SelectMgr_EntityOwner) XAIS_InteractiveContext::DetectedCurrentOwner()
+    {
+        return NativeHandle()->DetectedCurrentOwner();
+    };
+
+    //=======================================================================
+    //function : DetectedCurrentShape
+    //purpose  :
+    //=======================================================================
+    /*TopoDS_Shape XAIS_InteractiveContext::DetectedCurrentShape()
+    {
+        return NativeHandle()->DetectedCurrentShape();
+    };*/
+
+    //=======================================================================
+    //function : DetectedCurrentObject
+    //purpose  :
+    //=======================================================================
+    /*XAIS_InteractiveObject^ XAIS_InteractiveContext::DetectedCurrentObject()
+    {
+        return NativeHandle()->DetectedCurrentObject();
+    };*/
+
+    //2
+    //=======================================================================
+    //function : SetSelectionModeActive
+    //purpose  :
+    //=======================================================================
+    void XAIS_InteractiveContext::SetSelectionModeActive(XAIS_InteractiveObject^ theObj, Standard_Integer theMode, Standard_Boolean theIsActive, XAIS_SelectionModesConcurrency theActiveFilter, Standard_Boolean theIsForce)
+    {
+        NativeHandle()->SetSelectionModeActive(theObj->GetInteractiveObject(), theMode, theIsActive, safe_cast<AIS_SelectionModesConcurrency>(theActiveFilter), theIsForce);
+    };
+
+    // ============================================================================
+    // function : Activate
+    // purpose  :
+    // ============================================================================
+    void XAIS_InteractiveContext::Activate(Standard_Integer theMode, Standard_Boolean theIsForce)
+    {
+        NativeHandle()->Activate(theMode, theIsForce);
+    };
+
+    //! Deactivates all the activated selection modes of an object.
+    void XAIS_InteractiveContext::Deactivate(XAIS_InteractiveObject^ theObj) {
+        NativeHandle()->Deactivate(theObj->GetInteractiveObject());
+    };
+
+    //! Deactivates all the activated selection modes of the interactive object anIobj with a given selection mode aMode.
+    void XAIS_InteractiveContext::Deactivate(XAIS_InteractiveObject^ theObj, Standard_Integer theMode) {
+        NativeHandle()->Deactivate(theObj->GetInteractiveObject(), theMode);
+    };
+
+
+    // ============================================================================
+    // function : Deactivate
+    // purpose  :
+    // ============================================================================
+    void XAIS_InteractiveContext::Deactivate(Standard_Integer theMode)
+    {
+        NativeHandle()->Deactivate(theMode);
+    };
+
+    // ============================================================================
+    // function : Deactivate
+    // purpose  :
+    // ============================================================================
+    void XAIS_InteractiveContext::Deactivate()
+    {
+        NativeHandle()->Deactivate();
+    };
+
+    //=======================================================================
+    //function : ActivatedModes
+    //purpose  :
+    //=======================================================================
+    void XAIS_InteractiveContext::ActivatedModes(XAIS_InteractiveObject^ theObj, TColStd_ListOfInteger theList)
+    {
+        NativeHandle()->ActivatedModes(theObj->GetInteractiveObject(), theList);
+    };
+
+    //! Sub-intensity allows temporary highlighting of particular objects with specified color in a manner of selection highlight,
+      //! but without actual selection (e.g., global status and owner's selection state will not be updated).
+      //! The method returns the color of such highlighting.
+      //! By default, it is Quantity_NOC_GRAY40.
+    XQuantity_Color^ XAIS_InteractiveContext::SubIntensityColor() {
+        return gcnew XQuantity_Color(NativeHandle()->SubIntensityColor());
+    };
+
+    //! Sub-intensity allows temporary highlighting of particular objects with specified color in a manner of selection highlight,
+    //! but without actual selection (e.g., global status and owner's selection state will not be updated).
+    //! The method sets up the color for such highlighting.
+    //! By default, this is Quantity_NOC_GRAY40.
+    void XAIS_InteractiveContext::SetSubIntensityColor(XQuantity_Color^ theColor) {
+        NativeHandle()->SetSubIntensityColor(*theColor->GetColor());
+    };
+
+    //=======================================================================
+    //function : SubIntensityOn
+    //purpose  : 
+    //=======================================================================
+    void XAIS_InteractiveContext::SubIntensityOn(XAIS_InteractiveObject^ anIObj, Standard_Boolean updateviewer)
+    {
+        NativeHandle()->SubIntensityOn(anIObj->GetInteractiveObject(), updateviewer);
+    };
+    //=======================================================================
+    //function : SubIntensityOff
+    //purpose  : 
+    //=======================================================================
+
+    void XAIS_InteractiveContext::SubIntensityOff(XAIS_InteractiveObject^ theObj, Standard_Boolean theToUpdateViewer)
+    {
+        NativeHandle()->SubIntensityOff(theObj->GetInteractiveObject(), theToUpdateViewer);
+    };
+
+    //! Returns selection instance
+    Handle(AIS_Selection) XAIS_InteractiveContext::Selection() {
+        return NativeHandle()->Selection();
+    };
+
+    //! Sets selection instance to manipulate a container of selected owners
+    //! @param theSelection an instance of the selection
+    void XAIS_InteractiveContext::SetSelection(Handle(AIS_Selection) theSelection) {
+        NativeHandle()->SetSelection(theSelection);
+    };
+
+    //=======================================================================
+    //function : AddFilter
+    //purpose  : 
+    //=======================================================================
+    void XAIS_InteractiveContext::AddFilter(Handle(SelectMgr_Filter) aFilter)
+    {
+        NativeHandle()->AddFilter(aFilter);
+    };
+
+    //=======================================================================
+    //function : RemoveFilter
+    //purpose  : 
+    //=======================================================================
+    void XAIS_InteractiveContext::RemoveFilter(Handle(SelectMgr_Filter) aFilter)
+    {
+        NativeHandle()->RemoveFilter(aFilter);
+    };
+
+    //=======================================================================
+    //function : RemoveFilters
+    //purpose  : 
+    //=======================================================================
+
+    void XAIS_InteractiveContext::RemoveFilters()
+    {
+        NativeHandle()->RemoveFilters();
+    };
+
+    //! Return picking strategy; SelectMgr_PickingStrategy_FirstAcceptable by default.
+        //! @sa MoveTo()/Filters()
+    XSelectMgr_PickingStrategy XAIS_InteractiveContext::PickingStrategy() {
+        return safe_cast<XSelectMgr_PickingStrategy>(NativeHandle()->PickingStrategy());
+    };
+
+    //! Setup picking strategy - which entities detected by picking line will be accepted, considering Selection Filters.
+    //! By default (SelectMgr_PickingStrategy_FirstAcceptable), Selection Filters reduce the list of entities
+    //! so that the context accepts topmost in remaining.
+    //!
+    //! This means that entities behind non-selectable (by filters) parts can be picked by user.
+    //! If this behavior is undesirable, and user wants that non-selectable (by filters) parts
+    //! should remain an obstacle for picking, SelectMgr_PickingStrategy_OnlyTopmost can be set instead.
+    //!
+    //! Notice, that since Selection Manager operates only objects registered in it,
+    //! SelectMgr_PickingStrategy_OnlyTopmost will NOT prevent picking entities behind
+    //! visible by unregistered in Selection Manager presentations (e.g. deactivated).
+    //! Hence, SelectMgr_PickingStrategy_OnlyTopmost changes behavior only with Selection Filters enabled.
+    void XAIS_InteractiveContext::SetPickingStrategy(XSelectMgr_PickingStrategy theStrategy) {
+        NativeHandle()->SetPickingStrategy(safe_cast<SelectMgr_PickingStrategy>(theStrategy));
+    };
+
+
+    //=======================================================================
+    //function : Filters
+    //purpose  : 
+    //=======================================================================
+    SelectMgr_ListOfFilter XAIS_InteractiveContext::Filters()
+    {
+        return NativeHandle()->Filters();
+    };
+
+    //=======================================================================
+    //function : DisplayActiveSensitive
+    //purpose  : 
+    //=======================================================================
+    void XAIS_InteractiveContext::DisplayActiveSensitive(XV3d_View^ aviou)
+    {
+        NativeHandle()->DisplayActiveSensitive(aviou->GetView());
+    };
+    //=======================================================================
+    //function : DisplayActiveSensitive
+    //purpose  : 
+    //=======================================================================
+
+    void XAIS_InteractiveContext::DisplayActiveSensitive(XAIS_InteractiveObject^ theObj, XV3d_View^ theView)
+    {
+        NativeHandle()->DisplayActiveSensitive(theObj->GetInteractiveObject(), theView->GetView());
+    };
+
+    //=======================================================================
+    //function : ClearActiveSensitive
+    //purpose  : 
+    //=======================================================================
+    void XAIS_InteractiveContext::ClearActiveSensitive(XV3d_View^ theView)
+    {
+        NativeHandle()->ClearActiveSensitive(theView->GetView());
+    };
+
+    //=======================================================================
+    //function : PurgeDisplay
+    //purpose  : 
+    //=======================================================================
+
+    Standard_Integer XAIS_InteractiveContext::PurgeDisplay()
+    {
+        return NativeHandle()->PurgeDisplay();
+    };
+
+
+    ////=======================================================================
+    ////function : PurgeViewer
+    ////purpose  : 
+    ////=======================================================================
+    //Standard_Integer XAIS_InteractiveContext::PurgeViewer(XV3d_Viewer^ Vwr)
+    //{
+    //    return NativeHandle()->PurgeViewer(Vwr);
+    //};
+
+    //=======================================================================
+    //function : IsImmediateModeOn
+    //purpose  :
+    //=======================================================================
+
+    Standard_Boolean XAIS_InteractiveContext::IsImmediateModeOn()
+    {
+        return NativeHandle()->IsImmediateModeOn();
+    };
+
+    //! Redraws immediate structures in all views of the viewer given taking into account its visibility.
+    void XAIS_InteractiveContext::RedrawImmediate(XV3d_Viewer^ theViewer) {
+        NativeHandle()->RedrawImmediate(theViewer->GetViewer());
+    };
+
+    //=======================================================================
+    //function : BeginImmediateDraw
+    //purpose  :
+    //=======================================================================
+
+    Standard_Boolean XAIS_InteractiveContext::BeginImmediateDraw()
+    {
+        return NativeHandle()->BeginImmediateDraw();
+    };
+
+    //=======================================================================
+    //function : ImmediateAdd
+    //purpose  :
+    //=======================================================================
+
+    Standard_Boolean XAIS_InteractiveContext::ImmediateAdd(XAIS_InteractiveObject^ theObj, Standard_Integer theMode)
+    {
+        return NativeHandle()->ImmediateAdd(theObj->GetInteractiveObject(), theMode);
+    };
+
+    //=======================================================================
+    //function : EndImmediateDraw
+    //purpose  :
+    //=======================================================================
+
+    Standard_Boolean XAIS_InteractiveContext::EndImmediateDraw(XV3d_View^ theView)
+    {
+        return NativeHandle()->EndImmediateDraw(theView->GetView());
+    };
+
+    //=======================================================================
+    //function : EndImmediateDraw
+    //purpose  :
+    //=======================================================================
+
+    Standard_Boolean XAIS_InteractiveContext::EndImmediateDraw()
+    {
+        return NativeHandle()->EndImmediateDraw();
+    };
+
+    //3
+    void XAIS_InteractiveContext::SetPolygonOffsets(XAIS_InteractiveObject^ anObj, Standard_Integer aMode, Standard_ShortReal aFactor, Standard_ShortReal aUnits, Standard_Boolean updateviewer)
+    {
+        NativeHandle()->SetPolygonOffsets(anObj->GetInteractiveObject(), aMode, aFactor, aUnits, updateviewer);
+    };
+
+
+    //=======================================================================
+    //function : HasPolygonOffsets 
+    //purpose  : 
+    //=======================================================================
+    Standard_Boolean XAIS_InteractiveContext::HasPolygonOffsets(XAIS_InteractiveObject^ anObj)
+    {
+        return NativeHandle()->HasPolygonOffsets(anObj->GetInteractiveObject());
+    };
+
+    //=======================================================================
+    //function : PolygonOffsets 
+    //purpose  : 
+    //=======================================================================
+    void XAIS_InteractiveContext::PolygonOffsets(XAIS_InteractiveObject^ anObj, Standard_Integer aMode, Standard_ShortReal aFactor, Standard_ShortReal aUnits)
+    {
+        NativeHandle()->PolygonOffsets(anObj->GetInteractiveObject(), aMode, aFactor, aUnits);
+    };
+
 }

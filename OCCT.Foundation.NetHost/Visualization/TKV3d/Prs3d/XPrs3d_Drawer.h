@@ -24,6 +24,11 @@
 #include "XPrs3d_VertexDrawMode.h"
 #include "XGraphic3d_TypeOfShadingModel.h"
 #include "XPrs3d_LineAspect.h"
+#include "XPrs3d_ShadingAspect.h"
+#include <XGeomAbs_Shape.h>
+#include <XTCollection_AsciiString.h>
+#include <XGraphic3d_GroupAspect.h>
+//#include <Visualization\TKService\Graphic3d\XGraphic3d_GroupAspect.h>
 
 #include <Standard.hxx>
 #include <Standard_Type.hxx>
@@ -59,6 +64,7 @@ namespace TKV3d {
     //! objects such as color, width, line thickness and deflection are displayed.
     //! A drawer includes an instance of the Aspect classes with particular default values.
     ref class XPrs3d_LineAspect;
+    ref class XPrs3d_ShadingAspect;
     ref class TKService::XGraphic3d_PresentationAttributes;
     public ref class XPrs3d_Drawer : public XGraphic3d_PresentationAttributes
     {
@@ -92,7 +98,7 @@ namespace TKV3d {
         //!   Prs3d_DeflectionCurve
         //!   Prs3d_WFDeflectionSurface
         //!   Prs3d_WFDeflectionRestrictedFace
-        void SetMaximalChordialDeviation(const Standard_Real theChordialDeviation);
+        void SetMaximalChordialDeviation(Standard_Real theChordialDeviation);
 
         //! Returns the maximal chordal deviation. The default value is 0.1.
         //! Drawings of curves or patches are made with respect to an absolute maximal chordal deviation.
@@ -112,7 +118,7 @@ namespace TKV3d {
 
         //! Defines the maximum value allowed for the first and last
         //! parameters of an infinite curve.
-        void SetMaximalParameterValue(const Standard_Real theValue);
+        void SetMaximalParameterValue(Standard_Real theValue);
 
         //! Sets the maximum value allowed for the first and last
         //! parameters of an infinite curve. By default, this value is 500000.
@@ -123,7 +129,7 @@ namespace TKV3d {
         Standard_Boolean HasOwnMaximalParameterValue();
 
         //! Sets IsoOnPlane on or off by setting the parameter theIsEnabled to true or false.
-        void SetIsoOnPlane(const Standard_Boolean theIsEnabled);
+        void SetIsoOnPlane(Standard_Boolean theIsEnabled);
 
         //! Returns True if the drawing of isos on planes is enabled.
         Standard_Boolean IsoOnPlane();
@@ -138,10 +144,10 @@ namespace TKV3d {
         Standard_Boolean HasOwnIsoOnTriangulation();
 
         //! Enables or disables isolines on triangulation by setting the parameter theIsEnabled to true or false.
-        void SetIsoOnTriangulation(const Standard_Boolean theToEnable);
+        void SetIsoOnTriangulation(Standard_Boolean theToEnable);
 
         //! Sets the discretisation parameter theValue.
-        void SetDiscretisation(const Standard_Integer theValue);
+        void SetDiscretisation(Standard_Integer theValue);
 
         //! Returns the discretisation setting. 
         Standard_Integer Discretisation();
@@ -151,7 +157,7 @@ namespace TKV3d {
 
         //! Sets the deviation coefficient theCoefficient.
         //! Also sets the hasOwnDeviationCoefficient flag to Standard_True and myPreviousDeviationCoefficient
-        void SetDeviationCoefficient(const Standard_Real theCoefficient);
+        void SetDeviationCoefficient(Standard_Real theCoefficient);
 
         //! Returns the deviation coefficient.
         //! Drawings of curves or patches are made with respect
@@ -189,7 +195,7 @@ namespace TKV3d {
         //! of hidden lines created by different viewpoints in
         //! different presentations. The Default value is 0.02.
         //! Also sets the hasOwnHLRDeviationCoefficient flag to Standard_True and myPreviousHLRDeviationCoefficient
-        //! void SetHLRDeviationCoefficient(const Standard_Real theCoefficient);
+        //! void SetHLRDeviationCoefficient(Standard_Real theCoefficient);
 
         //! Returns the real number value of the hidden line
         //! removal deviation coefficient in this framework, if the flag
@@ -224,7 +230,7 @@ namespace TKV3d {
 
         //! Sets the deviation angle theAngle.
         //! Also sets the hasOwnDeviationAngle flag to Standard_True, and myPreviousDeviationAngle.
-        void SetDeviationAngle(const Standard_Real theAngle);
+        void SetDeviationAngle(Standard_Real theAngle);
 
         //! Returns the value for deviation angle.
         Standard_Real DeviationAngle();
@@ -246,7 +252,7 @@ namespace TKV3d {
         //! different viewpoints in different presentations.
         //! The default value is 20 * M_PI / 180.
         //! Also sets the hasOwnHLRDeviationAngle flag to Standard_True and myPreviousHLRDeviationAngle.
-        //! void SetHLRAngle(const Standard_Real theAngle);
+        //! void SetHLRAngle(Standard_Real theAngle);
 
         //! Returns the real number value of the deviation angle
         //! in hidden line removal views. The default value is 20 * M_PI / 180.
@@ -266,7 +272,7 @@ namespace TKV3d {
         //! If this flag is True automatic re-triangulation with deflection-check logic will be applied.
         //! Else this feature will be disable and triangulation is expected to be computed by application itself
         //! and no shading presentation at all if unavailable.
-        void SetAutoTriangulation(const Standard_Boolean theIsEnabled);
+        void SetAutoTriangulation(Standard_Boolean theIsEnabled);
 
         //! Returns True if automatic triangulation is enabled.
         Standard_Boolean IsAutoTriangulation();
@@ -289,7 +295,7 @@ namespace TKV3d {
         //!   Prs3d_WFDeflectionRestrictedFace
         Handle(Prs3d_IsoAspect) UIsoAspect();
 
-        void SetUIsoAspect(const Handle(Prs3d_IsoAspect)& theAspect);
+        void SetUIsoAspect(Handle(Prs3d_IsoAspect) theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! UIso aspect that overrides the one in the link.
@@ -311,7 +317,7 @@ namespace TKV3d {
         Handle(Prs3d_IsoAspect) VIsoAspect();
 
         //! Sets the appearance of V isoparameters - theAspect.
-        void SetVIsoAspect(const Handle(Prs3d_IsoAspect)& theAspect);
+        void SetVIsoAspect(Handle(Prs3d_IsoAspect) theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! VIso aspect that overrides the one in the link.
@@ -324,17 +330,17 @@ namespace TKV3d {
         //!   Type of line: Aspect_TOL_SOLID
         //!   Width: 1.0
         //! These attributes are used by the algorithm Prs3d_WFShape.
-        Handle(Prs3d_LineAspect) WireAspect();
+        XPrs3d_LineAspect^ WireAspect();
 
         //! Sets the parameter theAspect for display of wires.
-        void SetWireAspect(const Handle(Prs3d_LineAspect)& theAspect);
+        void SetWireAspect(XPrs3d_LineAspect^ theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! wire aspect that overrides the one in the link.
         Standard_Boolean HasOwnWireAspect();
 
         //! Sets WireDraw on or off by setting the parameter theIsEnabled to true or false.
-        void SetWireDraw(const Standard_Boolean theIsEnabled);
+        void SetWireDraw(Standard_Boolean theIsEnabled);
 
         //! Returns True if the drawing of the wire is enabled.
         Standard_Boolean WireDraw();
@@ -351,7 +357,7 @@ namespace TKV3d {
         Handle(Prs3d_PointAspect) PointAspect();
 
         //! Sets the parameter theAspect for display attributes of points
-        void SetPointAspect(const Handle(Prs3d_PointAspect)& theAspect);
+        void SetPointAspect(Handle(Prs3d_PointAspect) theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! point aspect that overrides the one in the link.
@@ -371,10 +377,10 @@ namespace TKV3d {
         //!   Prs3d_Curve
         //!   Prs3d_Line
         //!   Prs3d_HLRShape
-        Handle(Prs3d_LineAspect) LineAspect();
+        XPrs3d_LineAspect^ LineAspect();
 
         //! Sets the parameter theAspect for display attributes of lines.
-        void SetLineAspect(const Handle(Prs3d_LineAspect)& theAspect);
+        void SetLineAspect(XPrs3d_LineAspect^ theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! line aspect that overrides the one in the link.
@@ -396,7 +402,7 @@ namespace TKV3d {
         Handle(Prs3d_TextAspect) TextAspect();
 
         //! Sets the parameter theAspect for display attributes of text.
-        void SetTextAspect(const Handle(Prs3d_TextAspect)& theAspect);
+        void SetTextAspect(Handle(Prs3d_TextAspect) theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! text aspect that overrides the one in the link.
@@ -411,10 +417,10 @@ namespace TKV3d {
         //! being a chord of the corresponding curved edge in the face.
         //! Reflection of light in each projector perspective is then calculated for each of the
         //! resultant triangular planes.
-        Handle(Prs3d_ShadingAspect) ShadingAspect();
+        XPrs3d_ShadingAspect^ ShadingAspect();
 
         //! Sets the parameter theAspect for display attributes of shading.
-         void SetShadingAspect(const Handle(Prs3d_ShadingAspect)& theAspect);
+         void SetShadingAspect(XPrs3d_ShadingAspect^ theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! shading aspect that overrides the one in the link.
@@ -430,10 +436,10 @@ namespace TKV3d {
         //!   Color: Quantity_NOC_YELLOW
         //!   Type of line: Aspect_TOL_SOLID
         //!   Width: 1.0
-        Handle(Prs3d_LineAspect) SeenLineAspect();
+        XPrs3d_LineAspect^ SeenLineAspect();
 
         //! Sets the parameter theAspect for the display of seen lines in hidden line removal mode.
-        void SetSeenLineAspect(const Handle(Prs3d_LineAspect)& theAspect);
+        void SetSeenLineAspect(XPrs3d_LineAspect^ theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! seen line aspect that overrides the one in the link.
@@ -443,7 +449,7 @@ namespace TKV3d {
         Handle(Prs3d_PlaneAspect) PlaneAspect();
 
         //! Sets the parameter theAspect for the display of planes. 
-        void SetPlaneAspect(const Handle(Prs3d_PlaneAspect)& theAspect);
+        void SetPlaneAspect(Handle(Prs3d_PlaneAspect) theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! plane aspect that overrides the one in the link.
@@ -453,7 +459,7 @@ namespace TKV3d {
         Handle(Prs3d_ArrowAspect) ArrowAspect();
 
         //! Sets the parameter theAspect for display attributes of arrows.
-        void SetArrowAspect(const Handle(Prs3d_ArrowAspect)& theAspect);
+        void SetArrowAspect(Handle(Prs3d_ArrowAspect) theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! arrow aspect that overrides the one in the link.
@@ -461,7 +467,7 @@ namespace TKV3d {
 
         //! Enables the drawing of an arrow at the end of each line.
         //! By default the arrows are not drawn.
-        void SetLineArrowDraw(const Standard_Boolean theIsEnabled);
+        void SetLineArrowDraw(Standard_Boolean theIsEnabled);
 
         //! Returns True if drawing an arrow at the end of each edge is enabled
         //! and False otherwise (the default).
@@ -476,10 +482,10 @@ namespace TKV3d {
         //!   Color: Quantity_NOC_YELLOW
         //!   Type of line: Aspect_TOL_DASH
         //!   Width: 1.0
-        Handle(Prs3d_LineAspect) HiddenLineAspect();
+        XPrs3d_LineAspect^ HiddenLineAspect();
 
         //! Sets the parameter theAspect for the display of hidden lines in hidden line removal mode.
-        void SetHiddenLineAspect(const Handle(Prs3d_LineAspect)& theAspect);
+        void SetHiddenLineAspect(XPrs3d_LineAspect^ theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! hidden lines aspect that overrides the one in the link.
@@ -504,10 +510,10 @@ namespace TKV3d {
         //!   Color: Quantity_NOC_SKYBLUE
         //!   Type of line: Aspect_TOL_SOLID
         //!   Width: 1.0
-        Handle(Prs3d_LineAspect) VectorAspect();
+        XPrs3d_LineAspect^ VectorAspect();
 
         //! Sets the modality theAspect for the display of vectors.
-        void SetVectorAspect(const Handle(Prs3d_LineAspect)& theAspect);
+        void SetVectorAspect(XPrs3d_LineAspect^ theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! vector aspect that overrides the one in the link.
@@ -537,7 +543,7 @@ namespace TKV3d {
         Handle(Prs3d_DatumAspect) DatumAspect();
 
         //! Sets the modality theAspect for the display of datums.
-        void SetDatumAspect(const Handle(Prs3d_DatumAspect)& theAspect);
+        void SetDatumAspect(Handle(Prs3d_DatumAspect) theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! datum aspect that overrides the one in the link.
@@ -549,10 +555,10 @@ namespace TKV3d {
         //!   Type of line: Aspect_TOL_SOLID
         //!   Width: 1.0
         //! These attributes are used by the algorithm Prs3d_WFShape.
-        Handle(Prs3d_LineAspect) SectionAspect();
+        XPrs3d_LineAspect^ SectionAspect();
 
         //! Sets the parameter theAspect for display attributes of sections. 
-        void SetSectionAspect(const Handle(Prs3d_LineAspect)& theAspect);
+        void SetSectionAspect(XPrs3d_LineAspect^ theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! section aspect that overrides the one in the link.
@@ -561,7 +567,7 @@ namespace TKV3d {
         //! Sets the parameter theAspect for the display of free boundaries.
         //! The method sets aspect owned by the drawer that will be used during
         //! visualization instead of the one set in link.
-        void SetFreeBoundaryAspect(const Handle(Prs3d_LineAspect)& theAspect);
+        void SetFreeBoundaryAspect(XPrs3d_LineAspect^ theAspect);
 
         //! Returns the values for presentation of free boundaries,
         //! in other words, boundaries which are not shared.
@@ -571,7 +577,7 @@ namespace TKV3d {
         //!   Type of line: Aspect_TOL_SOLID
         //!   Width: 1.0
         //! These attributes are used by the algorithm Prs3d_WFShape
-        Handle(Prs3d_LineAspect) FreeBoundaryAspect();
+        XPrs3d_LineAspect^ FreeBoundaryAspect();
 
         //! Returns true if the drawer has its own attribute for
         //! free boundaries aspect that overrides the one in the link.
@@ -582,7 +588,7 @@ namespace TKV3d {
         //! visualization instead of the one set in link.
         //! theIsEnabled is a boolean flag indicating whether the free boundaries should be
         //! drawn or not.
-        void SetFreeBoundaryDraw(const Standard_Boolean theIsEnabled);
+        void SetFreeBoundaryDraw(Standard_Boolean theIsEnabled);
 
         //! Returns True if the drawing of the free boundaries is enabled
         //! True is the default setting.
@@ -595,7 +601,7 @@ namespace TKV3d {
         //! Sets the parameter theAspect for the display of shared boundaries.
         //! The method sets aspect owned by the drawer that will be used during
         //! visualization instead of the one set in link.
-        void SetUnFreeBoundaryAspect(const Handle(Prs3d_LineAspect)& theAspect);
+        void SetUnFreeBoundaryAspect(XPrs3d_LineAspect^ theAspect);
 
         //! Returns settings for shared boundary line aspects.
         //! The LineAspect for the unfree boundaries can be edited.
@@ -604,7 +610,7 @@ namespace TKV3d {
         //! Type of line: Aspect_TOL_SOLID
         //! Width: 1.
         //! These attributes are used by the algorithm Prs3d_WFShape
-        Handle(Prs3d_LineAspect) UnFreeBoundaryAspect();
+        XPrs3d_LineAspect^ UnFreeBoundaryAspect();
 
         //! Returns true if the drawer has its own attribute for
         //! unfree boundaries aspect that overrides the one in the link.
@@ -614,7 +620,7 @@ namespace TKV3d {
         //! The method sets drawing flag owned by the drawer that will be used during
         //! visualization instead of the one set in link.
         //! theIsEnabled is a boolean flag indicating whether the shared boundaries should be drawn or not.
-        void SetUnFreeBoundaryDraw(const Standard_Boolean theIsEnabled);
+        void SetUnFreeBoundaryDraw(Standard_Boolean theIsEnabled);
 
         //! Returns True if the drawing of the shared boundaries is enabled.
         //! True is the default setting.
@@ -646,7 +652,7 @@ namespace TKV3d {
         //! The method sets drawing flag owned by the drawer that will be used during
         //! visualization instead of the one set in link.
         //! theIsEnabled is a boolean flag indicating whether the face boundaries should be drawn or not.
-        void SetFaceBoundaryDraw(const Standard_Boolean theIsEnabled);
+        void SetFaceBoundaryDraw(Standard_Boolean theIsEnabled);
 
         //! Checks whether the face boundary drawing is enabled or not.
         Standard_Boolean FaceBoundaryDraw();
@@ -659,10 +665,10 @@ namespace TKV3d {
         Standard_Boolean HasOwnFaceBoundaryUpperContinuity();
 
         //! Get the most edge continuity class; GeomAbs_CN by default (all edges).
-        GeomAbs_Shape FaceBoundaryUpperContinuity();
+        XGeomAbs_Shape FaceBoundaryUpperContinuity();
 
         //! Set the most edge continuity class for face boundaries.
-        void SetFaceBoundaryUpperContinuity(GeomAbs_Shape theMostAllowedEdgeClass);
+        void SetFaceBoundaryUpperContinuity(XGeomAbs_Shape theMostAllowedEdgeClass);
 
         //! Unset the most edge continuity class for face boundaries.
         void UnsetFaceBoundaryUpperContinuity();
@@ -673,7 +679,7 @@ namespace TKV3d {
         //! Sets the settings for the appearance of dimensions.
         //! The method sets aspect owned by the drawer that will be used during
         //! visualization instead of the one set in link.
-        void SetDimensionAspect(const Handle(Prs3d_DimensionAspect)& theAspect);
+        void SetDimensionAspect(Handle(Prs3d_DimensionAspect) theAspect);
 
         //! Returns true if the drawer has its own attribute for
         //! the appearance of dimensions that overrides the one in the link.
@@ -682,18 +688,18 @@ namespace TKV3d {
         //! Sets dimension length model units for computing of dimension presentation.
         //! The method sets value owned by the drawer that will be used during
         //! visualization instead of the one set in link.
-        void SetDimLengthModelUnits(const TCollection_AsciiString& theUnits);
+        void SetDimLengthModelUnits(XTCollection_AsciiString^ theUnits);
 
         //! Sets dimension angle model units for computing of dimension presentation.
         //! The method sets value owned by the drawer that will be used during
         //! visualization instead of the one set in link.
-        void SetDimAngleModelUnits(const TCollection_AsciiString& theUnits);
+        void SetDimAngleModelUnits(XTCollection_AsciiString^ theUnits);
 
         //! Returns length model units for the dimension presentation. 
-        TCollection_AsciiString DimLengthModelUnits();
+        XTCollection_AsciiString^ DimLengthModelUnits();
 
         //! Returns angle model units for the dimension presentation. 
-        TCollection_AsciiString DimAngleModelUnits();
+        XTCollection_AsciiString^ DimAngleModelUnits();
 
         //! Returns true if the drawer has its own attribute for
         //! dimension length model units that overrides the one in the link.
@@ -706,18 +712,18 @@ namespace TKV3d {
         //! Sets length units in which value for dimension presentation is displayed.
         //! The method sets value owned by the drawer that will be used during
         //! visualization instead of the one set in link.
-        void SetDimLengthDisplayUnits(const TCollection_AsciiString& theUnits);
+        void SetDimLengthDisplayUnits(XTCollection_AsciiString^ theUnits);
 
         //! Sets angle units in which value for dimension presentation is displayed.
         //! The method sets value owned by the drawer that will be used during
         //! visualization instead of the one set in link.
-        void SetDimAngleDisplayUnits(const TCollection_AsciiString& theUnits);
+        void SetDimAngleDisplayUnits(XTCollection_AsciiString^ theUnits);
 
         //! Returns length units in which dimension presentation is displayed.
-        TCollection_AsciiString DimLengthDisplayUnits();
+        XTCollection_AsciiString^ DimLengthDisplayUnits();
 
         //! Returns angle units in which dimension presentation is displayed.
-        TCollection_AsciiString DimAngleDisplayUnits();
+        XTCollection_AsciiString^ DimAngleDisplayUnits();
 
         //! Returns true if the drawer has its own attribute for
         //! length units in which dimension presentation is displayed
@@ -751,7 +757,7 @@ namespace TKV3d {
         //!                              otherwise, only already customized attributes will be changed
         //! @return TRUE if presentation should be recomputed after creating aspects not previously customized (if theToOverrideDefaults is also TRUE)
         //! theToOverrideDefaults = false
-        bool SetShaderProgram(const Handle(Graphic3d_ShaderProgram)& theProgram, Graphic3d_GroupAspect theAspect, bool theToOverrideDefaults);
+        bool SetShaderProgram(Handle(Graphic3d_ShaderProgram) theProgram, XGraphic3d_GroupAspect theAspect, bool theToOverrideDefaults);
 
         //! Sets Shading Model type for the shading aspect.
         //! theToOverrideDefaults = false
@@ -759,7 +765,7 @@ namespace TKV3d {
 
         //! Dumps the content of me into the stream
         //! theDepth = -1
-        void DumpJson(Standard_OStream& theOStream, Standard_Integer theDepth);
+        void DumpJson(Standard_OStream theOStream, Standard_Integer theDepth);
         /// <summary>
        /// ±¾µØ¾ä±ú
        /// </summary>

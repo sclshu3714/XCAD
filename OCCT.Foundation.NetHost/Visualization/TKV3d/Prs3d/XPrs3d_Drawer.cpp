@@ -44,7 +44,7 @@ namespace TKV3d {
     //!   Prs3d_DeflectionCurve
     //!   Prs3d_WFDeflectionSurface
     //!   Prs3d_WFDeflectionRestrictedFace
-    void XPrs3d_Drawer::SetMaximalChordialDeviation(const Standard_Real theChordialDeviation) {
+    void XPrs3d_Drawer::SetMaximalChordialDeviation(Standard_Real theChordialDeviation) {
         NativeHandle()->SetMaximalChordialDeviation(theChordialDeviation);
     };
 
@@ -60,7 +60,7 @@ namespace TKV3d {
     };
 
     //! Sets the type of HLR algorithm used by drawer's interactive objects
-    void XPrs3d_Drawer::SetTypeOfHLR(const XPrs3d_TypeOfHLR theTypeOfHLR) {
+    void XPrs3d_Drawer::SetTypeOfHLR(XPrs3d_TypeOfHLR theTypeOfHLR) {
         NativeHandle()->SetTypeOfHLR(safe_cast<Prs3d_TypeOfHLR>(theTypeOfHLR));
     };
 
@@ -76,7 +76,7 @@ namespace TKV3d {
 
     //! Defines the maximum value allowed for the first and last
     //! parameters of an infinite curve.
-    void XPrs3d_Drawer::SetMaximalParameterValue(const Standard_Real theValue) {
+    void XPrs3d_Drawer::SetMaximalParameterValue(Standard_Real theValue) {
         NativeHandle()->SetMaximalParameterValue(theValue);
     };
 
@@ -93,7 +93,7 @@ namespace TKV3d {
     };
 
     //! Sets IsoOnPlane on or off by setting the parameter theIsEnabled to true or false.
-    void XPrs3d_Drawer::SetIsoOnPlane(const Standard_Boolean theIsEnabled) {
+    void XPrs3d_Drawer::SetIsoOnPlane(Standard_Boolean theIsEnabled) {
         NativeHandle()->SetIsoOnPlane(theIsEnabled);
     };
 
@@ -118,12 +118,12 @@ namespace TKV3d {
     };
 
     //! Enables or disables isolines on triangulation by setting the parameter theIsEnabled to true or false.
-    void XPrs3d_Drawer::SetIsoOnTriangulation(const Standard_Boolean theToEnable) {
+    void XPrs3d_Drawer::SetIsoOnTriangulation(Standard_Boolean theToEnable) {
         NativeHandle()->SetIsoOnTriangulation(theToEnable);
     };
 
     //! Sets the discretisation parameter theValue.
-    void XPrs3d_Drawer::SetDiscretisation(const Standard_Integer theValue) {
+    void XPrs3d_Drawer::SetDiscretisation(Standard_Integer theValue) {
         NativeHandle()->SetDiscretisation(theValue);
     };
 
@@ -139,7 +139,7 @@ namespace TKV3d {
 
     //! Sets the deviation coefficient theCoefficient.
     //! Also sets the hasOwnDeviationCoefficient flag to Standard_True and myPreviousDeviationCoefficient
-    void XPrs3d_Drawer::SetDeviationCoefficient(const Standard_Real theCoefficient) {
+    void XPrs3d_Drawer::SetDeviationCoefficient(Standard_Real theCoefficient) {
         NativeHandle()->SetDeviationCoefficient(theCoefficient);
     };
 
@@ -189,7 +189,7 @@ namespace TKV3d {
     //! of hidden lines created by different viewpoints in
     //! different presentations. The Default value is 0.02.
     //! Also sets the hasOwnHLRDeviationCoefficient flag to Standard_True and myPreviousHLRDeviationCoefficient
-    /*void XPrs3d_Drawer::SetHLRDeviationCoefficient(const Standard_Real theCoefficient) {
+    /*void XPrs3d_Drawer::SetHLRDeviationCoefficient(Standard_Real theCoefficient) {
         NativeHandle()->SetHLRDeviationCoefficient(theCoefficient);
     };*/
 
@@ -234,7 +234,7 @@ namespace TKV3d {
 
     //! Sets the deviation angle theAngle.
     //! Also sets the hasOwnDeviationAngle flag to Standard_True, and myPreviousDeviationAngle.
-    void XPrs3d_Drawer::SetDeviationAngle(const Standard_Real theAngle) {
+    void XPrs3d_Drawer::SetDeviationAngle(Standard_Real theAngle) {
         NativeHandle()->SetDeviationAngle(theAngle);
     };
 
@@ -268,7 +268,7 @@ namespace TKV3d {
     //! different viewpoints in different presentations.
     //! The default value is 20 * M_PI / 180.
     //! Also sets the hasOwnHLRDeviationAngle flag to Standard_True and myPreviousHLRDeviationAngle.
-   /* void XPrs3d_Drawer::SetHLRAngle(const Standard_Real theAngle) {
+   /* void XPrs3d_Drawer::SetHLRAngle(Standard_Real theAngle) {
         NativeHandle()->SetHLRAngle(theAngle);
     };*/
 
@@ -298,7 +298,7 @@ namespace TKV3d {
     //! If this flag is True automatic re-triangulation with deflection-check logic will be applied.
     //! Else this feature will be disable and triangulation is expected to be computed by application itself
     //! and no shading presentation at all if unavailable.
-    void XPrs3d_Drawer::SetAutoTriangulation(const Standard_Boolean theIsEnabled) {
+    void XPrs3d_Drawer::SetAutoTriangulation(Standard_Boolean theIsEnabled) {
         NativeHandle()->SetAutoTriangulation(theIsEnabled);
     };
 
@@ -329,7 +329,7 @@ namespace TKV3d {
         return  NativeHandle()->UIsoAspect();
     };
 
-    void XPrs3d_Drawer::SetUIsoAspect(const Handle(Prs3d_IsoAspect)& theAspect) {
+    void XPrs3d_Drawer::SetUIsoAspect(Handle(Prs3d_IsoAspect) theAspect) {
         NativeHandle()->SetUIsoAspect(theAspect);
     };
 
@@ -357,7 +357,7 @@ namespace TKV3d {
     };
 
     //! Sets the appearance of V isoparameters - theAspect.
-    void XPrs3d_Drawer::SetVIsoAspect(const Handle(Prs3d_IsoAspect)& theAspect) {
+    void XPrs3d_Drawer::SetVIsoAspect(Handle(Prs3d_IsoAspect) theAspect) {
         NativeHandle()->SetVIsoAspect(theAspect);
     };
 
@@ -374,13 +374,13 @@ namespace TKV3d {
     //!   Type of line: Aspect_TOL_SOLID
     //!   Width: 1.0
     //! These attributes are used by the algorithm Prs3d_WFShape.
-    Handle(Prs3d_LineAspect) XPrs3d_Drawer::WireAspect() {
-        return  NativeHandle()->WireAspect();
+    XPrs3d_LineAspect^ XPrs3d_Drawer::WireAspect() {
+        return gcnew XPrs3d_LineAspect(NativeHandle()->WireAspect());
     };
 
     //! Sets the parameter theAspect for display of wires.
-    void XPrs3d_Drawer::SetWireAspect(const Handle(Prs3d_LineAspect)& theAspect) {
-        NativeHandle()->SetWireAspect(theAspect);
+    void XPrs3d_Drawer::SetWireAspect(XPrs3d_LineAspect^ theAspect) {
+        NativeHandle()->SetWireAspect(theAspect->GetLineAspect());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -390,7 +390,7 @@ namespace TKV3d {
     };
 
     //! Sets WireDraw on or off by setting the parameter theIsEnabled to true or false.
-    void XPrs3d_Drawer::SetWireDraw(const Standard_Boolean theIsEnabled) {
+    void XPrs3d_Drawer::SetWireDraw(Standard_Boolean theIsEnabled) {
         NativeHandle()->SetWireDraw(theIsEnabled);
     };
 
@@ -415,7 +415,7 @@ namespace TKV3d {
     };
 
     //! Sets the parameter theAspect for display attributes of points
-    void XPrs3d_Drawer::SetPointAspect(const Handle(Prs3d_PointAspect)& theAspect) {
+    void XPrs3d_Drawer::SetPointAspect(Handle(Prs3d_PointAspect) theAspect) {
         NativeHandle()->SetPointAspect(theAspect);
     };
 
@@ -441,13 +441,13 @@ namespace TKV3d {
     //!   Prs3d_Curve
     //!   Prs3d_Line
     //!   Prs3d_HLRShape
-    Handle(Prs3d_LineAspect) XPrs3d_Drawer::LineAspect() {
-        return  NativeHandle()->LineAspect();
+    XPrs3d_LineAspect^ XPrs3d_Drawer::LineAspect() {
+        return  gcnew XPrs3d_LineAspect(NativeHandle()->LineAspect());
     };
 
     //! Sets the parameter theAspect for display attributes of lines.
-    void XPrs3d_Drawer::SetLineAspect(const Handle(Prs3d_LineAspect)& theAspect) {
-        NativeHandle()->SetLineAspect(theAspect);
+    void XPrs3d_Drawer::SetLineAspect(XPrs3d_LineAspect^ theAspect) {
+        NativeHandle()->SetLineAspect(theAspect->GetLineAspect());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -478,7 +478,7 @@ namespace TKV3d {
     };
 
     //! Sets the parameter theAspect for display attributes of text.
-    void XPrs3d_Drawer::SetTextAspect(const Handle(Prs3d_TextAspect)& theAspect) {
+    void XPrs3d_Drawer::SetTextAspect(Handle(Prs3d_TextAspect) theAspect) {
         NativeHandle()->SetTextAspect(theAspect);
     };
 
@@ -497,13 +497,13 @@ namespace TKV3d {
     //! being a chord of the corresponding curved edge in the face.
     //! Reflection of light in each projector perspective is then calculated for each of the
     //! resultant triangular planes.
-    Handle(Prs3d_ShadingAspect) XPrs3d_Drawer::ShadingAspect() {
-        return NativeHandle()->ShadingAspect();
+    XPrs3d_ShadingAspect^ XPrs3d_Drawer::ShadingAspect() {
+        return gcnew XPrs3d_ShadingAspect(NativeHandle()->ShadingAspect());
     };
 
     //! Sets the parameter theAspect for display attributes of shading.
-    void XPrs3d_Drawer::SetShadingAspect(const Handle(Prs3d_ShadingAspect)& theAspect) {
-        NativeHandle()->SetShadingAspect(theAspect);
+    void XPrs3d_Drawer::SetShadingAspect(XPrs3d_ShadingAspect^ theAspect) {
+        NativeHandle()->SetShadingAspect(theAspect->GetShadingAspectHandle());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -524,13 +524,13 @@ namespace TKV3d {
     //!   Color: Quantity_NOC_YELLOW
     //!   Type of line: Aspect_TOL_SOLID
     //!   Width: 1.0
-    Handle(Prs3d_LineAspect) XPrs3d_Drawer::SeenLineAspect() {
-        return NativeHandle()->SeenLineAspect();
+    XPrs3d_LineAspect^ XPrs3d_Drawer::SeenLineAspect() {
+        return gcnew XPrs3d_LineAspect(NativeHandle()->SeenLineAspect());
     };
 
     //! Sets the parameter theAspect for the display of seen lines in hidden line removal mode.
-    void XPrs3d_Drawer::SetSeenLineAspect(const Handle(Prs3d_LineAspect)& theAspect) {
-        NativeHandle()->SetSeenLineAspect(theAspect);
+    void XPrs3d_Drawer::SetSeenLineAspect(XPrs3d_LineAspect^ theAspect) {
+        NativeHandle()->SetSeenLineAspect(theAspect->GetLineAspect());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -545,7 +545,7 @@ namespace TKV3d {
     };
 
     //! Sets the parameter theAspect for the display of planes. 
-    void XPrs3d_Drawer::SetPlaneAspect(const Handle(Prs3d_PlaneAspect)& theAspect) {
+    void XPrs3d_Drawer::SetPlaneAspect(Handle(Prs3d_PlaneAspect) theAspect) {
         NativeHandle()->SetPlaneAspect(theAspect);
     };
 
@@ -561,7 +561,7 @@ namespace TKV3d {
     };
 
     //! Sets the parameter theAspect for display attributes of arrows.
-    void XPrs3d_Drawer::SetArrowAspect(const Handle(Prs3d_ArrowAspect)& theAspect) {
+    void XPrs3d_Drawer::SetArrowAspect(Handle(Prs3d_ArrowAspect) theAspect) {
         return NativeHandle()->SetArrowAspect(theAspect);
     };
 
@@ -573,7 +573,7 @@ namespace TKV3d {
 
     //! Enables the drawing of an arrow at the end of each line.
     //! By default the arrows are not drawn.
-    void XPrs3d_Drawer::SetLineArrowDraw(const Standard_Boolean theIsEnabled) {
+    void XPrs3d_Drawer::SetLineArrowDraw(Standard_Boolean theIsEnabled) {
         NativeHandle()->SetLineArrowDraw(theIsEnabled);
     };
 
@@ -594,13 +594,13 @@ namespace TKV3d {
     //!   Color: Quantity_NOC_YELLOW
     //!   Type of line: Aspect_TOL_DASH
     //!   Width: 1.0
-    Handle(Prs3d_LineAspect) XPrs3d_Drawer::HiddenLineAspect() {
-        return NativeHandle()->HiddenLineAspect();
+    XPrs3d_LineAspect^ XPrs3d_Drawer::HiddenLineAspect() {
+        return gcnew XPrs3d_LineAspect(NativeHandle()->HiddenLineAspect());
     };
 
     //! Sets the parameter theAspect for the display of hidden lines in hidden line removal mode.
-    void XPrs3d_Drawer::SetHiddenLineAspect(const Handle(Prs3d_LineAspect)& theAspect) {
-        NativeHandle()->SetHiddenLineAspect(theAspect);
+    void XPrs3d_Drawer::SetHiddenLineAspect(XPrs3d_LineAspect^ theAspect) {
+        NativeHandle()->SetHiddenLineAspect(theAspect->GetLineAspect());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -636,13 +636,13 @@ namespace TKV3d {
     //!   Color: Quantity_NOC_SKYBLUE
     //!   Type of line: Aspect_TOL_SOLID
     //!   Width: 1.0
-    Handle(Prs3d_LineAspect) XPrs3d_Drawer::VectorAspect() {
-        return NativeHandle()->VectorAspect();
+    XPrs3d_LineAspect^ XPrs3d_Drawer::VectorAspect() {
+        return gcnew XPrs3d_LineAspect(NativeHandle()->VectorAspect());
     };
 
     //! Sets the modality theAspect for the display of vectors.
-    void XPrs3d_Drawer::SetVectorAspect(const Handle(Prs3d_LineAspect)& theAspect) {
-        NativeHandle()->SetVectorAspect(theAspect);
+    void XPrs3d_Drawer::SetVectorAspect(XPrs3d_LineAspect^ theAspect) {
+        NativeHandle()->SetVectorAspect(theAspect->GetLineAspect());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -683,7 +683,7 @@ namespace TKV3d {
     };
 
     //! Sets the modality theAspect for the display of datums.
-    void XPrs3d_Drawer::SetDatumAspect(const Handle(Prs3d_DatumAspect)& theAspect) {
+    void XPrs3d_Drawer::SetDatumAspect(Handle(Prs3d_DatumAspect) theAspect) {
         NativeHandle()->SetDatumAspect(theAspect);
     };
 
@@ -699,13 +699,13 @@ namespace TKV3d {
     //!   Type of line: Aspect_TOL_SOLID
     //!   Width: 1.0
     //! These attributes are used by the algorithm Prs3d_WFShape.
-    Handle(Prs3d_LineAspect) XPrs3d_Drawer::SectionAspect() {
-        return NativeHandle()->SectionAspect();
+    XPrs3d_LineAspect^ XPrs3d_Drawer::SectionAspect() {
+        return gcnew XPrs3d_LineAspect(NativeHandle()->SectionAspect());
     };
 
     //! Sets the parameter theAspect for display attributes of sections. 
-    void XPrs3d_Drawer::SetSectionAspect(const Handle(Prs3d_LineAspect)& theAspect) {
-        NativeHandle()->SetSectionAspect(theAspect);
+    void XPrs3d_Drawer::SetSectionAspect(XPrs3d_LineAspect^ theAspect) {
+        NativeHandle()->SetSectionAspect(theAspect->GetLineAspect());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -717,8 +717,8 @@ namespace TKV3d {
     //! Sets the parameter theAspect for the display of free boundaries.
     //! The method sets aspect owned by the drawer that will be used during
     //! visualization instead of the one set in link.
-    void XPrs3d_Drawer::SetFreeBoundaryAspect(const Handle(Prs3d_LineAspect)& theAspect) {
-        NativeHandle()->SetFreeBoundaryAspect(theAspect);
+    void XPrs3d_Drawer::SetFreeBoundaryAspect(XPrs3d_LineAspect^ theAspect) {
+        NativeHandle()->SetFreeBoundaryAspect(theAspect->GetLineAspect());
     };
 
     //! Returns the values for presentation of free boundaries,
@@ -729,8 +729,8 @@ namespace TKV3d {
     //!   Type of line: Aspect_TOL_SOLID
     //!   Width: 1.0
     //! These attributes are used by the algorithm Prs3d_WFShape
-    Handle(Prs3d_LineAspect) XPrs3d_Drawer::FreeBoundaryAspect() {
-        return NativeHandle()->FreeBoundaryAspect();
+    XPrs3d_LineAspect^ XPrs3d_Drawer::FreeBoundaryAspect() {
+        return gcnew XPrs3d_LineAspect(NativeHandle()->FreeBoundaryAspect());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -744,7 +744,7 @@ namespace TKV3d {
     //! visualization instead of the one set in link.
     //! theIsEnabled is a boolean flag indicating whether the free boundaries should be
     //! drawn or not.
-    void XPrs3d_Drawer::SetFreeBoundaryDraw(const Standard_Boolean theIsEnabled) {
+    void XPrs3d_Drawer::SetFreeBoundaryDraw(Standard_Boolean theIsEnabled) {
         NativeHandle()->SetFreeBoundaryDraw(theIsEnabled);
     };
 
@@ -763,8 +763,8 @@ namespace TKV3d {
     //! Sets the parameter theAspect for the display of shared boundaries.
     //! The method sets aspect owned by the drawer that will be used during
     //! visualization instead of the one set in link.
-    void XPrs3d_Drawer::SetUnFreeBoundaryAspect(const Handle(Prs3d_LineAspect)& theAspect) {
-        NativeHandle()->SetUnFreeBoundaryAspect(theAspect);
+    void XPrs3d_Drawer::SetUnFreeBoundaryAspect(XPrs3d_LineAspect^ theAspect) {
+        NativeHandle()->SetUnFreeBoundaryAspect(theAspect->GetLineAspect());
     };
 
     //! Returns settings for shared boundary line aspects.
@@ -774,8 +774,8 @@ namespace TKV3d {
     //! Type of line: Aspect_TOL_SOLID
     //! Width: 1.
     //! These attributes are used by the algorithm Prs3d_WFShape
-    Handle(Prs3d_LineAspect) XPrs3d_Drawer::UnFreeBoundaryAspect() {
-        return NativeHandle()->UnFreeBoundaryAspect();
+    XPrs3d_LineAspect^ XPrs3d_Drawer::UnFreeBoundaryAspect() {
+        return gcnew XPrs3d_LineAspect(NativeHandle()->UnFreeBoundaryAspect());
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -788,7 +788,7 @@ namespace TKV3d {
     //! The method sets drawing flag owned by the drawer that will be used during
     //! visualization instead of the one set in link.
     //! theIsEnabled is a boolean flag indicating whether the shared boundaries should be drawn or not.
-    void XPrs3d_Drawer::SetUnFreeBoundaryDraw(const Standard_Boolean theIsEnabled) {
+    void XPrs3d_Drawer::SetUnFreeBoundaryDraw(Standard_Boolean theIsEnabled) {
         return NativeHandle()->SetUnFreeBoundaryDraw(theIsEnabled);
     };
 
@@ -834,7 +834,7 @@ namespace TKV3d {
     //! The method sets drawing flag owned by the drawer that will be used during
     //! visualization instead of the one set in link.
     //! theIsEnabled is a boolean flag indicating whether the face boundaries should be drawn or not.
-    void XPrs3d_Drawer::SetFaceBoundaryDraw(const Standard_Boolean theIsEnabled) {
+    void XPrs3d_Drawer::SetFaceBoundaryDraw(Standard_Boolean theIsEnabled) {
         NativeHandle()->SetFaceBoundaryDraw(theIsEnabled);
     };
 
@@ -855,13 +855,13 @@ namespace TKV3d {
     };
 
     //! Get the most edge continuity class; GeomAbs_CN by default (all edges).
-    GeomAbs_Shape XPrs3d_Drawer::FaceBoundaryUpperContinuity() {
-        return NativeHandle()->FaceBoundaryUpperContinuity();
+    XGeomAbs_Shape XPrs3d_Drawer::FaceBoundaryUpperContinuity() {
+        return safe_cast<XGeomAbs_Shape>(NativeHandle()->FaceBoundaryUpperContinuity());
     };
 
     //! Set the most edge continuity class for face boundaries.
-    void XPrs3d_Drawer::SetFaceBoundaryUpperContinuity(GeomAbs_Shape theMostAllowedEdgeClass) {
-        NativeHandle()->SetFaceBoundaryUpperContinuity(theMostAllowedEdgeClass);
+    void XPrs3d_Drawer::SetFaceBoundaryUpperContinuity(XGeomAbs_Shape theMostAllowedEdgeClass) {
+        NativeHandle()->SetFaceBoundaryUpperContinuity(safe_cast<GeomAbs_Shape>(theMostAllowedEdgeClass));
     };
 
     //! Unset the most edge continuity class for face boundaries.
@@ -877,7 +877,7 @@ namespace TKV3d {
     //! Sets the settings for the appearance of dimensions.
     //! The method sets aspect owned by the drawer that will be used during
     //! visualization instead of the one set in link.
-    void XPrs3d_Drawer::SetDimensionAspect(const Handle(Prs3d_DimensionAspect)& theAspect) {
+    void XPrs3d_Drawer::SetDimensionAspect(Handle(Prs3d_DimensionAspect) theAspect) {
         NativeHandle()->SetDimensionAspect(theAspect);
     };
 
@@ -890,25 +890,27 @@ namespace TKV3d {
     //! Sets dimension length model units for computing of dimension presentation.
     //! The method sets value owned by the drawer that will be used during
     //! visualization instead of the one set in link.
-    void XPrs3d_Drawer::SetDimLengthModelUnits(const TCollection_AsciiString& theUnits) {
-        NativeHandle()->SetDimLengthModelUnits(theUnits);
+    void XPrs3d_Drawer::SetDimLengthModelUnits(XTCollection_AsciiString^ theUnits) {
+        NativeHandle()->SetDimLengthModelUnits(*theUnits->GetAsciiString());
     };
 
     //! Sets dimension angle model units for computing of dimension presentation.
     //! The method sets value owned by the drawer that will be used during
     //! visualization instead of the one set in link.
-    void XPrs3d_Drawer::SetDimAngleModelUnits(const TCollection_AsciiString& theUnits) {
-        NativeHandle()->SetDimAngleModelUnits(theUnits);
+    void XPrs3d_Drawer::SetDimAngleModelUnits(XTCollection_AsciiString^ theUnits) {
+        NativeHandle()->SetDimAngleModelUnits(*theUnits->GetAsciiString());
     };
 
     //! Returns length model units for the dimension presentation. 
-    TCollection_AsciiString XPrs3d_Drawer::DimLengthModelUnits() {
-        return NativeHandle()->DimLengthModelUnits();
+    XTCollection_AsciiString^ XPrs3d_Drawer::DimLengthModelUnits() {
+        TCollection_AsciiString* temp = new TCollection_AsciiString(NativeHandle()->DimLengthModelUnits());
+        return gcnew XTCollection_AsciiString(temp);
     };
 
     //! Returns angle model units for the dimension presentation. 
-    TCollection_AsciiString XPrs3d_Drawer::DimAngleModelUnits() {
-        return NativeHandle()->DimAngleModelUnits();
+    XTCollection_AsciiString^ XPrs3d_Drawer::DimAngleModelUnits() {
+        TCollection_AsciiString* temp = new TCollection_AsciiString(NativeHandle()->DimAngleModelUnits());
+        return gcnew XTCollection_AsciiString(temp);
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -926,25 +928,27 @@ namespace TKV3d {
     //! Sets length units in which value for dimension presentation is displayed.
     //! The method sets value owned by the drawer that will be used during
     //! visualization instead of the one set in link.
-    void XPrs3d_Drawer::SetDimLengthDisplayUnits(const TCollection_AsciiString& theUnits) {
-        NativeHandle()->SetDimLengthDisplayUnits(theUnits);
+    void XPrs3d_Drawer::SetDimLengthDisplayUnits(XTCollection_AsciiString^ theUnits) {
+        NativeHandle()->SetDimLengthDisplayUnits(*theUnits->GetAsciiString());
     };
 
     //! Sets angle units in which value for dimension presentation is displayed.
     //! The method sets value owned by the drawer that will be used during
     //! visualization instead of the one set in link.
-    void XPrs3d_Drawer::SetDimAngleDisplayUnits(const TCollection_AsciiString& theUnits) {
-        NativeHandle()->SetDimAngleDisplayUnits(theUnits);
+    void XPrs3d_Drawer::SetDimAngleDisplayUnits(XTCollection_AsciiString^ theUnits) {
+        NativeHandle()->SetDimAngleDisplayUnits(*theUnits->GetAsciiString());
     };
 
     //! Returns length units in which dimension presentation is displayed.
-    TCollection_AsciiString XPrs3d_Drawer::DimLengthDisplayUnits() {
-        return NativeHandle()->DimLengthDisplayUnits();
+    XTCollection_AsciiString^ XPrs3d_Drawer::DimLengthDisplayUnits() {
+        TCollection_AsciiString* temp = new TCollection_AsciiString(NativeHandle()->DimLengthDisplayUnits());
+        return gcnew XTCollection_AsciiString(temp);
     };
 
     //! Returns angle units in which dimension presentation is displayed.
-    TCollection_AsciiString XPrs3d_Drawer::DimAngleDisplayUnits() {
-        return NativeHandle()->DimAngleDisplayUnits();
+    XTCollection_AsciiString^ XPrs3d_Drawer::DimAngleDisplayUnits() {
+        TCollection_AsciiString* temp = new TCollection_AsciiString(NativeHandle()->DimAngleDisplayUnits());
+        return gcnew XTCollection_AsciiString(temp);
     };
 
     //! Returns true if the drawer has its own attribute for
@@ -993,8 +997,8 @@ namespace TKV3d {
     //!                              otherwise, only already customized attributes will be changed
     //! @return TRUE if presentation should be recomputed after creating aspects not previously customized (if theToOverrideDefaults is also TRUE)
     //! theToOverrideDefaults = false
-    bool XPrs3d_Drawer::SetShaderProgram(const Handle(Graphic3d_ShaderProgram)& theProgram, Graphic3d_GroupAspect theAspect, bool theToOverrideDefaults) {
-        return NativeHandle()->SetShaderProgram(theProgram, theAspect, theToOverrideDefaults);
+    bool XPrs3d_Drawer::SetShaderProgram(Handle(Graphic3d_ShaderProgram) theProgram, XGraphic3d_GroupAspect theAspect, bool theToOverrideDefaults) {
+        return NativeHandle()->SetShaderProgram(theProgram, safe_cast<Graphic3d_GroupAspect>(theAspect), theToOverrideDefaults);
     };
 
     //! Sets Shading Model type for the shading aspect.
@@ -1005,7 +1009,7 @@ namespace TKV3d {
 
     //! Dumps the content of me into the stream
     //! theDepth = -1
-    void XPrs3d_Drawer::DumpJson(Standard_OStream& theOStream, Standard_Integer theDepth) {
+    void XPrs3d_Drawer::DumpJson(Standard_OStream theOStream, Standard_Integer theDepth) {
         NativeHandle()->DumpJson(theOStream, theDepth);
     };
 }

@@ -14,63 +14,105 @@
 // Alternatively, this file may be used under the terms of Open CASCADE
 // commercial license or contractual agreement.
 
-#ifndef _Prs3d_ShadingAspect_HeaderFile
-#define _Prs3d_ShadingAspect_HeaderFile
+#ifndef _XPrs3d_ShadingAspect_HeaderFile
+#define _XPrs3d_ShadingAspect_HeaderFile
+#pragma once
+#include <Prs3d_ShadingAspect.hxx>
+#include <XPrs3d_BasicAspect.h>
+#include <XQuantity_Color.h>
+#include <XAspect_TypeOfFacingModel.h>
+#include <XGraphic3d_MaterialAspect.h>
+#include <XAspect_TypeOfFacingModel.h>
 
 #include <Aspect_TypeOfFacingModel.hxx>
 #include <Graphic3d_AspectFillArea3d.hxx>
 #include <Graphic3d_MaterialAspect.hxx>
 #include <Prs3d_BasicAspect.hxx>
 
-//! A framework to define the display of shading.
-//! The attributes which make up this definition include:
-//! -   fill aspect
-//! -   color, and
-//! -   material
-class Prs3d_ShadingAspect : public Prs3d_BasicAspect
-{
-  DEFINE_STANDARD_RTTIEXT(Prs3d_ShadingAspect, Prs3d_BasicAspect)
-public:
+using namespace TKernel;
+using namespace TKService;
+namespace TKV3d {
+	ref class TKernel::XQuantity_Color;
+	ref class TKService::XGraphic3d_MaterialAspect;
+	ref class XPrs3d_BasicAspect;
+	//! A framework to define the display of shading.
+	//! The attributes which make up this definition include:
+	//! -   fill aspect
+	//! -   color, and
+	//! -   material
+	public ref class XPrs3d_ShadingAspect : public XPrs3d_BasicAspect
+	{
+	public:
 
-  //! Constructs an empty framework to display shading.
-  Standard_EXPORT Prs3d_ShadingAspect();
+		//! Constructs an empty framework to display shading.
+		XPrs3d_ShadingAspect();
 
-  //! Constructor with initialization.
-  Prs3d_ShadingAspect (const Handle(Graphic3d_AspectFillArea3d)& theAspect) : myAspect (theAspect) {}
-  
-  //! Change the polygons interior color and material ambient color.
-  Standard_EXPORT void SetColor (const Quantity_Color& aColor, const Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE);
+		//! Constructor with initialization.
+		XPrs3d_ShadingAspect(Handle(Graphic3d_AspectFillArea3d) theAspect);
 
-  //! Change the polygons material aspect.
-  Standard_EXPORT void SetMaterial (const Graphic3d_MaterialAspect& aMaterial, const Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE);
 
-  //! Change the polygons transparency value.
-  //! Warning : aValue must be in the range 0,1. 0 is the default (NO transparent)
-  Standard_EXPORT void SetTransparency (const Standard_Real aValue, const Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE);
-  
-  //! Returns the polygons color.
-  Standard_EXPORT const Quantity_Color& Color (const Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE) const;
-  
-  //! Returns the polygons material aspect.
-  Standard_EXPORT const Graphic3d_MaterialAspect& Material (const Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE) const;
-  
-  //! Returns the polygons transparency value.
-  Standard_EXPORT Standard_Real Transparency (const Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE) const;
-  
-  //! Returns the polygons aspect properties.
-  const Handle(Graphic3d_AspectFillArea3d)& Aspect() const { return myAspect; }
+		!XPrs3d_ShadingAspect();// { };// { IHandle = NULL; };
 
-  void SetAspect (const Handle(Graphic3d_AspectFillArea3d)& theAspect) { myAspect = theAspect; }
+		~XPrs3d_ShadingAspect();// { IHandle = NULL; };
 
-  //! Dumps the content of me into the stream
-  Standard_EXPORT virtual void DumpJson (Standard_OStream& theOStream, const Standard_Integer theDepth = -1) const Standard_OVERRIDE;
+		//! Constructor with initialization.
+		XPrs3d_ShadingAspect(Handle(Prs3d_ShadingAspect) theAspect);
 
-protected:
+		void SetShadingAspectHandle(Handle(Prs3d_ShadingAspect) pos);
 
-  Handle(Graphic3d_AspectFillArea3d) myAspect;
+		Handle(Prs3d_BasicAspect) GetBasicAspectHandle() Standard_OVERRIDE;
 
-};
+		Handle(Prs3d_ShadingAspect) GetShadingAspectHandle();
 
-DEFINE_STANDARD_HANDLE(Prs3d_ShadingAspect, Prs3d_BasicAspect)
+		//! Change the polygons interior color and material ambient color.
+		//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE
+		void SetColor(XQuantity_Color^ aColor, XAspect_TypeOfFacingModel aModel);
 
-#endif // _Prs3d_ShadingAspect_HeaderFile
+		//! Change the polygons material aspect.
+		//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE
+		void SetMaterial(XGraphic3d_MaterialAspect^ aMaterial, XAspect_TypeOfFacingModel aModel);
+
+		//! Change the polygons transparency value.
+		//! Warning : aValue must be in the range 0,1. 0 is the default (NO transparent)
+		//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE
+		void SetTransparency(Standard_Real aValue, XAspect_TypeOfFacingModel aModel);
+
+		//! Returns the polygons color.
+		//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE
+		XQuantity_Color^ Color(XAspect_TypeOfFacingModel aModel);
+
+		//! Returns the polygons material aspect.
+		//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE
+		XGraphic3d_MaterialAspect^ Material(XAspect_TypeOfFacingModel aModel);
+
+		//! Returns the polygons transparency value.
+		//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE
+		Standard_Real Transparency(XAspect_TypeOfFacingModel aModel);
+
+		//! Returns the polygons aspect properties.
+		Handle(Graphic3d_AspectFillArea3d) Aspect();
+
+		void SetAspect(Handle(Graphic3d_AspectFillArea3d) theAspect);
+
+		//! Dumps the content of me into the stream
+		virtual void DumpJson(Standard_OStream theOStream, Standard_Integer theDepth) Standard_OVERRIDE;
+
+		/// <summary>
+		/// ±¾µØ¾ä±ú
+		/// </summary>
+		virtual property Handle(Standard_Transient) IHandle {
+			Handle(Standard_Transient) get() Standard_OVERRIDE {
+				return NativeHandle();
+			}
+			void set(Handle(Standard_Transient) handle) Standard_OVERRIDE {
+				if (!handle.IsNull())
+					NativeHandle() = Handle(Prs3d_ShadingAspect)::DownCast(handle);
+				else if (!NativeHandle().IsNull())
+					NativeHandle() = NULL;
+			}
+		}
+	private:
+		NCollection_Haft<Handle(Prs3d_ShadingAspect)> NativeHandle;
+	};
+}
+#endif // _XPrs3d_ShadingAspect_HeaderFile

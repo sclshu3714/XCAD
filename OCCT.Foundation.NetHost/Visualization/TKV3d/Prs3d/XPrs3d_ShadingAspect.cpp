@@ -12,171 +12,96 @@
 // Alternatively, this file may be used under the terms of Open CASCADE
 // commercial license or contractual agreement.
 
-#include <Prs3d_ShadingAspect.hxx>
+#include <XPrs3d_ShadingAspect.h>
 
-#include <Graphic3d_AspectFillArea3d.hxx>
-#include <Graphic3d_MaterialAspect.hxx>
-#include <Quantity_Color.hxx>
-#include <Standard_Type.hxx>
-#include <Standard_Dump.hxx>
+namespace TKV3d {
+	//! Constructs an empty framework to display shading.
+	XPrs3d_ShadingAspect::XPrs3d_ShadingAspect() {
+		NativeHandle() = new Prs3d_ShadingAspect();
+	};
 
-IMPLEMENT_STANDARD_RTTIEXT(Prs3d_ShadingAspect, Prs3d_BasicAspect)
+	//! Constructor with initialization.
+	XPrs3d_ShadingAspect::XPrs3d_ShadingAspect(Handle(Graphic3d_AspectFillArea3d) theAspect) {
+		NativeHandle() = new Prs3d_ShadingAspect(theAspect);
+	};
 
-//=======================================================================
-//function : Prs3d_ShadingAspect
-//purpose  :
-//=======================================================================
-Prs3d_ShadingAspect::Prs3d_ShadingAspect()
-{
-  const Graphic3d_MaterialAspect aMat (Graphic3d_NOM_BRASS);
-  const Quantity_Color aColor = aMat.AmbientColor();
-  myAspect = new Graphic3d_AspectFillArea3d (Aspect_IS_SOLID,
-					     aColor,
-					     aColor,
-					     Aspect_TOL_SOLID,
-					     1.0,
-					     aMat,
-					     aMat);
-}
+	XPrs3d_ShadingAspect::!XPrs3d_ShadingAspect() { 
+	
+	};// { IHandle = NULL; };
 
-//=======================================================================
-//function : SetColor
-//purpose  :
-//=======================================================================
-void Prs3d_ShadingAspect::SetColor (const Quantity_Color& theColor,
-                                    const Aspect_TypeOfFacingModel theModel)
-{
-  if (theModel != Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->SetDistinguishOn();
-  }
+	XPrs3d_ShadingAspect::~XPrs3d_ShadingAspect() {
+		IHandle = NULL;
+	};
 
-  if (theModel == Aspect_TOFM_FRONT_SIDE
-   || theModel == Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->ChangeFrontMaterial().SetColor (theColor);
-    myAspect->SetInteriorColor (theColor);
-  }
+	//! Constructor with initialization.
+	//! Constructor with initialization.
+	XPrs3d_ShadingAspect::XPrs3d_ShadingAspect(Handle(Prs3d_ShadingAspect) theAspect) {
+		NativeHandle() = theAspect;
+	};
 
-  if (theModel == Aspect_TOFM_BACK_SIDE
-   || theModel == Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->ChangeBackMaterial().SetColor (theColor);
-    myAspect->SetBackInteriorColor (theColor);
-  }
-}
+	void XPrs3d_ShadingAspect::SetShadingAspectHandle(Handle(Prs3d_ShadingAspect) theAspect) {
+		NativeHandle() = theAspect;
+	};
 
-//=======================================================================
-//function : Color
-//purpose  :
-//=======================================================================
-const Quantity_Color& Prs3d_ShadingAspect::Color (const Aspect_TypeOfFacingModel theModel) const
-{
-  switch (theModel)
-  {
-    default:
-    case Aspect_TOFM_BOTH_SIDE:
-    case Aspect_TOFM_FRONT_SIDE:
-      return myAspect->FrontMaterial().MaterialType() == Graphic3d_MATERIAL_ASPECT
-           ? myAspect->InteriorColor()
-           : myAspect->FrontMaterial().Color();
-    case Aspect_TOFM_BACK_SIDE:
-      return myAspect->BackMaterial().MaterialType() == Graphic3d_MATERIAL_ASPECT
-           ? myAspect->BackInteriorColor()
-           : myAspect->BackMaterial().Color();
-  }
-}
+	Handle(Prs3d_BasicAspect) XPrs3d_ShadingAspect::GetBasicAspectHandle() {
+		return NativeHandle();
+	};
 
-//=======================================================================
-//function : SetMaterial
-//purpose  :
-//=======================================================================
-void Prs3d_ShadingAspect::SetMaterial (const Graphic3d_MaterialAspect& theMaterial,
-                                       const Aspect_TypeOfFacingModel  theModel)
-{
-  if (theModel != Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->SetDistinguishOn();
-  }
-  if (theModel == Aspect_TOFM_FRONT_SIDE
-   || theModel == Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->SetFrontMaterial(theMaterial);
-  }
 
-  if (theModel == Aspect_TOFM_BACK_SIDE
-   || theModel == Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->SetBackMaterial (theMaterial);
-  }
-}
+	Handle(Prs3d_ShadingAspect) XPrs3d_ShadingAspect::GetShadingAspectHandle() {
+		return NativeHandle();
+	};
 
-//=======================================================================
-//function : Material
-//purpose  :
-//=======================================================================
-const Graphic3d_MaterialAspect& Prs3d_ShadingAspect::Material (const Aspect_TypeOfFacingModel theModel) const
-{
-  switch (theModel)
-  {
-    default:
-    case Aspect_TOFM_BOTH_SIDE:
-    case Aspect_TOFM_FRONT_SIDE:
-      return myAspect->FrontMaterial();
-    case Aspect_TOFM_BACK_SIDE:
-      return myAspect->BackMaterial();
-  }
-}
+	//! Change the polygons interior color and material ambient color.
+	//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE
+	void XPrs3d_ShadingAspect::SetColor(XQuantity_Color^ aColor, XAspect_TypeOfFacingModel aModel) {
+		NativeHandle()->SetColor(*aColor->GetColor(), safe_cast<Aspect_TypeOfFacingModel>(aModel));
+	};
 
-//=======================================================================
-//function : SetTransparency
-//purpose  :
-//=======================================================================
-void Prs3d_ShadingAspect::SetTransparency (const Standard_Real theValue,
-                                           const Aspect_TypeOfFacingModel theModel)
-{
-  if (theModel != Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->SetDistinguishOn();
-  }
+	//! Change the polygons material aspect.
+	//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE
+	void XPrs3d_ShadingAspect::SetMaterial(XGraphic3d_MaterialAspect^ aMaterial, XAspect_TypeOfFacingModel aModel) {
+		NativeHandle()->SetMaterial(*aMaterial->GetMaterialAspect(), safe_cast<Aspect_TypeOfFacingModel>(aModel));
+	};
 
-  if (theModel == Aspect_TOFM_FRONT_SIDE
-   || theModel == Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->ChangeFrontMaterial().SetTransparency (Standard_ShortReal(theValue));
-  }
+	//! Change the polygons transparency value.
+	//! Warning : aValue must be in the range 0,1. 0 is the default (NO transparent)
+	//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_BOTH_SIDE
+	void XPrs3d_ShadingAspect::SetTransparency(Standard_Real aValue, XAspect_TypeOfFacingModel aModel) {
+		NativeHandle()->SetTransparency(aValue, safe_cast<Aspect_TypeOfFacingModel>(aModel));
+	};
 
-  if (theModel == Aspect_TOFM_BACK_SIDE
-   || theModel == Aspect_TOFM_BOTH_SIDE)
-  {
-    myAspect->ChangeBackMaterial().SetTransparency (Standard_ShortReal(theValue));
-  }
-}
+	//! Returns the polygons color.
+	//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE
+	XQuantity_Color^ XPrs3d_ShadingAspect::Color(XAspect_TypeOfFacingModel aModel) {
+		return gcnew XQuantity_Color(NativeHandle()->Color(safe_cast<Aspect_TypeOfFacingModel>(aModel)));
+	};
 
-//=======================================================================
-//function : Transparency
-//purpose  :
-//=======================================================================
-Standard_Real Prs3d_ShadingAspect::Transparency (const Aspect_TypeOfFacingModel theModel) const
-{
-  switch (theModel)
-  {
-    case Aspect_TOFM_BOTH_SIDE:
-    case Aspect_TOFM_FRONT_SIDE:
-      return myAspect->FrontMaterial().Transparency();
-    case Aspect_TOFM_BACK_SIDE:
-      return myAspect->BackMaterial().Transparency();
-  }
-  return 0.0;
-}
+	//! Returns the polygons material aspect.
+	//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE
+	XGraphic3d_MaterialAspect^ XPrs3d_ShadingAspect::Material(XAspect_TypeOfFacingModel aModel) {
+		Graphic3d_MaterialAspect* temp = new Graphic3d_MaterialAspect(NativeHandle()->Material(safe_cast<Aspect_TypeOfFacingModel>(aModel)));
+		return gcnew XGraphic3d_MaterialAspect(temp);
+	};
 
-// =======================================================================
-// function : DumpJson
-// purpose  :
-// =======================================================================
-void Prs3d_ShadingAspect::DumpJson (Standard_OStream& theOStream, const Standard_Integer theDepth) const
-{
-  OCCT_DUMP_CLASS_BEGIN (theOStream, Prs3d_ShadingAspect);
-  OCCT_DUMP_FIELD_VALUES_DUMPED (theOStream, theDepth, myAspect.get());
+	//! Returns the polygons transparency value.
+	//! Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE
+	Standard_Real XPrs3d_ShadingAspect::Transparency(XAspect_TypeOfFacingModel aModel) {
+		return NativeHandle()->Transparency(safe_cast<Aspect_TypeOfFacingModel>(aModel));
+	};
+
+	//! Returns the polygons aspect properties.
+	Handle(Graphic3d_AspectFillArea3d) XPrs3d_ShadingAspect::Aspect() {
+		return NativeHandle()->Aspect();
+	};
+
+	void XPrs3d_ShadingAspect::SetAspect(Handle(Graphic3d_AspectFillArea3d) theAspect) {
+		NativeHandle()->SetAspect(theAspect);
+	};
+
+	//! Dumps the content of me into the stream
+	void XPrs3d_ShadingAspect::DumpJson(Standard_OStream theOStream, Standard_Integer theDepth) {
+		NativeHandle()->DumpJson(theOStream, theDepth);
+	};
 }
 
