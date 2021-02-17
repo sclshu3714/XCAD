@@ -124,6 +124,7 @@ namespace XCAD
                 e.DrawHeaderBackground();
                 e.DrawText();
                 e.Cache.FillRectangle(e.ObjectInfo.PaintAppearance.ForeColor, new Rectangle(e.ObjectInfo.HeaderBounds.Location, new Size(ScaleHelper.ScaleHorizontal(3), e.ObjectInfo.HeaderBounds.Height)));
+                e.ObjectInfo.Element.ImageOptions.Image = this.accordionControl.SelectedElement.ImageOptions.Image;
             }
         }
 
@@ -132,7 +133,7 @@ namespace XCAD
             base.OnSizeChanged(e);
             if (!IsHandleCreated || IsDisposed) return;
             if (Width < ScaleHelper.ScaleHorizontal(850)) {
-                accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Overlay;
+                accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Minimal;
             }
             else {
                 accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Inline;

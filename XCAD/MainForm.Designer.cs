@@ -542,7 +542,5 @@ namespace XCAD
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementSelectParent;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementAssignorchangematerial;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementDeleteSelected;
-        private DevExpress.Utils.ImageCollection imageCollection;
-        private DevExpress.Utils.FlyoutPanel flyoutPanel1;
     }
 }
