@@ -72,11 +72,10 @@ namespace XCAD
             this.accElementAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.fluentDesignFormContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer
@@ -85,7 +84,7 @@ namespace XCAD
             this.fluentDesignFormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer.Location = new System.Drawing.Point(250, 31);
             this.fluentDesignFormContainer.Name = "fluentDesignFormContainer";
-            this.fluentDesignFormContainer.Size = new System.Drawing.Size(760, 668);
+            this.fluentDesignFormContainer.Size = new System.Drawing.Size(801, 668);
             this.fluentDesignFormContainer.TabIndex = 0;
             // 
             // RWControl
@@ -94,7 +93,7 @@ namespace XCAD
             this.RWControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RWControl.Location = new System.Drawing.Point(0, 0);
             this.RWControl.Name = "RWControl";
-            this.RWControl.Size = new System.Drawing.Size(760, 668);
+            this.RWControl.Size = new System.Drawing.Size(801, 668);
             this.RWControl.TabIndex = 0;
             // 
             // accordionControl
@@ -137,12 +136,14 @@ namespace XCAD
             this.accElementSection,
             this.accElementMeasure});
             this.accElementOperation.Expanded = true;
+            this.accElementOperation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementOperation.ImageOptions.Image")));
             this.accElementOperation.Name = "accElementOperation";
             this.accElementOperation.Tag = "Operation";
             this.accElementOperation.Text = "功能";
             // 
             // accElementOpen
             // 
+            this.accElementOpen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementOpen.ImageOptions.Image")));
             this.accElementOpen.Name = "accElementOpen";
             this.accElementOpen.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementOpen.Tag = "Open";
@@ -150,6 +151,7 @@ namespace XCAD
             // 
             // accElementSave
             // 
+            this.accElementSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementSave.ImageOptions.Image")));
             this.accElementSave.Name = "accElementSave";
             this.accElementSave.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementSave.Tag = "Save";
@@ -157,6 +159,7 @@ namespace XCAD
             // 
             // accElementTLable
             // 
+            this.accElementTLable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementTLable.ImageOptions.Image")));
             this.accElementTLable.Name = "accElementTLable";
             this.accElementTLable.Tag = "TLable";
             this.accElementTLable.Text = "模型";
@@ -167,6 +170,7 @@ namespace XCAD
             this.accElementProperty,
             this.accElementDisplayMode});
             this.accElementView.Expanded = true;
+            this.accElementView.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementView.ImageOptions.Image")));
             this.accElementView.Name = "accElementView";
             this.accElementView.Tag = "View";
             this.accElementView.Text = "显示";
@@ -184,6 +188,7 @@ namespace XCAD
             // 
             // accElementNone
             // 
+            this.accElementNone.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementNone.ImageOptions.Image")));
             this.accElementNone.Name = "accElementNone";
             this.accElementNone.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementNone.Tag = "None";
@@ -191,6 +196,7 @@ namespace XCAD
             // 
             // accElementMaterial
             // 
+            this.accElementMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementMaterial.ImageOptions.Image")));
             this.accElementMaterial.Name = "accElementMaterial";
             this.accElementMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementMaterial.Tag = "Material";
@@ -198,6 +204,7 @@ namespace XCAD
             // 
             // accElementTexture
             // 
+            this.accElementTexture.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementTexture.ImageOptions.Image")));
             this.accElementTexture.Name = "accElementTexture";
             this.accElementTexture.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementTexture.Tag = "Texture";
@@ -220,6 +227,7 @@ namespace XCAD
             // 
             // accElementHollowMesh
             // 
+            this.accElementHollowMesh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementHollowMesh.ImageOptions.Image")));
             this.accElementHollowMesh.Name = "accElementHollowMesh";
             this.accElementHollowMesh.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementHollowMesh.Tag = "HollowMesh";
@@ -227,6 +235,7 @@ namespace XCAD
             // 
             // accoElementMeshEdges
             // 
+            this.accoElementMeshEdges.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accoElementMeshEdges.ImageOptions.Image")));
             this.accoElementMeshEdges.Name = "accoElementMeshEdges";
             this.accoElementMeshEdges.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accoElementMeshEdges.Tag = "MeshEdges";
@@ -234,6 +243,7 @@ namespace XCAD
             // 
             // accElementMeshShrinked
             // 
+            this.accElementMeshShrinked.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementMeshShrinked.ImageOptions.Image")));
             this.accElementMeshShrinked.Name = "accElementMeshShrinked";
             this.accElementMeshShrinked.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementMeshShrinked.Tag = "MeshShrinked";
@@ -241,6 +251,7 @@ namespace XCAD
             // 
             // accElementWireframe
             // 
+            this.accElementWireframe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementWireframe.ImageOptions.Image")));
             this.accElementWireframe.Name = "accElementWireframe";
             this.accElementWireframe.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementWireframe.Tag = "Wireframe";
@@ -248,6 +259,7 @@ namespace XCAD
             // 
             // accElementFlatShaded
             // 
+            this.accElementFlatShaded.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementFlatShaded.ImageOptions.Image")));
             this.accElementFlatShaded.Name = "accElementFlatShaded";
             this.accElementFlatShaded.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementFlatShaded.Tag = "FlatShaded";
@@ -255,6 +267,7 @@ namespace XCAD
             // 
             // accElementSmoothlyShaded
             // 
+            this.accElementSmoothlyShaded.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementSmoothlyShaded.ImageOptions.Image")));
             this.accElementSmoothlyShaded.Name = "accElementSmoothlyShaded";
             this.accElementSmoothlyShaded.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementSmoothlyShaded.Tag = "SmoothlyShaded";
@@ -262,6 +275,7 @@ namespace XCAD
             // 
             // accElementShadedwithEdges
             // 
+            this.accElementShadedwithEdges.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementShadedwithEdges.ImageOptions.Image")));
             this.accElementShadedwithEdges.Name = "accElementShadedwithEdges";
             this.accElementShadedwithEdges.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementShadedwithEdges.Tag = "ShadedwithEdges";
@@ -286,12 +300,14 @@ namespace XCAD
             this.accElementAssignorchangematerial,
             this.accElementDeleteSelected});
             this.accElementViewer.Expanded = true;
+            this.accElementViewer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementViewer.ImageOptions.Image")));
             this.accElementViewer.Name = "accElementViewer";
             this.accElementViewer.Tag = "Viewer";
             this.accElementViewer.Text = "视图";
             // 
             // accElementRubberbandselection
             // 
+            this.accElementRubberbandselection.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementRubberbandselection.ImageOptions.Image")));
             this.accElementRubberbandselection.Name = "accElementRubberbandselection";
             this.accElementRubberbandselection.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementRubberbandselection.Tag = "Rubberbandselection";
@@ -299,6 +315,7 @@ namespace XCAD
             // 
             // accElementOrbitrotationbysingletouch
             // 
+            this.accElementOrbitrotationbysingletouch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementOrbitrotationbysingletouch.ImageOptions.Image")));
             this.accElementOrbitrotationbysingletouch.Name = "accElementOrbitrotationbysingletouch";
             this.accElementOrbitrotationbysingletouch.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementOrbitrotationbysingletouch.Tag = "Orbitrotationbysingletouch";
@@ -306,6 +323,7 @@ namespace XCAD
             // 
             // accElementPanbysingletouch
             // 
+            this.accElementPanbysingletouch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementPanbysingletouch.ImageOptions.Image")));
             this.accElementPanbysingletouch.Name = "accElementPanbysingletouch";
             this.accElementPanbysingletouch.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementPanbysingletouch.Tag = "Panbysingletouch";
@@ -313,6 +331,7 @@ namespace XCAD
             // 
             // accElementZoombysingletouch
             // 
+            this.accElementZoombysingletouch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementZoombysingletouch.ImageOptions.Image")));
             this.accElementZoombysingletouch.Name = "accElementZoombysingletouch";
             this.accElementZoombysingletouch.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementZoombysingletouch.Tag = "Zoombysingletouch";
@@ -320,6 +339,7 @@ namespace XCAD
             // 
             // accElementShowAll
             // 
+            this.accElementShowAll.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementShowAll.ImageOptions.Image")));
             this.accElementShowAll.Name = "accElementShowAll";
             this.accElementShowAll.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementShowAll.Tag = "ShowAll";
@@ -327,6 +347,7 @@ namespace XCAD
             // 
             // accElementFitAll
             // 
+            this.accElementFitAll.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementFitAll.ImageOptions.Image")));
             this.accElementFitAll.Name = "accElementFitAll";
             this.accElementFitAll.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementFitAll.Tag = "FitAll";
@@ -334,6 +355,7 @@ namespace XCAD
             // 
             // accElementPerspectivemodel
             // 
+            this.accElementPerspectivemodel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementPerspectivemodel.ImageOptions.Image")));
             this.accElementPerspectivemodel.Name = "accElementPerspectivemodel";
             this.accElementPerspectivemodel.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementPerspectivemodel.Tag = "Enable/disableperspectivemodel";
@@ -341,6 +363,7 @@ namespace XCAD
             // 
             // accElementMessagewindow
             // 
+            this.accElementMessagewindow.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementMessagewindow.ImageOptions.Image")));
             this.accElementMessagewindow.Name = "accElementMessagewindow";
             this.accElementMessagewindow.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementMessagewindow.Tag = "Show/hidemessagewindow";
@@ -348,6 +371,7 @@ namespace XCAD
             // 
             // accElementShowselected
             // 
+            this.accElementShowselected.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementShowselected.ImageOptions.Image")));
             this.accElementShowselected.Name = "accElementShowselected";
             this.accElementShowselected.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementShowselected.Tag = "Showselected";
@@ -355,6 +379,7 @@ namespace XCAD
             // 
             // accElementHideSelected
             // 
+            this.accElementHideSelected.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementHideSelected.ImageOptions.Image")));
             this.accElementHideSelected.Name = "accElementHideSelected";
             this.accElementHideSelected.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementHideSelected.Tag = "HideSelected";
@@ -362,6 +387,7 @@ namespace XCAD
             // 
             // accElementShowonlyselected
             // 
+            this.accElementShowonlyselected.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementShowonlyselected.ImageOptions.Image")));
             this.accElementShowonlyselected.Name = "accElementShowonlyselected";
             this.accElementShowonlyselected.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementShowonlyselected.Tag = "Showonlyselected";
@@ -369,6 +395,7 @@ namespace XCAD
             // 
             // accElementPropertyWindow
             // 
+            this.accElementPropertyWindow.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementPropertyWindow.ImageOptions.Image")));
             this.accElementPropertyWindow.Name = "accElementPropertyWindow";
             this.accElementPropertyWindow.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementPropertyWindow.Tag = "PropertyWindow";
@@ -376,6 +403,7 @@ namespace XCAD
             // 
             // accElementSelectParent
             // 
+            this.accElementSelectParent.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementSelectParent.ImageOptions.Image")));
             this.accElementSelectParent.Name = "accElementSelectParent";
             this.accElementSelectParent.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementSelectParent.Tag = "SelectParent";
@@ -383,6 +411,7 @@ namespace XCAD
             // 
             // accElementAssignorchangematerial
             // 
+            this.accElementAssignorchangematerial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementAssignorchangematerial.ImageOptions.Image")));
             this.accElementAssignorchangematerial.Name = "accElementAssignorchangematerial";
             this.accElementAssignorchangematerial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementAssignorchangematerial.Tag = "Assignorchangematerial";
@@ -390,6 +419,7 @@ namespace XCAD
             // 
             // accElementDeleteSelected
             // 
+            this.accElementDeleteSelected.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementDeleteSelected.ImageOptions.Image")));
             this.accElementDeleteSelected.Name = "accElementDeleteSelected";
             this.accElementDeleteSelected.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementDeleteSelected.Tag = "DeleteSelected";
@@ -397,6 +427,7 @@ namespace XCAD
             // 
             // accElementSection
             // 
+            this.accElementSection.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementSection.ImageOptions.Image")));
             this.accElementSection.Name = "accElementSection";
             this.accElementSection.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementSection.Tag = "Section";
@@ -404,6 +435,7 @@ namespace XCAD
             // 
             // accElementMeasure
             // 
+            this.accElementMeasure.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementMeasure.ImageOptions.Image")));
             this.accElementMeasure.Name = "accElementMeasure";
             this.accElementMeasure.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accElementMeasure.Tag = "Measure";
@@ -413,6 +445,7 @@ namespace XCAD
             // 
             this.accElementSetting.ControlFooterAlignment = DevExpress.XtraBars.Navigation.AccordionItemFooterAlignment.Far;
             this.accElementSetting.Expanded = true;
+            this.accElementSetting.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementSetting.ImageOptions.Image")));
             this.accElementSetting.Name = "accElementSetting";
             this.accElementSetting.Tag = "Setting";
             this.accElementSetting.Text = "设置";
@@ -421,6 +454,7 @@ namespace XCAD
             // 
             this.accElementAbout.ControlFooterAlignment = DevExpress.XtraBars.Navigation.AccordionItemFooterAlignment.Far;
             this.accElementAbout.Expanded = true;
+            this.accElementAbout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementAbout.ImageOptions.Image")));
             this.accElementAbout.Name = "accElementAbout";
             this.accElementAbout.Tag = "About";
             this.accElementAbout.Text = "关于";
@@ -431,7 +465,7 @@ namespace XCAD
             this.fluentDesignFormControl.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl.Manager = this.fluentFormDefaultManager;
             this.fluentDesignFormControl.Name = "fluentDesignFormControl";
-            this.fluentDesignFormControl.Size = new System.Drawing.Size(1010, 31);
+            this.fluentDesignFormControl.Size = new System.Drawing.Size(1051, 31);
             this.fluentDesignFormControl.TabIndex = 2;
             this.fluentDesignFormControl.TabStop = false;
             // 
@@ -440,15 +474,11 @@ namespace XCAD
             this.fluentFormDefaultManager.DockingEnabled = false;
             this.fluentFormDefaultManager.Form = this;
             // 
-            // imageCollection
-            // 
-            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 699);
+            this.ClientSize = new System.Drawing.Size(1051, 699);
             this.ControlContainer = this.fluentDesignFormContainer;
             this.Controls.Add(this.fluentDesignFormContainer);
             this.Controls.Add(this.accordionControl);
@@ -460,13 +490,14 @@ namespace XCAD
             this.NavigationControl = this.accordionControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XCAD";
+            this.fluentDesignFormContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer;
@@ -512,5 +543,6 @@ namespace XCAD
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementAssignorchangematerial;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementDeleteSelected;
         private DevExpress.Utils.ImageCollection imageCollection;
+        private DevExpress.Utils.FlyoutPanel flyoutPanel1;
     }
 }

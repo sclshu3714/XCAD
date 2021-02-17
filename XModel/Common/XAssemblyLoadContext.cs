@@ -36,7 +36,10 @@ namespace XModel.Common
                     //DesignPlugin = DesignPlugin.LoadAssembly(plugin.PluginPath);
                     if (LoadedAssemblys == null)
                         LoadedAssemblys = new Dictionary<string, AssemblyLoadContext>();
-                    LoadedAssemblys.Add(friendlyName, _AssemblyLoadContext);
+                    if (string.IsNullOrEmpty(DesignPlugin.PluginId))
+                        DesignPlugin.PluginId = Guid.NewGuid().ToString();
+                    LoadedAssemblys.Add(DesignPlugin.PluginId, _AssemblyLoadContext);
+                    LoadedDesignPlugins.Add(DesignPlugin.PluginId, DesignPlugin);
                     return _AssemblyLoadContext;
                 }
             } catch (Exception ex) { Console.WriteLine(ex.Message); };
@@ -64,12 +67,15 @@ namespace XModel.Common
             if (LoadedAssemblys.ContainsKey(DesignPlugin.PluginId)) {
                 LoadedAssemblys[DesignPlugin.PluginId].Unload();
                 LoadedAssemblys.Remove(DesignPlugin.PluginId);
+                LoadedDesignPlugins.Remove(DesignPlugin.PluginId);
+                DesignPlugin = null;
             }
             return true;
         }
 
         #region 字段属性
         private static Dictionary<string, AssemblyLoadContext> LoadedAssemblys { get; set; }
+        private static Dictionary<string, XDesignPlugin> LoadedDesignPlugins { get; set; }
         #endregion
     }
 }
