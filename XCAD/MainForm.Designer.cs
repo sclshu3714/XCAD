@@ -72,10 +72,14 @@ namespace XCAD
             this.accElementAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.flyoutMessagePanel = new DevExpress.Utils.FlyoutPanel();
             this.fluentDesignFormContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutMessagePanel)).BeginInit();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer
@@ -474,6 +478,22 @@ namespace XCAD
             this.fluentFormDefaultManager.DockingEnabled = false;
             this.fluentFormDefaultManager.Form = this;
             // 
+            // imageCollection
+            // 
+            this.imageCollection.ImageSize = new System.Drawing.Size(32, 32);
+            this.imageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection.ImageStream")));
+            // 
+            // flyoutMessagePanel
+            // 
+            this.flyoutMessagePanel.Location = new System.Drawing.Point(0, 0);
+            this.flyoutMessagePanel.Name = "flyoutMessagePanel";
+            this.flyoutMessagePanel.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Bottom;
+            this.flyoutMessagePanel.OptionsBeakPanel.BeakLocation = DevExpress.Utils.BeakPanelBeakLocation.Bottom;
+            this.flyoutMessagePanel.OptionsBeakPanel.Opacity = 0.1D;
+            this.flyoutMessagePanel.OwnerControl = this.RWControl;
+            this.flyoutMessagePanel.ParentForm = this;
+            this.flyoutMessagePanel.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -494,6 +514,8 @@ namespace XCAD
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutMessagePanel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -542,5 +564,7 @@ namespace XCAD
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementSelectParent;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementAssignorchangematerial;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accElementDeleteSelected;
+        private DevExpress.Utils.ImageCollection imageCollection;
+        private DevExpress.Utils.FlyoutPanel flyoutMessagePanel;
     }
 }

@@ -29,6 +29,7 @@ using XModel.Common;
 using XModel.Elements;
 using XModel.Interface;
 using System.Runtime.Loader;
+using DevExpress.XtraEditors;
 
 namespace XCAD
 {
@@ -51,6 +52,7 @@ namespace XCAD
                 Application.Exit();
                 return;
             }
+            DisplayMessage(Guid.NewGuid().ToString(), "code 55", "工具准备就绪", "MainForm", 0);
             //XPluginAssembly plugin = new XPluginAssembly() {
             //    PluginId = Guid.NewGuid().ToString(),
             //    AssemblyFullName = "XModelPlugin.ModelPlugin",
@@ -94,12 +96,9 @@ namespace XCAD
             OCCTView = new OCCTProxy();
             OCCTView.InitOCCTProxy();
             if (!(InitViewer = OCCTView.InitViewer(this.RWControl.Handle))) {
-                MessageBox.Show("初始化图形失败");
+                //DisplayMessage(Guid.NewGuid().ToString(), "code 98", "初始化图形失败", "MainForm", 3);
                 return InitViewer;
             }
-            //OCCTView.SetBgGradientColors(new XQuantity_Color(158 / 255.0, 165 / 255.0, 172 / 255.0, XQuantity_TypeOfColor.Quantity_TOC_RGB),
-            //                             new XQuantity_Color(229 / 255.0, 234 / 255.0, 236 / 255.0, XQuantity_TypeOfColor.Quantity_TOC_RGB),
-            //                             XAspect_GradientFillMethod.Aspect_GFM_VER, true);
             myCurrentMode = CurrentAction3d.CurAction3d_DynamicRotation;
             myCurrentPressedKey = CurrentPressedKey.CurPressedKey_Nothing;
             myDegenerateModeIsOn = true;
@@ -155,6 +154,7 @@ namespace XCAD
                 case "Open":
                     #region 打开文件
                     OperationOpenFile();
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 156", "打开文件完成", "MainForm", 0);
                     #endregion
                     break;
                 case "Save":
@@ -1938,6 +1938,44 @@ namespace XCAD
             }
         }
 
+        #endregion
+
+        #region 消息展示
+        /// <summary>
+        /// 显示状态信息
+        /// </summary>
+        /// <param name="strStatusInfo">信息参数</param>
+        public void DisplayStatusInfo(string strStatusInfo = "就绪")
+        {
+
+        }
+        /// <summary>
+        /// 更新各种信息消息
+        /// </summary>
+        /// <param name="logid">信息GUID编号</param>
+        /// <param name="code">信息代码或者标题</param>
+        /// <param name="explain">说明</param>
+        /// <param name="position">位置</param>
+        /// <param name="level">错误级别:未知Unknown0;普通消息Message1;警告消息Warning2;错误消息Error3;操作信息Operate4</param>
+        public void DisplayMessage(string logid, string code, string explain, string position, int level) {
+            this.flyoutMessagePanel.Controls.Clear();
+            ListBoxControl listBox = new ListBoxControl();
+            listBox.Items.Add(explain);
+            listBox.Dock = DockStyle.Fill;
+            this.flyoutMessagePanel.Controls.Add(listBox);
+            this.flyoutMessagePanel.ShowPopup();
+            Timer timer = new Timer();
+            timer.Interval = 3000;
+            timer.Tick += OnTimerTick;
+            timer.Start();
+        }
+
+        private void OnTimerTick(object sender, EventArgs e)
+        {
+            Timer timer = sender as Timer;
+            this.flyoutMessagePanel.HidePopup();
+            timer.Stop();
+        }
         #endregion
 
         #region 操作事件
