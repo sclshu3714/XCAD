@@ -233,6 +233,7 @@ namespace XCAD
         #region 视图模式
         private void SetViewMode(string Tag, XAIS_InteractiveObject shape = null)
         {
+            OCCTContext = OCCTView.GetInteractiveContext();
             switch (Tag) {
                 case "Rubberbandselection":             //视图模式 - 橡皮筋选择
                     myCurrentMode = CurrentAction3d.CurAction3d_Nothing; 
@@ -289,10 +290,7 @@ namespace XCAD
                     DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 指定材质", "MainForm", 0);
                     break;
                 case "DeleteSelected":                  //视图模式 - 删除选择
-                    for (OCCTContext.InitSelected(); OCCTContext.MoreSelected(); OCCTContext.NextSelected()) {
-                        OCCTContext.Remove(OCCTContext.SelectedInteractive(), false);
-                    }
-                    OCCTContext.UpdateCurrentViewer();
+                    OCCTContext.Remove(OCCTContext.SelectedInteractive(), true);
                     DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 删除选择", "MainForm", 0);
                     break;
                 case "Show/hidemessagewindow":          //视图模式 - 消息窗口
@@ -313,6 +311,7 @@ namespace XCAD
 
         private void SetViewDisplayMode(string Tag, XAIS_InteractiveObject shape = null)
         {
+            OCCTContext = OCCTView.GetInteractiveContext();
             switch (Tag) {
                 case "HollowMesh":                      //显示模式 - 空心网格
                     if (shape != null) {
@@ -404,6 +403,7 @@ namespace XCAD
         /// </example>
         private void SetProperty(string Tag, XAIS_InteractiveObject shape = null)
         {
+            OCCTContext = OCCTView.GetInteractiveContext();
             switch (Tag) {
                 case "Material":                        //特性 - 材料
                     if (shape != null) {
