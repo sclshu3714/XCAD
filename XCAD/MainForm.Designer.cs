@@ -68,13 +68,13 @@ namespace XCAD
             this.accElementDeleteSelected = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accElementSection = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accElementMeasure = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionElementPlugin = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accElementSetting = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accElementAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.flyoutMessagePanel = new DevExpress.Utils.FlyoutPanel();
-            this.accordionElementPlugin = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl)).BeginInit();
@@ -444,6 +444,13 @@ namespace XCAD
             this.accElementMeasure.Tag = "Measure";
             this.accElementMeasure.Text = "标记";
             // 
+            // accordionElementPlugin
+            // 
+            this.accordionElementPlugin.Expanded = true;
+            this.accordionElementPlugin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionElementPlugin.ImageOptions.Image")));
+            this.accordionElementPlugin.Name = "accordionElementPlugin";
+            this.accordionElementPlugin.Text = "插件";
+            // 
             // accElementSetting
             // 
             this.accElementSetting.ControlFooterAlignment = DevExpress.XtraBars.Navigation.AccordionItemFooterAlignment.Far;
@@ -493,13 +500,6 @@ namespace XCAD
             this.flyoutMessagePanel.ParentForm = this;
             this.flyoutMessagePanel.TabIndex = 0;
             // 
-            // accordionElementPlugin
-            // 
-            this.accordionElementPlugin.Expanded = true;
-            this.accordionElementPlugin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionElementPlugin.ImageOptions.Image")));
-            this.accordionElementPlugin.Name = "accordionElementPlugin";
-            this.accordionElementPlugin.Text = "插件";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -512,6 +512,7 @@ namespace XCAD
             this.DoubleBuffered = true;
             this.FluentDesignFormControl = this.fluentDesignFormControl;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("MainForm.IconOptions.Icon")));
+            this.KeyPreview = true;
             this.Name = "MainForm";
             this.NavigationControl = this.accordionControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

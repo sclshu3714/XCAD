@@ -235,12 +235,16 @@ namespace XCAD
         {
             switch (Tag) {
                 case "Rubberbandselection":             //视图模式 - 橡皮筋选择
+                    myCurrentMode = CurrentAction3d.CurAction3d_Nothing;
                     break;
                 case "Orbitrotationbysingletouch":      //视图模式 - 单触旋转
+                    myCurrentMode = CurrentAction3d.CurAction3d_DynamicRotation;
                     break;
                 case "Panbysingletouch":                //视图模式 - 单触平移
+                    myCurrentMode = CurrentAction3d.CurAction3d_DynamicPanning;
                     break;
                 case "Zoombysingletouch":               //视图模式 - 单触缩放
+                    myCurrentMode = CurrentAction3d.CurAction3d_DynamicZooming;
                     break;
                 case "ShowAll":                         //视图模式 - 显示所有
                     OCCTView.DisplayAll(true);
@@ -256,10 +260,11 @@ namespace XCAD
                     OCCTView.DisplaySelected(true);
                     break;
                 case "HideSelected":                    //视图模式 - 隐藏选择
-                    OCCTContext.EraseSelected(true);
+                    OCCTView.EraseSelected(true);
                     break;
                 case "Showonlyselected":                //视图模式 - 仅显示选择
-                   
+                    OCCTView.EraseAll(false);
+                    OCCTView.DisplaySelected(true);
                     break;
                 case "PropertyWindow":                  //视图模式 - 属性窗口
                     break;
@@ -268,7 +273,10 @@ namespace XCAD
                 case "Assignorchangematerial":          //视图模式 - 指定材质
                     break;
                 case "DeleteSelected":                  //视图模式 - 删除选择
-                    OCCTContext.ClearSelected(true);
+                    for (OCCTContext.InitSelected(); OCCTContext.MoreSelected(); OCCTContext.NextSelected()) {
+                        OCCTContext.Remove(OCCTContext.SelectedInteractive(), false);
+                    }
+                    OCCTContext.UpdateCurrentViewer();
                     break;
                 default:
                     break;
@@ -1879,7 +1887,7 @@ namespace XCAD
         /// </summary>
         public void DeleteObjects()
         {
-            OCCTView.EraseObjects();
+            OCCTView.EraseSelected(true);
             //IE_WinForms.Form1 parent = (IE_WinForms.Form1)this.ParentForm;
             //parent.SelectionChanged();
         }

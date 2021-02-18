@@ -687,13 +687,12 @@ public:
     /// <summary>
     ///Erase objects£¨Òş²ØÑ¡Ôñ¶ÔÏó£©
     /// </summary>
-    void EraseObjects(void) {
+    void EraseSelected(Standard_Boolean theToUpdateViewer) {
         if (mainAISContext().IsNull()) {
             return;
         }
-
-        mainAISContext()->EraseSelected(Standard_False);
-        mainAISContext()->ClearSelected(Standard_True);
+        mainAISContext()->EraseSelected(theToUpdateViewer);
+        //mainAISContext()->ClearSelected(Standard_True);
     }
 
     /// <summary>
