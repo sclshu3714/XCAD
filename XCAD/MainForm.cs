@@ -53,6 +53,7 @@ namespace XCAD
                 Application.Exit();
                 return;
             }
+            InitLayoutMessage();
             LoadedPlugins();
             DisplayMessage(Guid.NewGuid().ToString(), "code 55", "工具准备就绪", "MainForm", 0);
             
@@ -62,6 +63,7 @@ namespace XCAD
             this.accordionControl.Refresh();
             this.Refresh();
         }
+
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -185,13 +187,11 @@ namespace XCAD
                 case "Open":
                     #region 打开文件
                     OperationOpenFile();
-                    DisplayMessage(Guid.NewGuid().ToString(), "code 156", "打开文件完成", "MainForm", 0);
                     #endregion
                     break;
                 case "Save":
                     #region 打开文件
                     OperationSaveFile();
-                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", "保存文件完成", "MainForm", 0);
                     #endregion
                     break;
                 case "None":                            //特性 - 无
@@ -235,48 +235,73 @@ namespace XCAD
         {
             switch (Tag) {
                 case "Rubberbandselection":             //视图模式 - 橡皮筋选择
-                    myCurrentMode = CurrentAction3d.CurAction3d_Nothing;
+                    myCurrentMode = CurrentAction3d.CurAction3d_Nothing; 
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 橡皮筋选择", "MainForm", 0);
                     break;
                 case "Orbitrotationbysingletouch":      //视图模式 - 单触旋转
                     myCurrentMode = CurrentAction3d.CurAction3d_DynamicRotation;
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 单触旋转", "MainForm", 0);
                     break;
                 case "Panbysingletouch":                //视图模式 - 单触平移
                     myCurrentMode = CurrentAction3d.CurAction3d_DynamicPanning;
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 单触平移", "MainForm", 0);
                     break;
                 case "Zoombysingletouch":               //视图模式 - 单触缩放
                     myCurrentMode = CurrentAction3d.CurAction3d_DynamicZooming;
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 单触缩放", "MainForm", 0);
                     break;
                 case "ShowAll":                         //视图模式 - 显示所有
                     OCCTView.DisplayAll(true);
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 显示所有", "MainForm", 0);
                     break;
                 case "FitAll":                          //视图模式 - 适合所有
-                    OCCTView.WindowFitAll(0, 0, this.RWControl.Width, this.RWControl.Height);
+                    OCCTView.ZoomAllView();
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 适合所有", "MainForm", 0);
                     break;
                 case "Enable/disableperspectivemodel":  //视图模式 - 透视模式
-                    break;
-                case "Show/hidemessagewindow":          //视图模式 - 消息窗口
+                    XV3d_TypeOfView typeOfView = OCCTContext.CurrentViewer().DefaultTypeOfView();
+                    OCCTContext.CurrentViewer().SetDefaultTypeOfView(typeOfView == XV3d_TypeOfView.V3d_ORTHOGRAPHIC ? XV3d_TypeOfView.V3d_PERSPECTIVE : XV3d_TypeOfView.V3d_ORTHOGRAPHIC);
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 透视模式", "MainForm", 0);
                     break;
                 case "Showselected":                    //视图模式 - 显示选择
                     OCCTView.DisplaySelected(true);
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 显示选择", "MainForm", 0);
                     break;
                 case "HideSelected":                    //视图模式 - 隐藏选择
                     OCCTView.EraseSelected(true);
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 隐藏选择", "MainForm", 0);
                     break;
                 case "Showonlyselected":                //视图模式 - 仅显示选择
                     OCCTView.EraseAll(false);
                     OCCTView.DisplaySelected(true);
-                    break;
-                case "PropertyWindow":                  //视图模式 - 属性窗口
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 仅显示选择", "MainForm", 0);
                     break;
                 case "SelectParent":                    //视图模式 - 选择父级
+                    if (!OCCTView.IsObjectSelected())
+                        break;
+                    XAIS_InteractiveObject XObject = OCCTContext.SelectedInteractive();
+                    XPrsMgr_PresentableObject xPObject = XObject.Parent();
+                    XAIS_InteractiveObject PObject = OCCTView.DownCastObject(xPObject);
+                    OCCTContext.AddOrRemoveSelected(PObject, true);
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 选择父级", "MainForm", 0);
                     break;
                 case "Assignorchangematerial":          //视图模式 - 指定材质
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 指定材质", "MainForm", 0);
                     break;
                 case "DeleteSelected":                  //视图模式 - 删除选择
                     for (OCCTContext.InitSelected(); OCCTContext.MoreSelected(); OCCTContext.NextSelected()) {
                         OCCTContext.Remove(OCCTContext.SelectedInteractive(), false);
                     }
                     OCCTContext.UpdateCurrentViewer();
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 删除选择", "MainForm", 0);
+                    break;
+                case "Show/hidemessagewindow":          //视图模式 - 消息窗口
+                    if (!this.flyoutMessagePanel.IsPopupOpen)
+                        this.flyoutMessagePanel.ShowPopup();
+                    else
+                        this.flyoutMessagePanel.HidePopup();
+                    break;
+                case "PropertyWindow":                  //视图模式 - 属性窗口
                     break;
                 default:
                     break;
@@ -308,22 +333,28 @@ namespace XCAD
                         else
                             AspectFillArea3d.SetEdgeOff();
                     }
+
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"显示模式 - 空心网格", "MainForm", 0);
                     break;
                 case "MeshEdges":                       //显示模式 - 网格边缘
-
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"显示模式 - 网格边缘", "MainForm", 0);
                     break;
                 case "MeshShrinked":                    //显示模式 - 网格收缩
 
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"显示模式 - 网格收缩", "MainForm", 0);
                     break;
                 case "Wireframe":                       //显示模式 - 线框模式
                     int Mode = OCCTView.DisplayMode();
                     SetDisplayMode(Mode == 0 ? 1 : 0);
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"显示模式 - 线框模式", "MainForm", 0);
                     break;
                 case "FlatShaded":                      //显示模式 - 平面投影
 
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"显示模式 - 平面投影", "MainForm", 0);
                     break;
                 case "SmoothlyShaded":                  //显示模式 - 平滑阴影
 
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"显示模式 - 平滑阴影", "MainForm", 0);
                     break;
                 case "ShadedwithEdges":                 //显示模式 - 显示边框
                     if (shape != null) {
@@ -354,6 +385,7 @@ namespace XCAD
                         }
                         UpdateCurrentViewer();
                     }
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"显示模式 - 显示边框", "MainForm", 0);
                     break;
             }
         }
@@ -388,6 +420,7 @@ namespace XCAD
                         AspectFillArea3d.SetDistinguishOn();
                         AspectFillArea3d.SetTextureMapOff();
                     }
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"开启材料特性", "MainForm", 0);
                     break;
                 case "Texture":                         //特性 - 纹理
                     if (shape != null) {
@@ -404,6 +437,7 @@ namespace XCAD
                         AspectFillArea3d.SetDistinguishOff();
                         AspectFillArea3d.SetTextureMapOn();
                     }
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"开启纹理特性", "MainForm", 0);
                     break;
                 case "None":                            //特性 - 无
                 default:
@@ -421,6 +455,7 @@ namespace XCAD
                         AspectFillArea3d.SetDistinguishOff();
                         AspectFillArea3d.SetTextureMapOff();
                     }
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"关闭特性", "MainForm", 0);
                     break;
             }
         }
@@ -473,6 +508,7 @@ namespace XCAD
                     default:
                         return;
                 }
+                DisplayMessage(Guid.NewGuid().ToString(), "code 156", $"打开文件{Path.GetFileName(FullName)}完成", "MainForm", 0);
             }
         }
         #endregion
@@ -522,6 +558,7 @@ namespace XCAD
                     default:
                         return;
                 }
+                DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"保存文件{Path.GetFileName(FullName)}完成", "MainForm", 0);
             }
         }
         #endregion
@@ -2101,6 +2138,32 @@ namespace XCAD
         #endregion
 
         #region 消息展示
+
+        /// <summary>
+        /// 构建消息界面布局
+        /// </summary>
+        private void InitLayoutMessage()
+        {
+            this.flyoutMessagePanel.Controls.Clear();
+            this.flyoutMessagePanel.BorderStyle = BorderStyle.None;
+            this.flyoutMessagePanel.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.TopLeft;
+            this.flyoutMessagePanel.Options.VertIndent = this.RWControl.Height - 30;
+            this.flyoutMessagePanel.Options.HorzIndent = (this.RWControl.Width - 350) / 2;
+            this.flyoutMessagePanel.Height = 20;
+            this.flyoutMessagePanel.Width = 350;
+            ListBoxControl listBox = new ListBoxControl();
+            listBox.HorizontalScrollbar = false;
+            listBox.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            listBox.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            //listBox.Items.Add(explain);
+            //listBox.Dock = DockStyle.Fill;
+            listBox.Location = new Point(0, 0);
+            listBox.Width = 375;
+            listBox.Height = 20;
+            listBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            this.flyoutMessagePanel.Controls.Add(listBox);
+        }
+
         /// <summary>
         /// 显示状态信息
         /// </summary>
@@ -2118,12 +2181,11 @@ namespace XCAD
         /// <param name="position">位置</param>
         /// <param name="level">错误级别:未知Unknown0;普通消息Message1;警告消息Warning2;错误消息Error3;操作信息Operate4</param>
         public void DisplayMessage(string logid, string code, string explain, string position, int level) {
-            this.flyoutMessagePanel.Controls.Clear();
-            ListBoxControl listBox = new ListBoxControl();
-            listBox.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            ListBoxControl listBox = this.flyoutMessagePanel.Controls[0] as ListBoxControl;
+            //listBox.Items.Clear();
             listBox.Items.Add(explain);
-            listBox.Dock = DockStyle.Fill;
-            this.flyoutMessagePanel.Controls.Add(listBox);
+            listBox.TopIndex = listBox.ItemCount - 1;
+            listBox.SetSelected(listBox.ItemCount - 1, true);
             this.flyoutMessagePanel.ShowPopup();
             Timer timer = new Timer();
             timer.Interval = 3000;

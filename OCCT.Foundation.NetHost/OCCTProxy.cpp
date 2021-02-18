@@ -589,6 +589,38 @@ public:
     }
 
     /// <summary>
+    /// XPrsMgr_PresentableObject ת XAIS_InteractiveObject
+    /// </summary>
+    /// <param name="thePresentableObject"></param>
+    /// <returns></returns>
+    XAIS_InteractiveObject^ DownCastObject(XPrsMgr_PresentableObject^ thePresentableObject) {
+        //Handle(AIS_Shape) anIS = Handle(AIS_Shape)::DownCast(anIO);
+        Handle(AIS_InteractiveObject) tmpAisShape = Handle(AIS_InteractiveObject)::DownCast(thePresentableObject->GetPresentableObject());
+        return gcnew XAIS_InteractiveObject(tmpAisShape);
+    };
+    /// <summary>
+    /// XPrsMgr_PresentableObject ת XAIS_Shape
+    /// </summary>
+    /// <param name="thePresentableObject"></param>
+    /// <returns></returns>
+    XAIS_Shape^ DownCastShape(XPrsMgr_PresentableObject^ thePresentableObject) {
+        //Handle(AIS_Shape) anIS = Handle(AIS_Shape)::DownCast(anIO);
+        Handle(AIS_Shape) tmpAisShape = Handle(AIS_Shape)::DownCast(thePresentableObject->GetPresentableObject());
+        return gcnew XAIS_Shape(tmpAisShape);
+    };
+
+    /// <summary>
+    /// XAIS_InteractiveObject ת XAIS_Shape
+    /// </summary>
+    /// <param name="thePresentableObject"></param>
+    /// <returns></returns>
+    XAIS_Shape^ DownCastShape(XAIS_InteractiveObject^ theObject) {
+        //Handle(AIS_Shape) anIS = Handle(AIS_Shape)::DownCast(anIO);
+        Handle(AIS_Shape) tmpAisShape = Handle(AIS_Shape)::DownCast(theObject->GetInteractiveObject());
+        return gcnew XAIS_Shape(tmpAisShape);
+    };
+
+    /// <summary>
     /// Set display mode of the object
     /// </summary>
     /// <param name="theIObj"></param>
