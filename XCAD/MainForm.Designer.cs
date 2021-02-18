@@ -122,6 +122,7 @@ namespace XCAD
             this.accordionControl.LookAndFeel.SkinName = "Office 2019 Black";
             this.accordionControl.LookAndFeel.UseDefaultLookAndFeel = false;
             this.accordionControl.Name = "accordionControl";
+            this.accordionControl.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay;
             this.accordionControl.OptionsMinimizing.PopupFormAutoHeightMode = DevExpress.XtraBars.Navigation.AccordionPopupFormAutoHeightMode.FitContent;
             this.accordionControl.RootDisplayMode = DevExpress.XtraBars.Navigation.AccordionControlRootDisplayMode.Footer;
             this.accordionControl.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -292,17 +293,17 @@ namespace XCAD
             this.accElementOrbitrotationbysingletouch,
             this.accElementPanbysingletouch,
             this.accElementZoombysingletouch,
-            this.accElementShowAll,
             this.accElementFitAll,
             this.accElementPerspectivemodel,
-            this.accElementMessagewindow,
+            this.accElementShowAll,
             this.accElementShowselected,
             this.accElementHideSelected,
             this.accElementShowonlyselected,
-            this.accElementPropertyWindow,
             this.accElementSelectParent,
-            this.accElementAssignorchangematerial,
-            this.accElementDeleteSelected});
+            this.accElementDeleteSelected,
+            this.accElementPropertyWindow,
+            this.accElementMessagewindow,
+            this.accElementAssignorchangematerial});
             this.accElementViewer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementViewer.ImageOptions.Image")));
             this.accElementViewer.Name = "accElementViewer";
             this.accElementViewer.Tag = "Viewer";

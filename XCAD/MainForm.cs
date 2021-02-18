@@ -55,6 +55,7 @@ namespace XCAD
             }
             InitLayoutMessage();
             LoadedPlugins();
+            this.accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Overlay;
             DisplayMessage(Guid.NewGuid().ToString(), "code 55", "工具准备就绪", "MainForm", 0);
             
             this.FormClosed += MainForm_FormClosed;
@@ -163,13 +164,15 @@ namespace XCAD
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
-            if (!IsHandleCreated || IsDisposed) return;
-            if (Width < ScaleHelper.ScaleHorizontal(850)) {
-                accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Minimal;
-            }
-            else {
-                accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Inline;
-            }
+            this.flyoutMessagePanel.Options.VertIndent = this.RWControl.Height - 30;
+            this.flyoutMessagePanel.Options.HorzIndent = (this.RWControl.Width - 350) / 2;
+            //if (!IsHandleCreated || IsDisposed) return;
+            //if (Width < ScaleHelper.ScaleHorizontal(850)) {
+            //    accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Overlay;
+            //}
+            //else {
+            //    accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Inline;
+            //}
         }
         #endregion
 
@@ -294,8 +297,11 @@ namespace XCAD
                     DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 删除选择", "MainForm", 0);
                     break;
                 case "Show/hidemessagewindow":          //视图模式 - 消息窗口
-                    if (!this.flyoutMessagePanel.IsPopupOpen)
+                    if (!this.flyoutMessagePanel.IsPopupOpen) {
+                        this.flyoutMessagePanel.Options.VertIndent = this.RWControl.Height - 30;
+                        this.flyoutMessagePanel.Options.HorzIndent = (this.RWControl.Width - 350) / 2;
                         this.flyoutMessagePanel.ShowPopup();
+                    }
                     else
                         this.flyoutMessagePanel.HidePopup();
                     break;
