@@ -289,9 +289,7 @@ namespace XCAD
                     OCCTContext.AddOrRemoveSelected(PObject, true);
                     DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 选择父级", "MainForm", 0);
                     break;
-                case "Assignorchangematerial":          //视图模式 - 指定材质
-                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 指定材质", "MainForm", 0);
-                    break;
+               
                 case "DeleteSelected":                  //视图模式 - 删除选择
                     OCCTContext.Remove(OCCTContext.SelectedInteractive(), true);
                     DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 删除选择", "MainForm", 0);
@@ -306,6 +304,9 @@ namespace XCAD
                         this.flyoutMessagePanel.HidePopup();
                     break;
                 case "PropertyWindow":                  //视图模式 - 属性窗口
+                    break;
+                case "Assignorchangematerial":          //视图模式 - 指定材质
+                    DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"视图模式 - 指定材质", "MainForm", 0);
                     break;
                 default:
                     break;
