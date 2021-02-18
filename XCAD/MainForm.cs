@@ -2171,7 +2171,7 @@ namespace XCAD
         /// <param name="strStatusInfo">信息参数</param>
         public void DisplayStatusInfo(string strStatusInfo = "就绪")
         {
-
+            DisplayMessage(Guid.NewGuid().ToString(), "code 2174", strStatusInfo, "MainForm", 0);
         }
         /// <summary>
         /// 更新各种信息消息
