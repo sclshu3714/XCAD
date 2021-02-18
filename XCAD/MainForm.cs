@@ -2162,6 +2162,7 @@ namespace XCAD
             listBox.Height = 20;
             listBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             this.flyoutMessagePanel.Controls.Add(listBox);
+            //listBox.BackColor = Color.Transparent;
         }
 
         /// <summary>
