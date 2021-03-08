@@ -55,7 +55,7 @@ namespace XCAD
             }
             InitLayoutMessage();
             LoadedPlugins();
-            this.accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Overlay;
+            this.accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Inline;
             DisplayMessage(Guid.NewGuid().ToString(), "code 55", "工具准备就绪", "MainForm", 0);
             
             this.FormClosed += MainForm_FormClosed;
@@ -227,6 +227,9 @@ namespace XCAD
                 case "Assignorchangematerial":          //视图模式 - 指定材质
                 case "DeleteSelected":                  //视图模式 - 删除选择
                     SetViewMode(e.Element.Tag?.ToString());
+                    break;
+                case "Animation": // 动画
+                    StartAnimation();
                     break;
                 default:
                     break;
@@ -901,7 +904,7 @@ namespace XCAD
             xgp_Trsf end_pnt0 = new xgp_Trsf();
             xgp_Trsf end_pnt1 = new xgp_Trsf();
             end_pnt0.SetTranslation(new xgp_Vec(0.0, 0.0, 0.0));
-            end_pnt1.SetTranslation(new xgp_Vec(100.0, 100.0, 0.0));
+            end_pnt1.SetRotation(new xgp_Ax1(new xgp_Pnt(0,0,0),new xgp_Dir(1,0,0)), 180);
             XAIS_AnimationObject ais_animation = new XAIS_AnimationObject(new XTCollection_AsciiString($"F1{Guid.NewGuid().ToString()}"), GetInteractiveContext(), ais_obj1, end_pnt0, end_pnt1);
             ais_animation.SetOwnDuration(30.0);
             ais_animation.SetStartPts(0);
@@ -910,29 +913,22 @@ namespace XCAD
             Timer timer = new Timer();
             timer.Interval = 100;
             timer.Tag = ais_animation;
-            timer.Tick += Timer_Tick;
-            timer.Start();
-            //var task = new Task(() => {
-            //    while (!ais_animation.IsStopped()) {
-            //        lock (lockObject)
-            //        {
-            //            ais_animation.UpdateTimer();
-            //            render.UpdateCurrentViewer();
-            //        }
-            //    }; ais_animation.Stop(); });
-            //task.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            Timer timer = sender as Timer;
-            XAIS_AnimationObject ais_animation = timer.Tag as XAIS_AnimationObject;
-            if (ais_animation != null && !ais_animation.IsStopped()) {
-                lock (lockObject) {
-                    ais_animation.UpdateTimer();
-                    UpdateCurrentViewer();
+            timer.Tick += (sender, e)=> {
+                if (!ais_animation.IsStopped())
+                {
+                    lock (lockObject)
+                    {
+                        ais_animation.UpdateTimer();
+                        UpdateCurrentViewer();
+                    }
                 }
+                else {
+                    ais_animation.Stop();
+                    ais_animation.Dispose();
+                    timer.Stop();
+                };
             };
+            timer.Start();
         }
         #endregion
 

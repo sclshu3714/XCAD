@@ -449,7 +449,7 @@
   <data name="accordionElementPlugin.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAiJJREFUWEfFl1FKHEEYhH2WgHgAQcQrBMQrCJ4gIEIuIUggJxBEyGtAAkG8jS/u
+        DgAACw4BQL7hQQAAAiJJREFUWEfFl1FKHEEYhH2WgHgAQcQrBMQrCJ4gIEIuIUggJxBEyGtAAkG8jS/u
         gwhBkEDuMKmCrqXm35qdmbBsHj7cqf/rf2d7e7rXna7r/isx3CYxHGOxWByCM/AVXLfXh8kdI4YJvMEp
         +AO6EX6D09QjEUMHzY6t+VyOU08nhgINPpeGziv42fjVssRF6i1iSDDwW2lEvoPd5BPWwH1zndvkkxhi
         wGVpQD4kN0G3jCVxJlYCiPU7f6rOVDD2ufQ6qk7vgpQBiPp1gdqFeYPfszmxX+8CAh81HzA47ajdmXeX
@@ -459,6 +459,20 @@
         /etWPHjcojZ9KyZFRtSvC9Q2fxgRSL0dETxXZyoY+1J6rfxw7V0IiP7pxF5yE3D3y1jyKbkrgcAAX+WC
         p9q6dcFDx08+cZN8EkOBgWkmBPf2h8ZbyxLxk4sYOmhQ18QcRv9ZiWECzfiI+j4xBGfjY+qRiOEYeIMD
         wH/HvjT4ennGzyGG2ySG26Pb+QshR3yWHHnaLAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="accElementDemo.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAHBSURBVFhH1Ze9SgNREIWDYC1iI/gOATsJ2Fj4FIKktknr
+        a4Q01rZCagtLGwn2+wQ+gA+wzpE7N2dm595NMD+m+MTzM+NlN2aTQdu2e+X3R9M0C6GtcO8H+8CM2+FZ
+        oKflqMBMefkqyMzM7eiAnpbDArG7A0Anr3fBGsxob/ah/98BBPzhqfM2QWdv6QARe38R5ku4KphxOzqg
+        p2X8z0aXHh4Y6mJFvLPUASdBPhR0Pto5Rs8MpcFc9hkj+Zy6z1FHoZ5ImxkBamWGe+t0fWYEqJUVya65
+        lxhFXcA9nxkBamVFsu/U+RA+0+9fURekPNxpBKiVgfhH1MEL7ZL0cWFGc5E2MwLUykD8R5+rFibqMZSL
+        tJkRoFYGlL+R966+eoxmUW4EqJXFO+e8wEUwl3OfGQFqZfFeOS8wD+Zy7jMjQK1M2VOQvWgeZMWdRoBS
+        WfQtZaecpZxvz43L1Bdp54wApbLokYBnxQP7jGQTAe/zV86vH0CCsYBB/zCCht95GPWBmTQLeKd6y4cR
+        hSW2/jgOC8ROD6CXiL1NoLcze+EBoJPnXw9/4bA+FUcc5IfS3luInpa38eX0zu3wLL+c7o928AM8cOsM
+        I5adtwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="accElementSetting.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
