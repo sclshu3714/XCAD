@@ -85,7 +85,7 @@ namespace TKXCAF {
 				//NativeHandle() = Handle(XCAFApp_Application)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(XCAFApp_Application)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

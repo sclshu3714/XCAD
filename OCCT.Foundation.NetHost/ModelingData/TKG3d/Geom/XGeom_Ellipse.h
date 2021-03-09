@@ -265,7 +265,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_Ellipse)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_Ellipse)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

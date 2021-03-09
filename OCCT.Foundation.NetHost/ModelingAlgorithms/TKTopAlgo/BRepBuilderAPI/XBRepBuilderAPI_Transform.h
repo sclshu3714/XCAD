@@ -107,6 +107,9 @@ namespace TKTopAlgo {
 		//! <S>.
 		virtual XTopTools_ListOfShape^ Modified(XTopoDS_Shape^ S) Standard_OVERRIDE;
 
+		//! Returns a shape built by the shape construction algorithm.
+		//! Raises exception StdFail_NotDone if the shape was not built.
+		virtual XTopoDS_Shape^ Shape() Standard_OVERRIDE;
 		/// <summary>
 		/// ±¾µØ¾ä±ú
 		/// </summary>

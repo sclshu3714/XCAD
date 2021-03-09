@@ -13,7 +13,7 @@ namespace TKV3d {
 
     //! Destruct object, clear arguments
     XAIS_Animation::~XAIS_Animation() {
-        NativeHandle() = NULL;
+        NativeHandle()->~AIS_Animation();
     };
 
     XAIS_Animation::XAIS_Animation(Handle(AIS_Animation) pos) {

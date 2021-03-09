@@ -90,7 +90,7 @@ namespace TKV3d {
         //! Destruct object, clear arguments
         virtual ~XAIS_Animation();
 
-        !XAIS_Animation() { IHandle = NULL; };
+        !XAIS_Animation() { };// { NativeHandle()->~AIS_Animation(); };
 
         XAIS_Animation(Handle(AIS_Animation) pos);
 
@@ -199,7 +199,7 @@ namespace TKV3d {
                 //NativeHandle() = Handle(AIS_Animation)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(AIS_Animation)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

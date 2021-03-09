@@ -109,7 +109,7 @@ namespace TKService {
             void set(Handle(Standard_Transient) handle) {//Standard_OVERRIDE {
                 if (!handle.IsNull())
                     NativeHandle() = Handle(Graphic3d_PresentationAttributes)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         };

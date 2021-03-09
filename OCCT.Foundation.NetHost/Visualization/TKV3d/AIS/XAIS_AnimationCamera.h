@@ -37,7 +37,7 @@ namespace TKV3d {
         //! DEFINE_STANDARD_RTTIEXT(AIS_AnimationCamera, AIS_Animation)
     public:
 
-        !XAIS_AnimationCamera() { IHandle = NULL; };
+        !XAIS_AnimationCamera() { };// { IHandle = NULL; };
         ~XAIS_AnimationCamera() { IHandle = NULL; };
         //! Main constructor.
         XAIS_AnimationCamera(XTCollection_AsciiString^ theAnimationName, XV3d_View^ theView);
@@ -72,7 +72,7 @@ namespace TKV3d {
                 //NativeHandle() = Handle(AIS_AnimationCamera)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(AIS_AnimationCamera)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

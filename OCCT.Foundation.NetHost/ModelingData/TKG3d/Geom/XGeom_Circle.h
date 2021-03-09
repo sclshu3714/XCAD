@@ -202,7 +202,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_Circle)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_Circle)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

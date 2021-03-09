@@ -777,7 +777,7 @@ namespace TKV3d {
                 //NativeHandle() = Handle(Prs3d_Drawer)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(Prs3d_Drawer)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         };

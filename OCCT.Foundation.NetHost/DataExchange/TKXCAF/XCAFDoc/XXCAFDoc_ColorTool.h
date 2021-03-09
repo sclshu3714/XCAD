@@ -284,7 +284,7 @@ namespace TKXCAF {
             void set(Handle(Standard_Transient) handle) Standard_OVERRIDE {
                 if (!handle.IsNull())
                     NativeHandle() = Handle(XCAFDoc_ColorTool)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

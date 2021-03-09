@@ -305,7 +305,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_TrimmedCurve)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_TrimmedCurve)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		};

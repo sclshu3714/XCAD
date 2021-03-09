@@ -144,7 +144,7 @@ namespace TKG2d {
 				//NativeHandle() = Handle(Geom2d_Geometry)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom2d_Geometry)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

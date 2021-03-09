@@ -164,7 +164,7 @@ namespace TKXCAF {
 				//NativeHandle() = Handle(XCAFDoc_DocumentTool)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(XCAFDoc_DocumentTool)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

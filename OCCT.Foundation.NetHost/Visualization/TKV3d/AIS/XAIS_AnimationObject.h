@@ -43,7 +43,7 @@ namespace TKV3d {
        /* XAIS_AnimationObject(XTCollection_AsciiString^ theAnimationName);
 
         XAIS_AnimationObject(Handle(AIS_AnimationObject) pos);*/
-        !XAIS_AnimationObject() { IHandle = NULL; };
+        !XAIS_AnimationObject() { };// { IHandle = NULL; };
         ~XAIS_AnimationObject() { IHandle = NULL; };
         void SetAnimationObjectHandle(Handle(AIS_AnimationObject) pos);
 
@@ -72,7 +72,7 @@ namespace TKV3d {
                 //NativeHandle() = Handle(AIS_AnimationObject)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(AIS_AnimationObject)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

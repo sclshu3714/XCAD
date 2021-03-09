@@ -309,7 +309,7 @@ namespace TKG3d
 				//NativeHandle() = Handle(Geom_Surface)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_Surface)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		};

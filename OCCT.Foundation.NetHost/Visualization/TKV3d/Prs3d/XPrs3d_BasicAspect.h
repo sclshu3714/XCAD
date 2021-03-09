@@ -52,7 +52,7 @@ namespace TKV3d {
             void set(Handle(Standard_Transient) handle) {//Standard_OVERRIDE {
                 if (!handle.IsNull())
                     NativeHandle() = Handle(Prs3d_BasicAspect)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

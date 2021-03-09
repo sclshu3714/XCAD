@@ -285,7 +285,7 @@ namespace TKLCAF {
                 //NativeHandle() = Handle(TDocStd_Document)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(TDocStd_Document)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

@@ -164,7 +164,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_Vector)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_Vector)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

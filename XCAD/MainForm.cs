@@ -31,6 +31,7 @@ using XModel.Interface;
 using System.Runtime.Loader;
 using DevExpress.XtraEditors;
 using TKService;
+using OCCT.Foundation.Net.Elements;
 
 namespace XCAD
 {
@@ -886,6 +887,8 @@ namespace XCAD
         #endregion
 
         #region 动画演示
+
+        int iNext = 0;
         /// <summary>
         /// 动画
         /// </summary>
@@ -904,14 +907,109 @@ namespace XCAD
             ais_obj1.SetDisplayMode(1);
             SetFaceBoundaryAspect(ais_obj1, true);
             AddShape(ais_obj1, true);
+            AnimationInfo animationInfo = new AnimationInfo()
+            {
+                theAnimationName = $"F1{Guid.NewGuid().ToString()}",
+                Movement = Movementmode.Rotation,
+                theDuration = 30,
+                theToUpdate = true,
+                theToStopTimer = false,
+                thePlaySpeed = 1,
+                theStartPts = 0,
+                Value = 90,
+                Axis = new List<double>() { 1582, -60.5f, 3340, V.X(), V.Y(), V.Z() },
+                theTrsfStart = new List<double>() { 0 },
+                theTrsfEnd = new List<double>() { 90 * Math.PI / 180 },
+                LinkElements = null,
+                theObjects = null
+            };
+            if (0 == iNext)
+            {
+                AnimationplayTime(animationInfo, ais_obj1);
+                iNext = 1;
+            }
+            else if (1 == iNext)
+            {
+                Animationplay(animationInfo, ais_obj1);
+                iNext = 0;
+            }
+        }
+        /// <summary>
+        /// 物体动画播放
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="args"></param>
+        public void Animationplay(AnimationInfo info, params XAIS_Shape[] args)
+        {
+            OCCTContext = OCCTView.GetInteractiveContext();
+            xgp_Trsf theTrsfStart = args.First().Transformation();
+            xgp_Trsf theTrsfEnd = args.First().Transformation();
+            XTCollection_AsciiString theAnimationName = new XTCollection_AsciiString($"{info.theAnimationName}");
+            XAIS_Animation playAnimation = new XAIS_Animation(theAnimationName);
+            for (int i = 0; i < args.Length; i++)
+            {
+                if(info.theTrsfStart.Count == 1)
+                    theTrsfStart.SetRotation(new xgp_Ax1(new xgp_Pnt(info.Axis[0], info.Axis[1], info.Axis[2]), new xgp_Dir(info.Axis[3], info.Axis[4], info.Axis[5])), info.theTrsfStart[0]);
+                else if (info.theTrsfStart.Count == 3)
+                    theTrsfStart.SetTranslation(new xgp_Vec(info.theTrsfEnd[0], info.theTrsfEnd[1], info.theTrsfEnd[2]));
+                if (info.theTrsfEnd.Count == 1)
+                    theTrsfEnd.SetRotation(new xgp_Ax1(new xgp_Pnt(info.Axis[0], info.Axis[1], info.Axis[2]), new xgp_Dir(info.Axis[3], info.Axis[4], info.Axis[5])), info.theTrsfEnd[0]);
+                else if (info.theTrsfEnd.Count == 3)
+                    theTrsfEnd.SetTranslation(new xgp_Vec(info.theTrsfEnd[0], info.theTrsfEnd[1], info.theTrsfEnd[2]));
 
-
+                XAIS_InteractiveObject ais_obj1 = args[i];
+                //xgp_Trsf theTrsf = new xgp_Trsf();
+                //theTrsf.SetTranslationPart(new xgp_Vec(new xgp_Pnt(info.Axis[0], info.Axis[1], info.Axis[2]), new xgp_Pnt(0, 0, 0)));
+                //XBRepBuilderAPI_Transform transform = new XBRepBuilderAPI_Transform(theTrsf);
+                //XAIS_Shape shape = new XAIS_Shape(transform.Shape());
+                //shape.SetDisplayMode(1);
+                //SetFaceBoundaryAspect(shape, true);
+                //AddShape(shape, true);
+                XAIS_AnimationObject linkShape = new XAIS_AnimationObject(new XTCollection_AsciiString($"{info.theAnimationName}{i}"), OCCTView.GetInteractiveContext(), ais_obj1, theTrsfStart, theTrsfEnd);
+                linkShape.SetOwnDuration(info.theDuration); //定义动画的持续时间
+                linkShape.SetStartPts(0);              //设置动画时间轴中动画的时间限制
+                linkShape.StartTimer(info.theStartPts, info.thePlaySpeed, info.theToUpdate, info.theToStopTimer);
+                linkShape.Start(true);
+                playAnimation.Add(linkShape);
+            }
+            playAnimation.SetOwnDuration(info.theDuration); //定义动画的持续时间
+            playAnimation.SetStartPts(0);              //设置动画时间轴中动画的时间限制
+            double duration = playAnimation.Duration();
+            playAnimation.StartTimer(info.theStartPts, info.thePlaySpeed, info.theToUpdate, info.theToStopTimer);
+            playAnimation.Start(true);
+            Timer timer = new Timer();
+            timer.Interval = 100;
+            timer.Tag = playAnimation;
+            timer.Tick += (sender, e) => {
+                if (!playAnimation.IsStopped())
+                {
+                    lock (lockObject)
+                    {
+                        playAnimation.UpdateTimer();
+                        UpdateCurrentViewer();
+                    }
+                }
+                else
+                {
+                    playAnimation.Clear();
+                    //playAnimation.Dispose();
+                    timer.Stop();
+                };
+            };
+            timer.Start();
+        }
+        /// <summary>
+        /// 线程动画播放
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="args"></param>
+        public void AnimationplayTime(AnimationInfo info, params XAIS_Shape[] args) {
             OCCTContext = OCCTView.GetInteractiveContext();
             int i = 0;
             double s = 50;
-            double v = 180 * Math.PI / 180;
+            double v = info.Value * Math.PI / 180;
             double speed = v / s;
-            xgp_Trsf end_pnt1 = ais_obj1.Transformation();
+            xgp_Trsf end_pnt1 = args.First().Transformation();
             Timer timer = new Timer();
             timer.Interval = 100;
             timer.Tick += (sender, e) => {
@@ -919,10 +1017,18 @@ namespace XCAD
                 {
                     lock (lockObject)
                     {
-                        //end_pnt1 = new xgp_Trsf();
-                        end_pnt1.SetRotation(new xgp_Ax1(P1, V), speed * i++);
+                        double value = speed * i++;
+                        if (info.Movement == Movementmode.Rotation)
+                            end_pnt1.SetRotation(new xgp_Ax1(new xgp_Pnt(info.Axis[0], info.Axis[1], info.Axis[2]), new xgp_Dir(info.Axis[3], info.Axis[4], info.Axis[5])), value);
+                        else
+                            end_pnt1.SetTranslation(new xgp_Vec(info.Axis[3] * value, info.Axis[4] * value, info.Axis[5] * value));
                         XTopLoc_Location theLocation = new XTopLoc_Location(end_pnt1);
-                        OCCTContext.SetLocation(ais_obj1, theLocation);
+                        for (int i = 0; i < args.Length; i++)
+                        {
+                            XAIS_InteractiveObject ais_obj1 = args[i];
+                            OCCTContext.SetLocation(ref ais_obj1, theLocation);
+                            //OCCTContext.SetLocation(args[i], theLocation);
+                        }
                         UpdateCurrentViewer();
                     }
                 }
@@ -932,36 +1038,8 @@ namespace XCAD
                 };
             };
             timer.Start();
-
-
-            //xgp_Trsf end_pnt0 = ais_obj1.Transformation();
-            //xgp_Trsf end_pnt1 = ais_obj1.Transformation();
-            //end_pnt1.SetRotation(new xgp_Ax1(P1,V), 180);
-            //XAIS_AnimationObject ais_animation = new XAIS_AnimationObject(new XTCollection_AsciiString($"F1{Guid.NewGuid().ToString()}"), GetInteractiveContext(), ais_obj1, end_pnt0, end_pnt1);
-            //ais_animation.SetOwnDuration(30.0);
-            //ais_animation.SetStartPts(0);
-            //ais_animation.StartTimer(0.0, 1.0, true, false);
-            //ais_animation.Start(true);
-            //Timer timer = new Timer();
-            //timer.Interval = 100;
-            //timer.Tag = ais_animation;
-            //timer.Tick += (sender, e)=> {
-            //    if (!ais_animation.IsStopped())
-            //    {
-            //        lock (lockObject)
-            //        {
-            //            ais_animation.UpdateTimer();
-            //            UpdateCurrentViewer();
-            //        }
-            //    }
-            //    else {
-            //        ais_animation.Stop();
-            //        ais_animation.Dispose();
-            //        timer.Stop();
-            //    };
-            //};
-            //timer.Start();
         }
+
         #endregion
 
         #region 几何图形

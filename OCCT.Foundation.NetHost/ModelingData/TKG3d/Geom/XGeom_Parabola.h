@@ -271,7 +271,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_Parabola)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_Parabola)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

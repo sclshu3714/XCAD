@@ -329,7 +329,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_OffsetCurve)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_OffsetCurve)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

@@ -151,7 +151,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_Direction)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_Direction)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

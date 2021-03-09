@@ -136,7 +136,7 @@ namespace TKLCAF {
 				//NativeHandle() = Handle(TDataStd_Name)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(TDataStd_Name)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

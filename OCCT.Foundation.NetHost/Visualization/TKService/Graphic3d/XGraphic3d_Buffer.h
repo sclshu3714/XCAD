@@ -186,7 +186,7 @@ namespace TKService {
                 //NativeHandle() = Handle(Graphic3d_Buffer)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(Graphic3d_Buffer)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

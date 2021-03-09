@@ -838,7 +838,7 @@ namespace TKG3d {
                 //NativeHandle() = Handle(Geom_BSplineCurve)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(Geom_BSplineCurve)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

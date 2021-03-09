@@ -318,7 +318,7 @@ namespace TKV3d
     public: //! @name object local transformation management
 
       //! Puts the location on the initial graphic representation and the selection for the Object.
-        void SetLocation(XAIS_InteractiveObject^ theObject, XTopLoc_Location^ theLocation);
+        void SetLocation(XAIS_InteractiveObject^% theObject, XTopLoc_Location^ theLocation);
 
         //! Puts the Object back into its initial position.
         void ResetLocation(XAIS_InteractiveObject^ theObject);
@@ -1090,7 +1090,7 @@ namespace TKV3d
                 //NativeHandle() = Handle(AIS_InteractiveContext)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(AIS_InteractiveContext)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         };

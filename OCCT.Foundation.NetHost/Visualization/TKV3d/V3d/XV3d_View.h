@@ -950,7 +950,7 @@ namespace TKV3d {
                 //NativeHandle() = Handle(V3d_View)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(V3d_View)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

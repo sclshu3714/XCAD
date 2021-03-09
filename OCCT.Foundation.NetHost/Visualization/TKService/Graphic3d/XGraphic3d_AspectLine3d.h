@@ -87,7 +87,7 @@ namespace TKService {
                 //NativeHandle() = Handle(Graphic3d_AspectLine3d)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(Graphic3d_AspectLine3d)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

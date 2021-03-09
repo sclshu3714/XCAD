@@ -71,4 +71,11 @@ namespace TKTopAlgo {
 		TopTools_ListOfShape* temp = new TopTools_ListOfShape(NativeHandle->Modified(*S->GetShape()));
 		return gcnew XTopTools_ListOfShape(temp);
 	};
+
+	//! Returns a shape built by the shape construction algorithm.
+	//! Raises exception StdFail_NotDone if the shape was not built.
+	XTopoDS_Shape^ XBRepBuilderAPI_Transform::Shape() {
+		TopoDS_Shape* Shape = new TopoDS_Shape(NativeHandle->Shape());
+		return gcnew XTopoDS_Shape(Shape);
+	};
 }

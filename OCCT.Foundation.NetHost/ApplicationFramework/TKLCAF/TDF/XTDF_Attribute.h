@@ -435,7 +435,7 @@ namespace TKLCAF {
                 //NativeHandle() = Handle(TDF_Attribute)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(TDF_Attribute)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

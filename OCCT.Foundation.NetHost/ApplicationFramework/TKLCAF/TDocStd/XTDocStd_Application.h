@@ -373,7 +373,7 @@ namespace TKLCAF {
                 //NativeHandle() = Handle(TDocStd_Application)::DownCast(handle);
                 if (!handle.IsNull())
                     NativeHandle() = Handle(TDocStd_Application)::DownCast(handle);
-                else if (!NativeHandle().IsNull())
+                else
                     NativeHandle() = NULL;
             }
         }

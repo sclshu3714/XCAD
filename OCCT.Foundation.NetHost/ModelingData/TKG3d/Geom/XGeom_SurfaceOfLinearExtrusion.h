@@ -301,7 +301,7 @@ namespace TKG3d
 				//NativeHandle() = Handle(Geom_SurfaceOfLinearExtrusion)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_SurfaceOfLinearExtrusion)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		};

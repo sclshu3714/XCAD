@@ -148,7 +148,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_AxisPlacement)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_AxisPlacement)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

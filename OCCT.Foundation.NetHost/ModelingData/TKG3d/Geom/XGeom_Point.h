@@ -91,7 +91,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_Point)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_Point)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

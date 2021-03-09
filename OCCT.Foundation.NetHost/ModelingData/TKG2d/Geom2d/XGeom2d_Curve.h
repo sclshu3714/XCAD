@@ -262,7 +262,7 @@ namespace TKG2d {
 				//NativeHandle() = Handle(Geom2d_Curve)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom2d_Curve)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

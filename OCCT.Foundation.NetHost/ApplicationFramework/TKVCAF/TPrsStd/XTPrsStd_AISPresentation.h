@@ -255,7 +255,7 @@ namespace TKVCAF {
 				//NativeHandle() = Handle(TPrsStd_AISPresentation)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(TPrsStd_AISPresentation)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

@@ -128,7 +128,7 @@ namespace TKV3d {
 				//NativeHandle() = Handle(AIS_Axis)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(AIS_Axis)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}

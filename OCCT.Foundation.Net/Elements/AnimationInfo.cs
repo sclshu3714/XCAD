@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,13 +23,13 @@ namespace OCCT.Foundation.Net.Elements
         /// </summary>
         public string[] theObjects { get; set; }
         ///// <summary>
-        ///// 起始转换规则
+        ///// 起始转换规则（一个值是旋转，三个值是平移）
         ///// </summary>
-        //public xgp_Trsf theTrsfStart { get; set; }
+        public List<double> theTrsfStart { get; set; } = new List<double>();
         ///// <summary>
-        ///// 结束转换规则
+        ///// 结束转换规则（一个值是旋转，三个值是平移）
         ///// </summary>
-        //public xgp_Trsf theTrsfEnd { get; set; }
+        public List<double> theTrsfEnd { get; set; } = new List<double>();
         /// <summary>
         /// 定义动画的持续时间
         /// </summary>
@@ -59,9 +60,9 @@ namespace OCCT.Foundation.Net.Elements
         public Movementmode Movement { get; set; } = Movementmode.Translation;
 
         /// <summary>
-        /// 旋转轴或者平移向量
+        /// 旋转轴或者平移向量(6个值，前三个是点，后三个是方向)
         /// </summary>
-        //public xgp_Ax1 Axis { get; set; } = null;
+        public List<double> Axis { get; set; } = new List<double>();
 
         /// <summary>
         /// 联动元素

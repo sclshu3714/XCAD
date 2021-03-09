@@ -322,7 +322,7 @@ namespace TKG3d {
 				//NativeHandle() = Handle(Geom_Hyperbola)::DownCast(handle);
 				if (!handle.IsNull())
 					NativeHandle() = Handle(Geom_Hyperbola)::DownCast(handle);
-				else if (!NativeHandle().IsNull())
+				else
 					NativeHandle() = NULL;
 			}
 		}
