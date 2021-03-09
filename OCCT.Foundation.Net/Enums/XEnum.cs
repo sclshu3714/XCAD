@@ -58,9 +58,18 @@ namespace OCCT.Foundation.Net
 		STL,
 		IMAGE
 	}
-
-	
-	
-
-	
+	/// <summary>
+	/// 运动模式
+	/// </summary>
+	public enum Movementmode
+	{
+		/// <summary>
+		/// 平移
+		/// </summary>
+		Translation,
+		/// <summary>
+		/// 旋转
+		/// </summary>
+		Rotation
+	}
 }

@@ -85,9 +85,6 @@ namespace XCAD
             foreach (string fileName in FileInfos) {
                 XPluginAssembly plugin = new XPluginAssembly() {
                     PluginId = Guid.NewGuid().ToString(),
-                    //AssemblyFullName = "XModelPlugin.ModelPlugin",
-                    //AssemblyName = "ModelPlugin",
-                    //    index = 0,
                     PluginCaption = Path.GetFileNameWithoutExtension(fileName),
                     PluginGroup = Path.GetFileNameWithoutExtension(fileName),
                     PluginName = Path.GetFileNameWithoutExtension(fileName),
@@ -896,39 +893,74 @@ namespace XCAD
         /// <param name="e"></param>
         public void StartAnimation()
         {
-            XBRepPrimAPI_MakeBox obj1 = new XBRepPrimAPI_MakeBox(100, 100, 20);
+            xgp_Pnt P1 = new xgp_Pnt(1582, -60.5f, 3340);
+            xgp_Pnt P0 = new xgp_Pnt(1582, 52, 3340);
+            double distance = Math.Sqrt(Math.Pow((P0.X() - P1.X()), 2) + Math.Pow((P0.Y() - P1.Y()), 2) + Math.Pow((P0.Z() - P1.Z()), 2));
+            xgp_Dir V = new xgp_Dir((P0.X() - P1.X()) / distance, (P0.Y() - P1.Y()) / distance, (P0.Z() - P1.Z()) / distance);
+            xgp_Ax2 Axes = new xgp_Ax2(P1,V);
+
+            XBRepPrimAPI_MakeBox obj1 = new XBRepPrimAPI_MakeBox(Axes, 1000, 1000, 200);
             XAIS_Shape ais_obj1 = new XAIS_Shape(obj1.Shape());
+            ais_obj1.SetDisplayMode(1);
             SetFaceBoundaryAspect(ais_obj1, true);
             AddShape(ais_obj1, true);
 
-            xgp_Trsf end_pnt0 = new xgp_Trsf();
-            xgp_Trsf end_pnt1 = new xgp_Trsf();
-            end_pnt0.SetTranslation(new xgp_Vec(0.0, 0.0, 0.0));
-            end_pnt1.SetRotation(new xgp_Ax1(new xgp_Pnt(0,0,0),new xgp_Dir(1,0,0)), 180);
-            XAIS_AnimationObject ais_animation = new XAIS_AnimationObject(new XTCollection_AsciiString($"F1{Guid.NewGuid().ToString()}"), GetInteractiveContext(), ais_obj1, end_pnt0, end_pnt1);
-            ais_animation.SetOwnDuration(30.0);
-            ais_animation.SetStartPts(0);
-            ais_animation.StartTimer(0.0, 1.0, true, false);
-            ais_animation.Start(true);
+
+            OCCTContext = OCCTView.GetInteractiveContext();
+            int i = 0;
+            double s = 50;
+            double v = 180 * Math.PI / 180;
+            double speed = v / s;
+            xgp_Trsf end_pnt1 = ais_obj1.Transformation();
             Timer timer = new Timer();
             timer.Interval = 100;
-            timer.Tag = ais_animation;
-            timer.Tick += (sender, e)=> {
-                if (!ais_animation.IsStopped())
+            timer.Tick += (sender, e) => {
+                if (speed * i <= v)
                 {
                     lock (lockObject)
                     {
-                        ais_animation.UpdateTimer();
+                        //end_pnt1 = new xgp_Trsf();
+                        end_pnt1.SetRotation(new xgp_Ax1(P1, V), speed * i++);
+                        XTopLoc_Location theLocation = new XTopLoc_Location(end_pnt1);
+                        OCCTContext.SetLocation(ais_obj1, theLocation);
                         UpdateCurrentViewer();
                     }
                 }
-                else {
-                    ais_animation.Stop();
-                    ais_animation.Dispose();
+                else
+                {
                     timer.Stop();
                 };
             };
             timer.Start();
+
+
+            //xgp_Trsf end_pnt0 = ais_obj1.Transformation();
+            //xgp_Trsf end_pnt1 = ais_obj1.Transformation();
+            //end_pnt1.SetRotation(new xgp_Ax1(P1,V), 180);
+            //XAIS_AnimationObject ais_animation = new XAIS_AnimationObject(new XTCollection_AsciiString($"F1{Guid.NewGuid().ToString()}"), GetInteractiveContext(), ais_obj1, end_pnt0, end_pnt1);
+            //ais_animation.SetOwnDuration(30.0);
+            //ais_animation.SetStartPts(0);
+            //ais_animation.StartTimer(0.0, 1.0, true, false);
+            //ais_animation.Start(true);
+            //Timer timer = new Timer();
+            //timer.Interval = 100;
+            //timer.Tag = ais_animation;
+            //timer.Tick += (sender, e)=> {
+            //    if (!ais_animation.IsStopped())
+            //    {
+            //        lock (lockObject)
+            //        {
+            //            ais_animation.UpdateTimer();
+            //            UpdateCurrentViewer();
+            //        }
+            //    }
+            //    else {
+            //        ais_animation.Stop();
+            //        ais_animation.Dispose();
+            //        timer.Stop();
+            //    };
+            //};
+            //timer.Start();
         }
         #endregion
 
