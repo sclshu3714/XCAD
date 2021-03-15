@@ -12,6 +12,7 @@ using XModel.Elements;
 
 namespace OCCT.Foundation.Net.Loader
 {
+    #if NET48
     /// <summary>
     /// 
     /// </summary>
@@ -61,4 +62,5 @@ namespace OCCT.Foundation.Net.Loader
         private static Dictionary<string, AppDomain> LoadedAssemblys;
         #endregion
     }
+    #endif
 }

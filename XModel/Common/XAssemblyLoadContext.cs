@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+#if NET5_0
 using System.Runtime.Loader;
+#endif
 using System.Text;
 using XModel.Elements;
 using XModel.Interface;
 
 namespace XModel.Common
 {
+    #if NET5_0
     public class XAssemblyLoadContext : AssemblyLoadContext
     {
-        public XAssemblyLoadContext(string? name, bool isCollectible = false) : base(name, isCollectible) { 
+        public XAssemblyLoadContext(string name, bool isCollectible = false) : base(name, isCollectible) { 
             
         }
         /// <summary>
@@ -82,4 +85,5 @@ namespace XModel.Common
         private static Dictionary<string, XDesignPlugin> LoadedDesignPlugins { get; set; }
         #endregion
     }
+    #endif
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+#if NET5_0
 using System.Runtime.Loader;
+#endif
 using System.Text;
 using System.Threading.Tasks;
 using XModel.Elements;
@@ -11,6 +13,7 @@ using XModel.Interface;
 
 namespace OCCT.Foundation.Net.Loader
 {
+    #if NET5_0
     public class XAssemblyLoadContextHelper
     {
         /// <summary>
@@ -75,4 +78,5 @@ namespace OCCT.Foundation.Net.Loader
         private static Dictionary<string, AssemblyLoadContext> LoadedAssemblys;
         #endregion
     }
+    #endif
 }

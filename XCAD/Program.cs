@@ -14,7 +14,9 @@ namespace XCAD
         [STAThread]
         static void Main()
         {
+            #if NET5_0
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

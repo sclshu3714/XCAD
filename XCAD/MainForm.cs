@@ -28,7 +28,9 @@ using DevExpress.XtraBars.Navigation;
 using XModel.Common;
 using XModel.Elements;
 using XModel.Interface;
+#if NET5_0
 using System.Runtime.Loader;
+#endif
 using DevExpress.XtraEditors;
 using TKService;
 using OCCT.Foundation.Net.Elements;
@@ -92,7 +94,12 @@ namespace XCAD
                     PluginPath = @$"plugins\{Path.GetFileName(fileName)}"
                 };
                 XDesignPlugin DesignPlugin = new XDesignPlugin();
+                
+#if NET5_0
                 XAssemblyLoadContext loadContext = XAssemblyLoadContext.AssemblyLoad(plugin, ref DesignPlugin);
+#elif NET48
+                AppDomain ad = XAppDomainLoadContext.AssemblyLoad(plugin, ref DesignPlugin);
+#endif
                 AccordionControlElement PluginNode = this.accordionElementPlugin;
                 PluginNode = new AccordionControlElement();
                 PluginNode.Name = $"{DesignPlugin.PluginName}";
@@ -172,9 +179,9 @@ namespace XCAD
             //    accordionControl.OptionsHamburgerMenu.DisplayMode = AccordionControlDisplayMode.Inline;
             //}
         }
-        #endregion
+#endregion
 
-        #region 元素事件
+#region 元素事件
         /// <summary>
         /// 操作事件
         /// </summary>
@@ -186,14 +193,14 @@ namespace XCAD
                 return;
             switch (e.Element.Tag?.ToString()) {
                 case "Open":
-                    #region 打开文件
+#region 打开文件
                     OperationOpenFile();
-                    #endregion
+#endregion
                     break;
                 case "Save":
-                    #region 打开文件
+#region 打开文件
                     OperationSaveFile();
-                    #endregion
+#endregion
                     break;
                 case "None":                            //特性 - 无
                 case "Material":                        //特性 - 材料
@@ -234,7 +241,7 @@ namespace XCAD
             }
         }
 
-        #region 视图模式
+#region 视图模式
         private void SetViewMode(string Tag, XAIS_InteractiveObject shape = null)
         {
             OCCTContext = OCCTView.GetInteractiveContext();
@@ -313,9 +320,9 @@ namespace XCAD
                     break;
             }
         }
-        #endregion
+#endregion
 
-        #region 显示模式
+#region 显示模式
 
         private void SetViewDisplayMode(string Tag, XAIS_InteractiveObject shape = null)
         {
@@ -396,9 +403,9 @@ namespace XCAD
                     break;
             }
         }
-        #endregion
+#endregion
 
-        #region 特性修改
+#region 特性修改
         /// <summary>
         /// 设置指定或者选择的图形的展示特性
         /// </summary>
@@ -467,9 +474,9 @@ namespace XCAD
                     break;
             }
         }
-        #endregion
+#endregion
 
-        #region 打开文件
+#region 打开文件
         /// <summary>
         /// 操作 - 打开文件，选择文件
         /// </summary>
@@ -519,9 +526,9 @@ namespace XCAD
                 DisplayMessage(Guid.NewGuid().ToString(), "code 156", $"打开文件{Path.GetFileName(FullName)}完成", "MainForm", 0);
             }
         }
-        #endregion
+#endregion
 
-        #region 保存文件
+#region 保存文件
         /// <summary>
         /// 操作 - 保存文件
         /// </summary>
@@ -569,10 +576,10 @@ namespace XCAD
                 DisplayMessage(Guid.NewGuid().ToString(), "code 163", $"保存文件{Path.GetFileName(FullName)}完成", "MainForm", 0);
             }
         }
-        #endregion
-        #endregion
+#endregion
+#endregion
 
-        #region 导入导出
+#region 导入导出
         /// <summary>
         /// 导入STEP
         /// </summary>
@@ -884,9 +891,9 @@ namespace XCAD
                 OCCTView.SetLocation1(aPrsObject, XLocalLocation);
             OCCTView.SetFaceBoundaryDraw(aPrsObject, IsBoundaryDraw);
         }
-        #endregion
+#endregion
 
-        #region 动画演示
+#region 动画演示
 
         int iNext = 0;
         /// <summary>
@@ -1040,9 +1047,9 @@ namespace XCAD
             timer.Start();
         }
 
-        #endregion
+#endregion
 
-        #region 几何图形
+#region 几何图形
         /// <summary>
         /// 绘制壳图像
         /// </summary>
@@ -1169,9 +1176,9 @@ namespace XCAD
             XTopoDS_Vertex V1 = MV1.Vertex();
             AddShape(V1, true);
         }
-        #endregion
+#endregion
 
-        #region 演示图形
+#region 演示图形
         /// <summary>
         /// MakeBox
         /// </summary>
@@ -1897,9 +1904,9 @@ namespace XCAD
             //XBRepBuilderAPI_MakeShell tempMake = new XBRepBuilderAPI_MakeShell(tempGC.Value(), false);
             //IRender.AddShape(tempMake.Shape(), true, true);
         }
-        #endregion
+#endregion
 
-        #region 设置配置
+#region 设置配置
 
         /// <summary>
         /// 判断是否选择对象
@@ -2248,9 +2255,9 @@ namespace XCAD
             }
         }
 
-        #endregion
+#endregion
 
-        #region 消息展示
+#region 消息展示
 
         /// <summary>
         /// 构建消息界面布局
@@ -2313,9 +2320,9 @@ namespace XCAD
             this.flyoutMessagePanel.HidePopup();
             timer.Stop();
         }
-        #endregion
+#endregion
 
-        #region 操作事件
+#region 操作事件
         /// <summary>
         /// 窗体大小变化事件
         /// </summary>
@@ -2378,7 +2385,7 @@ namespace XCAD
             //InputHandler.MouseDown(mCanvas, e, Control.ModifierKeys);
             switch (e.Button) {
                 case MouseButtons.Left:
-                    #region 鼠标左键按下
+#region 鼠标左键按下
                     myXmin = e.X; myYmin = e.Y;
                     myXmax = e.X; myYmax = e.Y;
                     if (myCurrentPressedKey == CurrentPressedKey.CurPressedKey_Ctrl)
@@ -2405,10 +2412,10 @@ namespace XCAD
                                 break;
                         }
                     }
-                    #endregion
+#endregion
                     break;
                 case MouseButtons.Right:
-                    #region 鼠标右键按下
+#region 鼠标右键按下
                     //MessageBox.Show("right mouse button is down");
                     if (myCurrentPressedKey == CurrentPressedKey.CurPressedKey_Ctrl) {
                         if (!myDegenerateModeIsOn)
@@ -2417,16 +2424,16 @@ namespace XCAD
                     }
                     //else
                     //    Popup(e.X, e.Y);
-                    #endregion
+#endregion
                     break;
                 case MouseButtons.Middle:
-                    #region 鼠标中键按下
+#region 鼠标中键按下
                     {
                         if (!myDegenerateModeIsOn)
                             OCCTView.SetDegenerateModeOn();
                         myCurrentMode = CurrentAction3d.CurAction3d_DynamicPanning;
                     }
-                    #endregion
+#endregion
                     break;
                 default:
                     break;
@@ -2441,7 +2448,7 @@ namespace XCAD
         {
             switch (e.Button) {
                 case MouseButtons.Left:
-                    #region 鼠标左键弹起
+#region 鼠标左键弹起
                     if (myCurrentPressedKey == CurrentPressedKey.CurPressedKey_Ctrl) {
                         if (e.X == myXmin && e.Y == myYmin) {
                             myXmax = e.X; myYmax = e.Y;
@@ -2526,10 +2533,10 @@ namespace XCAD
                             break;
 
                     }
-                    #endregion
+#endregion
                     break;
                 case MouseButtons.Right:
-                    #region 鼠标右键弹起
+#region 鼠标右键弹起
                     if (!myDegenerateModeIsOn) {
                         OCCTView.SetDegenerateModeOff();
                         myDegenerateModeIsOn = false;
@@ -2538,10 +2545,10 @@ namespace XCAD
                         OCCTView.SetDegenerateModeOn();
                         myDegenerateModeIsOn = true;
                     }
-                    #endregion
+#endregion
                     break;
                 case MouseButtons.Middle:
-                    #region 鼠标中键弹出
+#region 鼠标中键弹出
                     if (!myDegenerateModeIsOn) {
                         OCCTView.SetDegenerateModeOff();
                         myDegenerateModeIsOn = false;
@@ -2551,7 +2558,7 @@ namespace XCAD
                         myDegenerateModeIsOn = true;
                     }
                     myCurrentMode = CurrentAction3d.CurAction3d_DynamicRotation;
-                    #endregion
+#endregion
                     break;
                 default:
                     break;
@@ -2708,9 +2715,9 @@ namespace XCAD
         {
             OCCTView.MoveTo(x, y);
         }
-        #endregion
+#endregion
 
-        #region 字段属性
+#region 字段属性
         protected CurrentAction3d myCurrentMode;
         protected CurrentPressedKey myCurrentPressedKey;
         protected float myCurZoom;
@@ -2731,6 +2738,6 @@ namespace XCAD
         public bool InitViewer { get; set; } = false;
 
         private static object lockObject = new object();
-        #endregion
+#endregion
     }
 }
