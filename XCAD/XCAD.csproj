@@ -1,18 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net5.0-windows;net48</TargetFrameworks>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>Resources\Main.ico</ApplicationIcon>
-	<LangVersion>preview</LangVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<!--永远支持最新语法 preview,默认是latestMajor-->
+		<LangVersion>preview</LangVersion>
+		<!--必须要加-windows-->
+		<TargetFrameworks>net5.0-windows;net48</TargetFrameworks>
+		<!-- 支持wpf -->
+		<UseWpf>true</UseWpf>
+		<!-- 支持winform -->
+		<UseWindowsForms>true</UseWindowsForms>
+		<!-- 以下是默认引用 WPF 相关依赖的属性 -->
+		<ExtrasEnableWpfProjectSetup>true</ExtrasEnableWpfProjectSetup>
+		<!-- 以下是默认引用 Windows Forms 相关依赖的属性 -->
+		<ExtrasEnableWinFormsProjectSetup>true</ExtrasEnableWinFormsProjectSetup>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<!--dll=Library exe=WinExe 可以在属性上面改输出类型-->
+		<OutputType>WinExe</OutputType>
+		<!--项目ICO图标-->
+		<ApplicationIcon>Resources\Main.ico</ApplicationIcon>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="bin\**" />
-    <EmbeddedResource Remove="bin\**" />
-    <None Remove="bin\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="bin\**" />
+		<EmbeddedResource Remove="bin\**" />
+		<None Remove="bin\**" />
+	</ItemGroup>
 
 	<PropertyGroup Condition=" '$(TargetFramework)' == 'net48' ">
 		<DefineConstants>NETFULL</DefineConstants>
@@ -27,7 +40,7 @@
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="System.Net.Http" />-->
 	</ItemGroup>
-	
+
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net5.0-windows' ">
 		<PackageReference Include="DevExpress.WindowsDesktop.Core" Version="20.2.4" />
 		<PackageReference Include="DevExpress.WindowsDesktop.Win" Version="20.2.4-ctp" />
@@ -40,79 +53,79 @@
 		<PackageReference Include="System.Drawing.Common" Version="5.0.1" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\OCCT.Foundation.NetHost\OCCT.Foundation.NetHost.vcxproj" />
-	  <ProjectReference Include="..\OCCT.Foundation.Net\OCCT.Foundation.Net.csproj" />
-	  <ProjectReference Include="..\XModel\XModel.csproj" />
+		<ProjectReference Include="..\OCCT.Foundation.NetHost\OCCT.Foundation.NetHost.vcxproj" />
+		<ProjectReference Include="..\OCCT.Foundation.Net\OCCT.Foundation.Net.csproj" />
+		<ProjectReference Include="..\XModel\XModel.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
-	  <Reference Include="DevExpress.BonusSkins.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.BonusSkins.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.Data.Desktop.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Data.Desktop.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.Data.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Data.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.Images.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Images.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.Tutorials.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Tutorials.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.Utils.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Utils.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.Utils.v20.1.UI">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Utils.v20.1.UI.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.Xpo.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Xpo.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.XtraBars.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraBars.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.XtraEditors.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraEditors.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.XtraGrid.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraGrid.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.XtraLayout.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraLayout.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.XtraNavBar.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraNavBar.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.XtraPrinting.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraPrinting.v20.1.dll</HintPath>
-	  </Reference>
-	  <Reference Include="DevExpress.XtraTreeList.v20.1">
-	    <HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraTreeList.v20.1.dll</HintPath>
-	  </Reference>
+		<Reference Include="DevExpress.BonusSkins.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.BonusSkins.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Data.Desktop.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Data.Desktop.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Data.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Data.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Images.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Images.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Tutorials.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Tutorials.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Utils.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Utils.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Utils.v20.1.UI">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Utils.v20.1.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Xpo.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.Xpo.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraBars.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraBars.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraEditors.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraEditors.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraGrid.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraGrid.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraLayout.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraLayout.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraNavBar.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraNavBar.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraPrinting.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraPrinting.v20.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraTreeList.v20.1">
+			<HintPath>bin\Debug\net48\3dparty\DevExpress\DevExpress.XtraTreeList.v20.1.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Update="Properties\Resources.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>Resources.resx</DependentUpon>
-	  </Compile>
-	  <Compile Update="Properties\Settings.Designer.cs">
-	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>Settings.settings</DependentUpon>
-	  </Compile>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
 	</ItemGroup>
 	<ItemGroup>
-	  <EmbeddedResource Update="Properties\Resources.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
 	</ItemGroup>
 	<ItemGroup>
-	  <None Update="Properties\Settings.settings">
-	    <Generator>SettingsSingleFileGenerator</Generator>
-	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-	  </None>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
 	</ItemGroup>
 </Project>
