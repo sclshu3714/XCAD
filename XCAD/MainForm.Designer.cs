@@ -70,13 +70,13 @@ namespace XCAD
             this.accElementMeasure = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionElementPlugin = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accElementSetting = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accElementDemo = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accElementAnimation = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accElementAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.flyoutMessagePanel = new DevExpress.Utils.FlyoutPanel();
-            this.accElementDemo = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accElementAnimation = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl)).BeginInit();
@@ -124,8 +124,6 @@ namespace XCAD
             this.accordionControl.LookAndFeel.SkinName = "Office 2019 Black";
             this.accordionControl.LookAndFeel.UseDefaultLookAndFeel = false;
             this.accordionControl.Name = "accordionControl";
-            this.accordionControl.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Inline;
-            this.accordionControl.OptionsMinimizing.PopupFormAutoHeightMode = DevExpress.XtraBars.Navigation.AccordionPopupFormAutoHeightMode.FitContent;
             this.accordionControl.RootDisplayMode = DevExpress.XtraBars.Navigation.AccordionControlRootDisplayMode.Footer;
             this.accordionControl.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
             this.accordionControl.ShowFilterControl = DevExpress.XtraBars.Navigation.ShowFilterControl.Always;
@@ -465,6 +463,22 @@ namespace XCAD
             this.accElementSetting.Tag = "Setting";
             this.accElementSetting.Text = "设置";
             // 
+            // accElementDemo
+            // 
+            this.accElementDemo.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accElementAnimation});
+            this.accElementDemo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementDemo.ImageOptions.Image")));
+            this.accElementDemo.Name = "accElementDemo";
+            this.accElementDemo.Text = "演示";
+            // 
+            // accElementAnimation
+            // 
+            this.accElementAnimation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementAnimation.ImageOptions.Image")));
+            this.accElementAnimation.Name = "accElementAnimation";
+            this.accElementAnimation.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accElementAnimation.Tag = "Animation";
+            this.accElementAnimation.Text = "动画";
+            // 
             // accElementAbout
             // 
             this.accElementAbout.ControlFooterAlignment = DevExpress.XtraBars.Navigation.AccordionItemFooterAlignment.Far;
@@ -504,22 +518,6 @@ namespace XCAD
             this.flyoutMessagePanel.OwnerControl = this.RWControl;
             this.flyoutMessagePanel.ParentForm = this;
             this.flyoutMessagePanel.TabIndex = 0;
-            // 
-            // accElementDemo
-            // 
-            this.accElementDemo.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accElementAnimation});
-            this.accElementDemo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementDemo.ImageOptions.Image")));
-            this.accElementDemo.Name = "accElementDemo";
-            this.accElementDemo.Text = "演示";
-            // 
-            // accElementAnimation
-            // 
-            this.accElementAnimation.Name = "accElementAnimation";
-            this.accElementAnimation.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accElementAnimation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accElementMeshShrinked.ImageOptions.Image")));
-            this.accElementAnimation.Text = "动画";
-            this.accElementAnimation.Tag = "Animation";
             // 
             // MainForm
             // 
