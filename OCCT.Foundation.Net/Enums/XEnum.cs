@@ -61,7 +61,7 @@ namespace OCCT.Foundation.Net
 	/// <summary>
 	/// 运动模式
 	/// </summary>
-	public enum Movementmode
+	public enum ActivityType
 	{
 		/// <summary>
 		/// 平移
@@ -70,6 +70,10 @@ namespace OCCT.Foundation.Net
 		/// <summary>
 		/// 旋转
 		/// </summary>
-		Rotation
+		Rotation,
+		/// <summary>
+		/// 形变
+		/// </summary>
+		Deformation,
 	}
 }

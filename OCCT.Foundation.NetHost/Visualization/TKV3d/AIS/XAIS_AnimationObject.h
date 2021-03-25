@@ -76,6 +76,7 @@ namespace TKV3d {
                     NativeHandle() = NULL;
             }
         }
+
     private:
         NCollection_Haft<Handle(AIS_AnimationObject)> NativeHandle;
     };

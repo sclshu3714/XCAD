@@ -24,4 +24,52 @@
 	  <Reference Include="Microsoft.CSharp" />
 	  <Reference Include="System.Net.Http" />
   </ItemGroup>
+	
+  <ItemGroup>
+    <Compile Remove="DMaths\gp\**" />
+    <EmbeddedResource Remove="DMaths\gp\**" />
+    <None Remove="DMaths\gp\**" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Compile Remove="DMaths\gp_Ax1.cs" />
+    <Compile Remove="DMaths\gp_Ax2.cs" />
+    <Compile Remove="DMaths\gp_Ax22d.cs" />
+    <Compile Remove="DMaths\gp_Ax2d.cs" />
+    <Compile Remove="DMaths\gp_Ax3.cs" />
+    <Compile Remove="DMaths\gp_Circ.cs" />
+    <Compile Remove="DMaths\gp_Circ2d.cs" />
+    <Compile Remove="DMaths\gp_Cone.cs" />
+    <Compile Remove="DMaths\gp_Cylinder.cs" />
+    <Compile Remove="DMaths\gp_Dir.cs" />
+    <Compile Remove="DMaths\gp_Dir2d.cs" />
+    <Compile Remove="DMaths\gp_Elips.cs" />
+    <Compile Remove="DMaths\gp_Elips2d.cs" />
+    <Compile Remove="DMaths\gp_EulerSequence.cs" />
+    <Compile Remove="DMaths\gp_GTrsf.cs" />
+    <Compile Remove="DMaths\gp_GTrsf2d.cs" />
+    <Compile Remove="DMaths\gp_Hypr.cs" />
+    <Compile Remove="DMaths\gp_Hypr2d.cs" />
+    <Compile Remove="DMaths\gp_Lin.cs" />
+    <Compile Remove="DMaths\gp_Lin2d.cs" />
+    <Compile Remove="DMaths\gp_Mat2d.cs" />
+    <Compile Remove="DMaths\gp_Parab.cs" />
+    <Compile Remove="DMaths\gp_Parab2d.cs" />
+    <Compile Remove="DMaths\gp_Pln.cs" />
+    <Compile Remove="DMaths\gp_Pnt.cs" />
+    <Compile Remove="DMaths\gp_Pnt2d.cs" />
+    <Compile Remove="DMaths\gp_Quaternion.cs" />
+    <Compile Remove="DMaths\gp_QuaternionNLerp.cs" />
+    <Compile Remove="DMaths\gp_QuaternionSLerp.cs" />
+    <Compile Remove="DMaths\gp_Sphere.cs" />
+    <Compile Remove="DMaths\gp_Torus.cs" />
+    <Compile Remove="DMaths\gp_Trsf.cs" />
+    <Compile Remove="DMaths\gp_Trsf2d.cs" />
+    <Compile Remove="DMaths\gp_TrsfForm.cs" />
+    <Compile Remove="DMaths\gp_TrsfNLerp.cs" />
+    <Compile Remove="DMaths\gp_Vec.cs" />
+    <Compile Remove="DMaths\gp_Vec2d.cs" />
+    <Compile Remove="DMaths\gp_VectorWithNullMagnitude.cs" />
+    <Compile Remove="DMaths\gp_XY.cs" />
+  </ItemGroup>
 </Project>

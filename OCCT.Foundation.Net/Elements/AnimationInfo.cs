@@ -57,7 +57,7 @@ namespace OCCT.Foundation.Net.Elements
         /// <summary>
         /// 运动模式
         /// </summary>
-        public Movementmode Movement { get; set; } = Movementmode.Translation;
+        public ActivityType AType { get; set; } = ActivityType.Translation;
 
         /// <summary>
         /// 旋转轴或者平移向量(6个值，前三个是点，后三个是方向)
